@@ -1,5 +1,5 @@
 #include <stdio.h>
 
-int main(ls
-    print
+int main(void)
+    printf("junior Motsoko")
 }
