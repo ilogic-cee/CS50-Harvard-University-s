@@ -8,10 +8,7 @@ int height = get_int("input your height, from 1 to 8:  ");
 //code
 
  do{
-  printf(" ")
-    printf("#")
-    printf("  ")
-    printf("#\n");
+ 
 
  }while(height>=1 || height<=8);
 
