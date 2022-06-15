@@ -7,16 +7,15 @@ int height = get_int("input your height, from 1 to 8:  ");
  if(height>=1 || height<=8){
 //code
 
- } else{
-
- printf("input that lies within the interval");
-
- }
-
  do{
+  printf(" ")
+    printf("#")
+    printf("  ")
+    print("#\n");
 
  }while(height>=1 || height<=8);
 
+printf("input height within the height interval");
 
  }
 
