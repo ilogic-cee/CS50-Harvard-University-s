@@ -3,23 +3,24 @@
 
 const string HA = "#";
 const string SP = " ";
-int height ;
+int h;
 int sp;
-sp = height -1;
+sp = h-1;
 
 int main(void)
 {
 
-height = get_int("input your height, from 1 to 8:  ");
- if(height>=1 || height<=8){
-
-
+h = get_int("input number of height, from 1 to 8 :  ");
 
 do{
 
 
+printf(SP)
+printf(HA)
+printf(SP)
+printf(HA);
 
- }while(height>=1 || height<=8);
+ }while(h>=1 || h<=8);
 
 
  }
