@@ -3,11 +3,14 @@
 
 const string HA = "#";
 const string SP = " ";
+int height ;
+int sp;
+sp = height -1;
 
 int main(void)
 {
 
-int height = get_int("input your height, from 1 to 8:  ");
+height = get_int("input your height, from 1 to 8:  ");
  if(height>=1 || height<=8){
 
 
