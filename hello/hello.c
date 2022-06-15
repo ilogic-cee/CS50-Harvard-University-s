@@ -3,6 +3,6 @@
 
 int main(){
 
-    printf("hey, i am !ugly");
+    printf("what is your name %s \n ",);
 
 }
