@@ -3,6 +3,10 @@
 
 int main(void)
 {
-printf("input a positive integer, from 1 to 8");
+
+
+int height = get_integer("input your height, from 1 to 8");
+
+
 
 }
