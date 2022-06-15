@@ -9,9 +9,11 @@ int height = get_int("input your height, from 1 to 8:  ");
  if(height>=1 || height<=8){
 //code
 
- } else
+ } else{
 
- printf("input that lies within the interval")
+ printf("input that lies within the interval");
+
+ }
 
 
 }
