@@ -4,7 +4,7 @@
 int main(){
 
     printf("what is your name %s \n ",);
-get_string("");
+    get_string("what is your name");
 
 
 }
