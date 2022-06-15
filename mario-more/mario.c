@@ -10,7 +10,7 @@ sp = h-1;
 int main(void)
 {
 
-h = get_int("input number of height, from 1 to 8 :  ");
+h = get_int("input number of height, from 1 to 8 :  \n");
 
 do{
 
