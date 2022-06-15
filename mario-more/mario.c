@@ -9,7 +9,6 @@ int height = get_int("input your height, from 1 to 8:  ");
 
  do{
  
-
  }while(height>=1 || height<=8);
 
 printf("input height within the height interval");
