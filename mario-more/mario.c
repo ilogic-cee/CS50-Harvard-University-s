@@ -10,8 +10,8 @@ h = get_int("input your height, from 1 to 8 :  \n");
 Trow= h;
 
 for(row =1; row<= Trow; row++){
-
-    
+// print the space
+    printf
 }
 
 do{
