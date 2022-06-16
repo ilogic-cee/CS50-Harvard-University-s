@@ -8,6 +8,8 @@ int main(void)
 
 h = get_int("input your height, from 1 to 8 :  \n");
 
+h = Trow;
+
 do{
 
 
