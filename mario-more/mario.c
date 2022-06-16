@@ -6,7 +6,7 @@ int Trow, row, sp, h;
 int main(void)
 {
 
-h = get_int("input number of height, from 1 to 8 :  \n");
+h = get_int("input your height, from 1 to 8 :  \n");
 
 do{
 
