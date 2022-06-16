@@ -18,7 +18,7 @@ for(row =1; row<= Trow; row++){
 
 do{
 
-    // print space
+    // print spaces
 for(row =1; row <= Trow; row++)
 {
 
