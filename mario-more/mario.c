@@ -12,7 +12,7 @@ do{
     // print spaces
 for(row =1; row <= Trow; row++){
 
-  for(sp =1; Trow - row; sp++){
+  for(sp =1; sp<=Trow - row; sp++){
   printf(" ");
  }
  // printin hash's
