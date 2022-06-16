@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int Trow, row, sp, h, h
+int Trow, row, sp, h, hash;
 
 int main(void)
 {
@@ -18,13 +18,14 @@ for(row =1; row <= Trow; row++){
   printf(" ");
  }
  // printin hash's
- for(){
-
+ for(hash=1, hash <= 2*row, hash++){
+printf("#");
+printF("\n");
  }
 
 } }while(h>=1 || h<=8);
 
 
- }
+}
 
 
