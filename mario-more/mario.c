@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int Trow, sp, h
+int Trow, row, sp, h;
 
 int main(void)
 {
