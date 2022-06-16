@@ -11,6 +11,7 @@ Trow= h;
 
 for(row =1; row<= Trow; row++){
 // print the space
+f
     printf
 }
 
