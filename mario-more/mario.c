@@ -9,7 +9,6 @@ int main(void)
 Trow = get_int("input your height, from 1 to 8 :  \n");
 
 do{
-
     // print spaces
 for(row =1; row <= Trow; row++){
 
