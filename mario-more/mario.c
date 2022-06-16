@@ -20,6 +20,8 @@ do{
 
     // print spaces
 for(row =1; row <= Trow; row++)
+
+for()
 {
 
 
