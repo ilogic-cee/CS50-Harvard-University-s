@@ -20,9 +20,9 @@ for(row =1; row <= Trow; row++){
 printf("#");
 printF("\n");
  }
+}
 
-} }while(h>=1 || h<=8);
-
+}while(Trow>=1 || Trow<=8);
 
 }
 
