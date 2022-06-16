@@ -19,11 +19,10 @@ for(row =1; row<= Trow; row++){
 do{
 
     // print spaces
-for(row =1; row <= Trow; row++)
+for(row =1; row <= Trow; row++){
+ for(sp =1 ; Trow - row; sp++){
 
-for()
-{
-
+ }
 
 } }while(h>=1 || h<=8);
 
