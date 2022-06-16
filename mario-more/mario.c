@@ -6,8 +6,7 @@ int Trow, row, sp, h, hash;
 int main(void)
 {
 
-h = get_int("input your height, from 1 to 8 :  \n");
-Trow= h;
+Trow = get_int("input your height, from 1 to 8 :  \n");
 
 do{
 
