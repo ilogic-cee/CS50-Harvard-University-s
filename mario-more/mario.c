@@ -11,19 +11,19 @@ Trow= h;
 
 for(row =1; row<= Trow; row++){
 // print the space
-f
+
+//
     printf
 }
 
 do{
 
+    // print space
+for(row =1; row <= Trow; row++)
+{
 
-printf(SP)
-printf(HA)
-printf(SP)
-printf(HA);
 
- }while(h>=1 || h<=8);
+} }while(h>=1 || h<=8);
 
 
  }
