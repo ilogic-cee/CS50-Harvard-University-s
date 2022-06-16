@@ -1,11 +1,7 @@
- #include <cs50.h>
+#include <cs50.h>
 #include <stdio.h>
 
-const string HA = "#";
-const string SP = " ";
-int h;
-int sp;
-sp = h-1;
+int Trow, sp, h
 
 int main(void)
 {
