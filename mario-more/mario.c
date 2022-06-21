@@ -20,7 +20,7 @@ do{
 
  // printin hash's
   for(hash=0; hash <= row; hash++){
-   printf("#")
+   printf("#");
  }
 
     printf("  ") ;
