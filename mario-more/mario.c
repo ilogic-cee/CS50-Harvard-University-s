@@ -4,19 +4,20 @@
 int main(void)
 {
 
-int  row, sp, h, hash;
+    int  row, sp, h, hash;
 
-do{
- h = get_int("input your height, from 1 to 8 :  \n");
-}while(h<1 || h>8);
+    do{
+         h = get_int("input your height, from 1 to 8 :  \n");
+    }while (h < 1 || h > 8);
 
 // print space's
- for(row =; row < h; row++){
-
+   for (row =; row < h; row++)
+   {
   // print space's
-  for(sp =0; sp<(h - row-1); sp++){
-  printf(" ");
- }
+   for(sp =0; sp<(h - row-1); sp++)
+   {
+            printf(" ");
+   }
 
  // printin hash's
   for(hash=0; hash <= row; hash++){
