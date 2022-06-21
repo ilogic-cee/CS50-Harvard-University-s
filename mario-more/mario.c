@@ -4,17 +4,17 @@
 int main(void)
 {
 
-int Trow, row, sp, h, hash;
+int  row, sp, h, hash;
 
 do{
- Trow = get_int("input your height, from 1 to 8 :  \n");
-}while(Trow<1 || Trow>8);
+ h = get_int("input your height, from 1 to 8 :  \n");
+}while(h<1 || h>8);
 
 // print space's
- for(row =0; row < Trow; row++){
+ for(row =0; row < h; row++){
 
   // print space's
-  for(sp =0; sp<(Trow - row-1); sp++){
+  for(sp =0; sp<(h - row-1); sp++){
   printf(" ");
  }
 
