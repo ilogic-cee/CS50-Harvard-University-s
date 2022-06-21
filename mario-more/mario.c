@@ -14,7 +14,6 @@ for(row =1; row <= Trow; row++){
  for(sp =1; sp<=(Trow - row); sp++){
   printf(" ");
  }
-
  // printin hash's
   for(hash=1; hash <= 2*row; hash++){
    printf("#");
