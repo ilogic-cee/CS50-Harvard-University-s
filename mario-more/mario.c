@@ -1,7 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 
-
 int main(void)
 {
 
@@ -20,9 +19,8 @@ for(row =1; row <= Trow; row++){
   for(hash=1; hash <= 2*row; hash++){
    printf("#");
    printF("\n");
-
  }
-}while(Trow>=1 || Trow<=8);
+}while(Trow<=1 || Trow>=8);
 
  }
 }
