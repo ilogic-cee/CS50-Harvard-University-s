@@ -22,8 +22,7 @@ do{
   for(hash=0; hash <= row; hash++){
    printf("#");
  }
-
-    printf("  ") ;
+ printf("  ") ;
 
     for(hash=0; hash <= row; hash++){
    printf("#");
