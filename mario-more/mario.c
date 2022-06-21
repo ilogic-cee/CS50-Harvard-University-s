@@ -11,7 +11,7 @@ Trow = get_int("input your height, from 1 to 8 :  \n");
 
  // print spaces
 for(row =1; row <= Trow; row++){
- for(sp =1; sp<=Trow - row; sp++){
+ for(sp =1; sp<=(Trow - row); sp++){
   printf(" ");
  }
 
