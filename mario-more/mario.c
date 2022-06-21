@@ -17,7 +17,7 @@ do{
  } */
 
  // printin hash's
-  for(hash=1; hash <= Trow); hash++){
+  for(hash=1; hash <= Trow; hash++){
    printf("#");
    printf("\n");
  }
