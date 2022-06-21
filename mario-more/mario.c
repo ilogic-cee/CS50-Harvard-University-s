@@ -11,13 +11,13 @@ do{
 }while(Trow<1 || Trow>8);
 
 print spaces
- for(row =1; row <= Trow; row++){
+ for(row =0; row < Trow; row++){
  /* for(sp =0; sp<=(Trow - row); sp++){
   printf(" ");
  } */
 
  // printin hash's
-  for(hash=1; hash <= Trow; hash++){
+  for(hash=0; hash <= Trow; hash++){
    printf("#");
    printf("\n");
  }
