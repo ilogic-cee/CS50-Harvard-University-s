@@ -4,7 +4,7 @@
 int main(void)
 {
 
-int Trow, row, sp, h, hash;
+`int Trow, row, sp, h, hash;
 
 do{
 Trow = get_int("input your height, from 1 to 8 :  \n");
