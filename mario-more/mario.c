@@ -9,7 +9,7 @@ int main(void)
     do{
 
        /* printf("input your height, from 1 to 8 :  \n");
-        scanf("%d", &h); */
+        /scanf("%d", &h); */
          h = get_int("input your height, from 1 to 8 :  \n");
     }while (h < 1 || h > 8);
 
