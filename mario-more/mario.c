@@ -7,8 +7,7 @@ int main(void)
     int  row, sp, h, hash;
 
     do{
-
-       /* printf("input your height, from 1 to 8 :  \n");
+ /* printf("input your height, from 1 to 8 :  \n");
         /scanf("%d", &h); */
          h = get_int("input your height, from 1 to 8 :  \n");
     }while (h < 1 || h > 8);
