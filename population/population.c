@@ -8,7 +8,7 @@ int main(void)
 
 do
 {
-start = get_int("start size: ");
+start = get_int("Enter the starting population size: ");
 }
 while(start < 9);
 
