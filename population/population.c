@@ -12,7 +12,9 @@ start = get_int("start size: ");
 
 
 }
-while(start < 9); 
+while(start < 9);
+
+
     // TODO: Prompt for end size
 
     // TODO: Calculate number of years until we reach threshold
