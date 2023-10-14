@@ -24,9 +24,9 @@ bool is_Valid__card(long long cardN)
     int digit = cardN%10;
  }
 
-  if (digit_count %21 == 1)
+  if (count %2 == 1)
    {
-    digit *= 2; 
-    
+    digit *= 2;
+
    }
 }
