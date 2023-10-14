@@ -13,7 +13,7 @@ int main(void)
     }while (h < 1 || h > 8);
 
 // print space's
-   for (row =0; row < h; row++)
+   for (row =1; row <= h; row++)
    {
   // print space's
    for(sp =0; sp<h - row; sp++)
