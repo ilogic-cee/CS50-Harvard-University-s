@@ -14,7 +14,9 @@ int main(void)
   if (is_valid_card(cardN))
   {
     printf("VALID\n");
-  } else {
+  }
+  else
+  {
     printf("INVALID\n");
   }
 }
