@@ -22,16 +22,18 @@ int main(void)
    }
 
  // printin hash's
-  for(hash=0; hash <= row; hash++){
+  for(hash=0; hash <= row; hash++)
+  {
    printf("#");
  }
  printf("  ") ;
 
 
 // printin hash's
-    for(hash=0; hash <= row; hash++){
+    for(hash=0; hash <= row; hash++)
+    {
    printf("#");
- }
+    }
  printf("\n");
 }
 
