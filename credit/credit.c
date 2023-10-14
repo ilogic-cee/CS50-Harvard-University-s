@@ -3,12 +3,19 @@
 
 // calling the function is_valid_card
 bool is_valid_card(long long cardN);
-int length = strien(cordN);
-if (length == 15 && cardN[0] == '3' && (cardN[1] == '4' || cardN[1] == '7') )
-{
-    // AMEX
-    else if (length == )
+
+int length = strlen(cardN);
+
+if (length == 15 && cardN[0] == '3' && (cardN[1] == '4' || cardN[1] == '7')) {
+  // AMEX card
+} else if (length == 16 && (cardN[0] == '5' && (cardN[1] == '1' || cardN[1] == '2' || cardN[1] == '3' || cardN[1] == '4' || cardN[1] == '5')) {
+  // Mastercard card
+} else if (length == 16 && cardN[0] == '4') {
+  // VISA card
+} else {
+  // Invalid credit card number
 }
+
 int main(void)
 
  int length = string(cardN);
