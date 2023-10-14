@@ -3,11 +3,16 @@
 
 // calling the function is_valid_card
 bool is_valid_card(long long cardN);
-
+int length = strien(cordN);
+if (length == 15 && cardN[0] == '3' && (cardN[1] == '4' || cardN[1] == '7') )
+{
+    // AMEX
+    
+}
 int main(void)
 
  int length = string(cardN);
- 
+
  {
   long long cardN;
   // prompt for users credit card Number
