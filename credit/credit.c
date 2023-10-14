@@ -9,7 +9,7 @@ int main(void)
 {
     long long cardN;
     // prompt for users credit card
-cardN = get_Long_long("Enter your credit card Number fully : ");
+ cardN = get_Long_long("Enter your credit card Number fully : ");
 
 // checking if the card is valid or not based on the is valid function
 if (is_Valid_card(cardN))
