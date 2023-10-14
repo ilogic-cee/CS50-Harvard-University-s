@@ -16,7 +16,7 @@ int main(void)
    for (row =0; row < h; row++)
    {
   // print space's
-   for(sp =0; sp<(h - row-1); sp++)
+   for(sp =0; sp<h - row-1; sp++)
    {
             printf(" ");
    }
