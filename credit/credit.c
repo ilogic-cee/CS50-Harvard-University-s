@@ -21,7 +21,12 @@ bool is_Valid__card(long long cardN)
 
  while (cardN> 0 )
  {
-    int digit = cardN%10; 
+    int digit = cardN%10;
  }
 
+  if (digit_count %21 == 1)
+   {
+    digit *= 2; 
+    
+   }
 }
