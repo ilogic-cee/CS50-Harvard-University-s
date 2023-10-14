@@ -13,9 +13,15 @@ else
 {}
 }
 
-bool is_Valid_credit__card(long long cardN)
+bool is_Valid__card(long long cardN)
 {
- int sum = 0 ;
- int digit_count = 0 ; 
+
+ int Total = 0 ;
+ int count = 0 ;
+
+ while (cardN> 0 )
+ {
+    int digit = cardN%10; 
+ }
 
 }
