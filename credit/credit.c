@@ -37,7 +37,7 @@ bool is_Valid_card(long long cardN)
 
   if (count %2 == 1)
    {
- int digit *= 2;
+    digit *= 2;
     Total += digit %10 + digit/10;
 
    }
@@ -50,3 +50,5 @@ bool is_Valid_card(long long cardN)
 }
 
 return Total % 10 == 0;
+
+}
