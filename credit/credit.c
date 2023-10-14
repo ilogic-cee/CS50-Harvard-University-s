@@ -5,6 +5,9 @@
 bool is_valid_card(long long cardN);
 
 int main(void)
+
+ int length = string(cardN);
+ 
  {
   long long cardN;
   // prompt for users credit card Number
