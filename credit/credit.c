@@ -4,7 +4,8 @@
 
 // calling the function is_valid_card
 
-bool is_Valid_card(long long cardN);
+bool is_valid_card(long long cardN);
+
 int main(void)
 {
     long long cardN;
@@ -12,13 +13,13 @@ int main(void)
  cardN = get_long_long("Enter your credit card Number fully : ");
 
 // checking if the card is valid or not based on the is valid function
-if (is_Valid_card(cardN))
+if (is_valid_card(cardN))
 {
-    printf("Valid\n");
+    printf("VALID\n");
 }
 else
 {
-    printf("invalid\n");
+    printf("INVALID\n");
 }
 }
 
