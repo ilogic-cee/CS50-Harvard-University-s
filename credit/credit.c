@@ -16,6 +16,7 @@ if (length == 15 && cardN[0] == '3' && (cardN[1] == '4' || cardN[1] == '7')) {
   // Invalid credit card number
 }
 
+
 int main(void)
 
  int length = string(cardN);
