@@ -4,7 +4,7 @@
 int main(void)
 {
     // TODO: Prompt for start size
-    int start, end, years = 0 ;
+    int start, end;
 
 do
 {
@@ -34,7 +34,7 @@ int years = 0;
      years++;
     }
 
-    printf("Years: %i\n ", years ); 
+    printf("Years: %i\n ", years );
 
 
     // TODO: Print number of years
