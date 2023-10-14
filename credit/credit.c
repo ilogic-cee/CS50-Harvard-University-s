@@ -7,7 +7,7 @@ int length = strien(cordN);
 if (length == 15 && cardN[0] == '3' && (cardN[1] == '4' || cardN[1] == '7') )
 {
     // AMEX
-    
+    else if (length == )
 }
 int main(void)
 
