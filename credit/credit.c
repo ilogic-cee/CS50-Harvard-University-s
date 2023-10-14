@@ -23,7 +23,7 @@ else
 }
 }
 
-bool is_Valid_card(long long cardN)
+bool is_alid_card(long long cardN)
 {
 
  int Total = 0 ;
@@ -32,12 +32,12 @@ bool is_Valid_card(long long cardN)
  while (cardN > 0 )
  {
     // getting the rightmost digit of the card Number
-
+    int digit = cardN%10;
  }
-  int digit = cardN%10;
+
   if (count %2 == 1)
    {
-    digit *= 2;
+ int digit *= 2;
     Total += digit %10 + digit/10;
 
    }
@@ -50,5 +50,3 @@ bool is_Valid_card(long long cardN)
 }
 
 return Total % 10 == 0;
-
-}
