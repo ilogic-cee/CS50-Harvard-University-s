@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    loing cardN
+    long long cardN;
     // prompt for users credit card
 cardN = get_Long_long("Enter your credit card Number: ");
 
@@ -19,7 +19,7 @@ bool is_Valid__card(long long cardN)
  int Total = 0 ;
  int count = 0 ;
 
- while (cardN> 0 )
+ while (cardN > 0 )
  {
     int digit = cardN%10;
  }
