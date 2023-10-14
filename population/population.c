@@ -22,7 +22,7 @@ while(start < 9);
     while (end < start);
 
     // TODO: Calculate number of years until we reach threshold
-    
+
 int years = 0;
 
     while (start < end)
@@ -31,8 +31,10 @@ int years = 0;
         int born = start/3;
         int passed = start/4 ;
         start = start +born -passed ;
-
+     years++;
     }
+
+    printf("Years: %i\n ", years ); 
 
 
     // TODO: Print number of years
