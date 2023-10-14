@@ -21,6 +21,7 @@ bool is_Valid__card(long long cardN)
 
  while (cardN > 0 )
  {
+    // getting the rightmost digit of the card Number 
     int digit = cardN%10;
  }
 
