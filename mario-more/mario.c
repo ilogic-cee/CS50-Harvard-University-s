@@ -16,13 +16,13 @@ int main(void)
    for (row =0; row < h; row++)
    {
   // print space's
-   for(sp =0; sp<h - row-1; sp++)
+   for(sp =0; sp<h - row; sp++)
    {
             printf(" ");
    }
 
  // printin hash's
-  for(hash=0; hash <= row; hash++)
+  for(hash=0; hash < row; hash++)
   {
    printf("#");
  }
@@ -30,11 +30,12 @@ int main(void)
 
 
 // printin hash's
-    for(hash=0; hash <= row; hash++)
+    for(hash=0; hash < row; hash++)
     {
    printf("#");
     }
  printf("\n");
 }
+return 0;
 
 }
