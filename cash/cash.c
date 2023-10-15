@@ -12,8 +12,8 @@ int main(void)
 {
 
     int cents = get_cents();
-    int quarters = quarters(cents);
-    int dimes=  dimes(cents);
+    int quarters = cents/25;
+    int dimes =  dimes(cents);
     int nickels = nickels(cents);
     int pennies = pennies(cents);
     int Final_coins = quarters + dimes + nickels + pennies ;
@@ -45,5 +45,5 @@ int dimes(int cents)
 }
 int pennies(int cents)
 {
-    return ((cents %25)%10)%5 ; 
+    return ((cents %25)%10)%5 ;
 }
