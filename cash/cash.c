@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+// variable decleration
 int get_cents(void);
 int quarters(int cents);
 int dimes(int cents);
@@ -9,6 +10,7 @@ int pennies(int cents);
 
 int main(void)
 {
+
     int cents = get_cents();
     int quarters = quarters(cents);
     int dimes=  dimes(cents);
@@ -25,9 +27,9 @@ int get_cents(void)
 {
     int cents ;
     do{
-
+    // prompt the user to get the change that is owed
         cents = get_int("Change that is owed: ");
     } while (cents < 0 );
 
-    return cents 
+    return cents
 }
