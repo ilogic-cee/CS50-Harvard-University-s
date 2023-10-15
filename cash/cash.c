@@ -28,8 +28,22 @@ int get_cents(void)
     int cents ;
     do{
     // prompt the user to get the change that is owed
-        cents = get_int("Change that is owed: ");
+        cents = get_int("Change the amount that is owed: ");
     } while (cents < 0 );
 
-    return cents
+    return cents ;
+}
+
+int quarters(int cents)
+{
+return cents/25 ;
+}
+
+int dimes(int cents)
+{
+    return (cents %25)/10 ;
+}
+int pennies(int cents)
+{
+    return ((cents %25)%10)%5 ; 
 }
