@@ -2,18 +2,30 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort1 takes a significant amount of time to sort a reversed list, indicating that it is not a highly efficient sorting algorithm like merge sort.
+When you give sort1 a list that's already sorted, it doesn't take too long to figure out that it's already sorted and doesn't need to do much work. This is like when you have your books arranged alphabetically on your shelf, it's easy to find the book you want without having to rearrange everything.
 
-sort1 takes a relatively short amount of time to sort an already sorted list, suggesting that it might be selection sort, which has a worst-case time complexity of O(n^2) but performs well on already sorted lists.
+When you give sort1 a list that's mixed up, it takes a bit more time to figure out the right order, but it still gets the job done. This is like when you have a pile of toys on the floor, and you need to put them away in their respective boxes. It might take some time to sort through them all, but you'll eventually find the right spot for each toy.
 
-sort1 takes a moderate amount of time to sort a random list, further supporting the hypothesis that sort1 is selection sor
+When you give sort1 a list that's completely backwards, it takes even longer to sort it out. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. It's going to take some extra time to fix everything and put it in the right order.pporting the hypothesis that sort1 is selection sor
 
 sort2 uses: TODO
 
 How do you know?: TODO
 
 
+When you give sort2 a list that's already sorted, it takes a long time to figure out that it's already sorted. This is like when you have your books arranged alphabetically on your shelf, but you ask your friend to double-check the order. Even though the books are already sorted, your friend might still go through each book one by one, just in case.
+
+When you give sort2 a list that's mixed up, it takes a long time to sort it out. This is like when you have a pile of toys on the floor, and you want to put them away in their respective boxes. But instead of sorting them one by one, you keep picking up random toys and throwing them into the boxes, hoping they'll end up in the right spot. It might take a while, and there might be some mistakes along the way, but eventually you'll get most of the toys in the right places.
+
+When you give sort2 a list that's completely backwards, it takes even longer to sort it out. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. And instead of fixing them one by one, you decide to take them all off the hangers, throw them into a pile on the floor, and then start hanging them up again, hoping you'll get them all right this time. It's going to take a long time, and there might be a lot of confusion along the way, but eventually you'll get most of the clothes back in the right order.
+
 
 sort3 uses: TODO
 
 How do you know?: TODO
+
+When you give sort3 a list that's already sorted, it doesn't take much time to figure out that it's already sorted. This is like when you have your books arranged alphabetically on your shelf, and you want to find a specific book. You can quickly scan the titles and find the one you're looking for without having to check each book individually.
+
+When you give sort3 a list that's mixed up, it takes a reasonable amount of time to sort it out. This is like when you have a pile of toys on the floor, and you want to put them away in their respective boxes. You can divide the toys into smaller groups, sort each group individually, and then combine the sorted groups to create one big sorted pile. It's still going to take some effort, but it's a more efficient way of sorting than just picking up random toys and throwing them into boxes.
+
+When you give sort3 a list that's completely backwards, it takes a bit more time to sort it out, but it's still much faster than sort1 or sort2. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. You can divide the clothes into smaller groups, flip each group of clothes the right way around, and then put them back on the hangers. It's still going to take some effort, but it's a more organized and efficient way of fixing the problem than trying to fix each piece of clothing individually.
