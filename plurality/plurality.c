@@ -63,15 +63,41 @@ int main(int argc, string argv[])
 }
 
 // Update vote totals given a new vote
-bool vote(string name)
-{
-    // TODO
-    return false;
+bool vote(string name) {
+  // Check if the name matches a valid candidate
+  for (int i = 0; i < candidate_count; i++) {
+    if (strcmp(candidates[i].name.c_str(), name.c_str()) == 0) {
+      // Update the vote count for the matching candidate
+      candidates[i].votes++;
+      return true;
+    }
+  }
+
+  // No matching candidate found
+  return false;
 }
 
 // Print the winner (or winners) of the election
-void print_winner(void)
-{
-    // TODO
-    return;
+void print_winner(void) {
+  // Find the candidate with the most votes
+  int max_votes = 0;
+  int winning_candidate_index = -1;
+  for (int i = 0; i < candidate_count; i++) {
+    if (candidates[i].votes > max_votes) {
+      max_votes = candidates[i].votes;
+      winning_candidate_index = i;
+    }
+  }
+
+  // Print the winner(s)
+  if (winning_candidate_index != -1) {
+    for (int i = 0; i < candidate_count; i++) {
+      if (candidates[i].votes == max_votes) {
+        printf("%s\n", candidates[i].name.c_str());
+      }
+    }
+  } else {
+    printf("There is no winner.\n");
+  }
 }
+
