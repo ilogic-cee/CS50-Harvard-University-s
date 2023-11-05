@@ -2,9 +2,17 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
+sort1 takes a significant amount of time to sort a reversed list, indicating that it is not a highly efficient sorting algorithm like merge sort.
+
+sort1 takes a relatively short amount of time to sort an already sorted list, suggesting that it might be selection sort, which has a worst-case time complexity of O(n^2) but performs well on already sorted lists.
+
+sort1 takes a moderate amount of time to sort a random list, further supporting the hypothesis that sort1 is selection sor
+
 sort2 uses: TODO
 
 How do you know?: TODO
+
+
 
 sort3 uses: TODO
 
