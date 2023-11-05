@@ -94,7 +94,8 @@ void print_winner(void) {
   if (winning_candidate_index != -1) {
     for (int i = 0; i < candidate_count; i++) {
       if (candidates[i].votes == max_votes) {
-        printf("%s\n", candidates[i].name.c_str());
+       printf("%s\n", candidates[i].name);
+
       }
     }
   } else {
