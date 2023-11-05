@@ -66,7 +66,8 @@ int main(int argc, string argv[])
 bool vote(string name) {
   // Check if the name matches a valid candidate
   for (int i = 0; i < candidate_count; i++) {
-    if (strcmp(candidates[i].name.c_str(), name.c_str()) == 0) {
+    if (strcmp(candidates[i].name, name) == 0) {
+
       // Update the vote count for the matching candidate
       candidates[i].votes++;
       return true;
