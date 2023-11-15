@@ -1,12 +1,14 @@
 def main():
+
     # Prompt the user for mass in kilograms
     mass = int(input("Enter mass in kilograms: "))
 
-    # Compute the equivalent number of Joules
-    joules = mass * 299792458 ** 2
+    # Convert mass to energy using the formula E = mc^2
+    c = 299792458  # Speed of light in meters per second
+    energy = mass * c ** 2
 
-    # Print the equivalent number of Joules
-    print(f"Equivalent energy in Joules: {joules}")
+    # Print the energy in Joules
+    print(f"Equivalent energy in Joules: {energy}")
 
 if __name__ == "__main__":
     main()
