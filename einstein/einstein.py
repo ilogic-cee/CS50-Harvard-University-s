@@ -3,7 +3,7 @@ def main():
     mass = int(input("Enter mass in kilograms: "))
 
     # Compute the equivalent number of Joules
-    joules = mass * (299792458 ** 2)
+    joules = mass * 299792458 ** 2
 
     # Print the equivalent number of Joules
     print(f"Equivalent energy in Joules: {joules}")
