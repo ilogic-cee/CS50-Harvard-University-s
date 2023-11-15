@@ -1,20 +1,19 @@
-# einstein.py
+# tip.py
 
-# Constants
-speed_of_light = 300000000  # meters per second
+def main():
+    dollars = dollars_to_float(input("How much was the meal? "))
+    percent = percent_to_float(input("What percentage would you like to tip? "))
+    tip = dollars * percent
+    print(f"Leave ${tip:.2f}")
 
-# Function to calculate energy from mass
-def calculate_energy(mass):
-    energy = mass * speed_of_light**2
-    return energy
 
-# Main program
+def dollars_to_float(d):
+    # Remove the leading $ and convert the amount to a float
+    return float(d[1:])
+
+def percent_to_float(p):
+    # Remove the trailing % and convert the percentage to a float
+    return float(p[:-1]) / 100
+
 if __name__ == "__main__":
-    # Prompt user for mass as an integer
-    mass = int(input("Enter mass (in kilograms): "))
-
-    # Calculate energy using Einstein's formula
-    energy = calculate_energy(mass)
-
-    # Output the equivalent energy in Joules
-    print(energy)
+    main()
