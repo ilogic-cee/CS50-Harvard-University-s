@@ -1,14 +1,20 @@
-def main():
+# einstein.py
 
-    # Prompt the user for mass in kilograms
-    mass = int(input("Enter mass in kilograms: "))
+# Constants
+speed_of_light = 300000000  # meters per second
 
-    # Convert mass to energy using the formula E = mc^2
-    c = 299792458  # Speed of light in meters per second
-    energy = mass * c ** 2
+# Function to calculate energy from mass
+def calculate_energy(mass):
+    energy = mass * speed_of_light**2
+    return energy
 
-    # Print the energy in Joules
-    print(f"Equivalent energy in Joules: {energy}")
-
+# Main program
 if __name__ == "__main__":
-    main()
+    # Prompt user for mass as an integer
+    mass = int(input("Enter mass (in kilograms): "))
+
+    # Calculate energy using Einstein's formula
+    energy = calculate_energy(mass)
+
+    # Output the equivalent energy in Joules
+    print(energy)
