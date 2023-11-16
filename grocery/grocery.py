@@ -1,26 +1,24 @@
-# grocery.py
+from collections import Counter
 
 def main():
-    grocery_list = {}
+    grocery_list = read_items()
+    print_items(grocery_list)
 
+def read_items():
+    grocery_list = []
     try:
         while True:
-            item = input("Enter an item (Ctrl-D to finish): ")
-            item = item.lower()  # Convert input to lowercase
-
-            if item in grocery_list:
-                grocery_list[item] += 1
-            else:
-                grocery_list[item] = 1
-
+            item = input("Enter an item: ").strip().upper()
+            grocery_list.append(item)
     except EOFError:
-        print_grocery_list(grocery_list)
+        pass  # End of input
 
-def print_grocery_list(grocery_list):
-    sorted_items = sorted(grocery_list.items())
+    return grocery_list
 
-    for item, count in sorted_items:
-        print(f"{count} {item.upper()}")
+def print_items(grocery_list):
+    item_counts = Counter(grocery_list)
+    for item, count in item_counts.items():
+        print(f"{count} {item}")
 
 if __name__ == "__main__":
     main()
