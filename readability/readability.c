@@ -63,6 +63,11 @@ int count_words(string text)
         {
             count++;
         }
+        // Check for hyphenated words
+        else if (text[i] == '-' && isalpha(text[i - 1]) && isalpha(text[i + 1]))
+        {
+            continue;
+        }
     }
     // Add 1 to account for the last word
     return count + 1;
@@ -74,7 +79,7 @@ int count_sentences(string text)
     int count = 0;
     for (int i = 0; text[i] != '\0'; i++)
     {
-        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        if ((text[i] == '.' || text[i] == '!' || text[i] == '?') && (text[i + 1] != '.' && text[i + 1] != '!' && text[i + 1] != '?' && text[i + 1] != '\0'))
         {
             count++;
         }
