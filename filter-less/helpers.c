@@ -5,6 +5,29 @@
 // Function prototypes
 RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel);
 
+// Convert image to grayscale
+void grayscale(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column
+        for (int j = 0; j < width; j++)
+        {
+            // Calculate average of red, green, and blue values
+            BYTE average = (image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3;
+
+            // Set each color channel to the calculated average
+            image[i][j].rgbtRed = average;
+            image[i][j].rgbtGreen = average;
+            image[i][j].rgbtBlue = average;
+        }
+    }
+}
+
+
+
+// Convert image to sepia
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -14,11 +37,20 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         // Iterate over each column
         for (int j = 0; j < width; j++)
         {
-            // Get sepia-toned pixel based on original pixel values
-            RGBTRIPLE sepia_pixel = get_clamped_sepia_pixel(image[i][j]);
+            // Calculate sepia values based on original color values
+            int sepiaRed = round(0.393 * image[i][j].rgbtRed + 0.769 * image[i][j].rgbtGreen + 0.189 * image[i][j].rgbtBlue);
+            int sepiaGreen = round(0.349 * image[i][j].rgbtRed + 0.686 * image[i][j].rgbtGreen + 0.168 * image[i][j].rgbtBlue);
+            int sepiaBlue = round(0.272 * image[i][j].rgbtRed + 0.534 * image[i][j].rgbtGreen + 0.131 * image[i][j].rgbtBlue);
 
-            // Update the original pixel with the sepia-toned values
-            image[i][j] = sepia_pixel;
+            // Clamp values to ensure they are between 0 and 255
+            sepiaRed = MIN(sepiaRed, 255);
+            sepiaGreen = MIN(sepiaGreen, 255);
+            sepiaBlue = MIN(sepiaBlue, 255);
+
+            // Update the original pixel with sepia-toned values
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
         }
     }
 }
@@ -63,25 +95,7 @@ RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel)
 }
 
 
-// Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width])
-{
-    // Iterate over each row
-    for (int i = 0; i < height; i++)
-    {
-        // Iterate over each column
-        for (int j = 0; j < width; j++)
-        {
-            // Calculate average of red, green, and blue values
-            BYTE average = (image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3;
 
-            // Set each color channel to the calculated average
-            image[i][j].rgbtRed = average;
-            image[i][j].rgbtGreen = average;
-            image[i][j].rgbtBlue = average;
-        }
-    }
-}
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
