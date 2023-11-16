@@ -5,7 +5,7 @@ def main():
     user_input = input("What is the Answer to the Great Question of Life, the Universe and Everything? ")
 
     # Check if the input is 42 or equivalent (case-insensitive)
-    if user_input.lower() == "42" or user_input.lower() == "forty-two" or user_input.lower() == "forty two":
+    if user_input.strip().lower() == "42" or user_input.strip().lower() == "forty-two" or user_input.strip().lower() == "forty two":
         print("Yes")
     else:
         print("No")
