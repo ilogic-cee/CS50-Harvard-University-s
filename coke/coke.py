@@ -7,15 +7,21 @@ while amount_due < 50:
     coin = int(input("Insert Coin: "))
 
     # Check if the coin is a valid denomination
-    if coin == 25 or coin == 10 or coin == 5:
-        # Update the amount due based on the denomination
+    if coin == 25:
+        # Update the amount due for 25 cents
         amount_due += coin
-
-        # Print the updated amount
-        print(f"Amount Due: {amount_due}")
+    elif coin == 10:
+        # Update the amount due for 10 cents
+        amount_due += coin
+    elif coin == 5:
+        # Update the amount due for 5 cents
+        amount_due += coin
     else:
         # Print an error message for invalid coins
         print("Invalid Coin. Accepted denominations: 25, 10, 5 cents.")
+
+    # Print the updated amount
+    print(f"Amount Due: {amount_due}")
 
 # Check if the user paid exactly 50 cents
 if amount_due == 50:
