@@ -1,10 +1,11 @@
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
 #ifndef HELPERS_H
 #define HELPERS_H
 
 #include "bmp.h"
 #include <math.h>
 
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
 // Function prototypes
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width]);
