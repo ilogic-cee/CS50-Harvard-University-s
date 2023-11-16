@@ -1,7 +1,11 @@
-#include "bmp.h"
+#ifndef HELPERS_H
+#define HELPERS_H
 
-// Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width]);
+#include "bmp.h"
+#include <math.h>
+
+// Function prototypes
+RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel);
 
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width]);
@@ -11,3 +15,5 @@ void reflect(int height, int width, RGBTRIPLE image[height][width]);
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
+
+#endif // HELPERS_H
