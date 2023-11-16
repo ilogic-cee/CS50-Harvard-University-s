@@ -61,3 +61,24 @@ RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel)
 
     return sepia_pixel;
 }
+
+
+// Convert image to grayscale
+void grayscale(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column
+        for (int j = 0; j < width; j++)
+        {
+            // Calculate average of red, green, and blue values
+            BYTE average = (image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3;
+
+            // Set each color channel to the calculated average
+            image[i][j].rgbtRed = average;
+            image[i][j].rgbtGreen = average;
+            image[i][j].rgbtBlue = average;
+        }
+    }
+}
