@@ -1,8 +1,8 @@
-#include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "bmp.h"
 #include "helpers.h"
+#include <getopt.h>
 
 int main(int argc, char *argv[])
 {
