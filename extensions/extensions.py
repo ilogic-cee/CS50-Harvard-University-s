@@ -5,7 +5,7 @@ def main():
     file_name = input("Enter the name of a file: ")
 
     # Extract the file extension (suffix) and convert to lowercase
-    file_extension = file_name.lower().split('.')[-1] if '.' in file_name else ''
+    file_extension = file_name.lower().strip().split('.')[-1] if '.' in file_name else ''
 
     # Map file extension to media type
     media_type = get_media_type(file_extension)
