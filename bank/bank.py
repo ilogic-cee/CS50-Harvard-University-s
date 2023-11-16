@@ -1,5 +1,3 @@
-# bank.py
-
 def main():
     # Prompt the user for a greeting
     user_greeting = input("Enter a greeting: ")
@@ -9,6 +7,8 @@ def main():
 
     # Check the conditions and output the corresponding amount
     if cleaned_greeting == "hello":
+        print("$0")
+    elif cleaned_greeting.startswith("hello "):  # Add a space after "hello" to ensure it's not part of a larger word
         print("$0")
     elif cleaned_greeting.startswith("h"):
         print("$20")
