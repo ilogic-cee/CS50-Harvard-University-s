@@ -6,7 +6,7 @@
 
 // Function prototypes
 RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel);
-
+void grayscale(int height, int width, RGBTRIPLE image[height][width]);
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width]);
 
