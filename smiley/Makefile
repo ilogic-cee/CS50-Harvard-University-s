@@ -1,11 +1,12 @@
-colorize: colorize.o helpers.o
-	clang -o colorize colorize.o helpers.o -I.
+# Makefile
+CC = clang
+CFLAGS = -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow
 
-colorize.o: colorize.c bmp.h helpers.h
-	clang -c colorize.c -o colorize.o -I.
+all: colorize
 
-helpers.o: helpers.c bmp.h helpers.h
-	clang -c helpers.c -o helpers.o -I.
+colorize: colorize.c helpers.c bmp.h helpers.h
+	$(CC) $(CFLAGS) -o colorize colorize.c helpers.c -lm
 
 clean:
-	rm -f colorize colorize.o helpers.o
+	rm -f *.o a.out core colorize
+

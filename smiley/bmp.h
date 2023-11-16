@@ -1,12 +1,16 @@
+// bmp.h
 #ifndef BMP_H
 #define BMP_H
 
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef uint8_t BYTE;
-typedef uint16_t WORD;
-typedef uint32_t DWORD;
-typedef int32_t LONG;
+typedef int8_t SBYTE;
+typedef int16_t WORD;
+typedef int32_t DWORD;
+typedef int64_t LONG;
 
 // BMP file header
 typedef struct
