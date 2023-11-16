@@ -1,24 +1,27 @@
-from collections import Counter
-
 def main():
-    grocery_list = read_items()
-    print_items(grocery_list)
+    # Initialize an empty dictionary to store items and their counts
+    items = {}
 
-def read_items():
-    grocery_list = []
-    try:
-        while True:
-            item = input("Enter an item: ").strip().upper()
-            grocery_list.append(item)
-    except EOFError:
-        pass  # End of input
+    # Prompt the user for items until they hit Ctrl+D
+    while True:
+        try:
+            # Input the item
+            item = input("Enter an item: ").lower()
 
-    return grocery_list
+            # Add the item to the dictionary, or increment its count if it already exists
+            if item not in items:
+                items[item] = 1
+            else:
+                items[item] += 1
+        except EOFError:
+            break
 
-def print_items(grocery_list):
-    item_counts = Counter(grocery_list)
-    for item, count in item_counts.items():
-        print(f"{count} {item}")
+    # Sort the items dictionary by key (item name)
+    sorted_items = sorted(items.items())
+
+    # Print the grocery list, prefixing each line with the count and item name
+    for count, item in sorted_items:
+        print(f"{count} {item.upper()}")
 
 if __name__ == "__main__":
     main()
