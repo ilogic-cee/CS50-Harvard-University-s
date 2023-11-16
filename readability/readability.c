@@ -20,7 +20,11 @@ int main(void)
     // Calculate Coleman-Liau index
     float L = (float)letters / words * 100;
     float S = (float)sentences / words * 100;
-    int index = (int)(0.0588 * L - 0.296 * S - 15.8 + 0.5); // Round to the nearest integer
+    int index = (int)(0.0588 * L - 0.296 * S - 15.8); // Round down
+    if ((0.0588 * L - 0.296 * S - 15.8) - index >= 0.5)
+    {
+        index++;
+    }
 
     // Output the reading level
     if (index < 1)
