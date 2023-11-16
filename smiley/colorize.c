@@ -1,4 +1,6 @@
 // colorize.c
+#include <stdio.h>
+#include <stdlib.h>
 #include "bmp.h"
 #include "helpers.h"
 
@@ -28,11 +30,53 @@ int main(int argc, char *argv[])
         return 3;
     }
 
-    // Your code for reading the input image and calling colorize function goes here
+    // Read the BMP file headers (you may need to adjust this based on your specific headers)
+    BITMAPFILEHEADER bf;
+    BITMAPINFOHEADER bi;
 
-    // Close files
+    fread(&bf, sizeof(BITMAPFILEHEADER), 1, infile);
+    fread(&bi, sizeof(BITMAPINFOHEADER), 1, infile);
+
+    // Create a 2D array to store the image pixels
+    RGBTRIPLE(*image)[bi.biWidth] = calloc(abs(bi.biHeight), sizeof(RGBTRIPLE[bi.biWidth]));
+    if (image == NULL)
+    {
+        fclose(infile);
+        fclose(outfile);
+        fprintf(stderr, "Not enough memory to store image.\n");
+        return 4;
+    }
+
+    // Read the image pixels
+    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
+    {
+        fread(image[i], sizeof(RGBTRIPLE), bi.biWidth, infile);
+        fseek(infile, bi.biWidth * sizeof(RGBTRIPLE), SEEK_CUR);
+    }
+
+    // Call the colorize function to change pixel colors
+    colorize(abs(bi.biHeight), bi.biWidth, image);
+
+    // Write the modified headers to the output file
+    fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outfile);
+    fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outfile);
+
+    // Write the modified image pixels to the output file
+    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
+    {
+        fwrite(image[i], sizeof(RGBTRIPLE), bi.biWidth, outfile);
+
+        // Add padding if necessary (you may need to adjust this based on your specific headers)
+        for (int k = 0; k < (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4; k++)
+        {
+            fputc(0x00, outfile);
+        }
+    }
+
+    // Close files and free memory
     fclose(infile);
     fclose(outfile);
+    free(image);
 
     return 0;
 }
