@@ -11,9 +11,10 @@ while amount_due < 50:
         # Update the amount due
         amount_due += coin
 
-        # Print the updated amount due
+        # Print the updated amount
         print(f"Amount Due: {amount_due}")
     else:
+        # Print an error message for invalid coins
         print("Invalid Coin. Accepted denominations: 25, 10, 5 cents.")
 
 # Calculate and print the change owed
