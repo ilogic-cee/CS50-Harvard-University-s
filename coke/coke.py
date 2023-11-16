@@ -23,4 +23,5 @@ if amount_due == 50:
 else:
     # Calculate and print the change owed
     change_owed = 50 - amount_due
-    print(f"Change Owed: {change_owed}")
+    print(f"Change Owed: {max(0, change_owed)}")
+            
