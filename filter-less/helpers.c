@@ -1,25 +1,46 @@
-e #include "helpers.h"
+#include "bmp.h"
+#include "helpers.h"
+#include <math.h>
 
-// Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width])
-{
-    return;
-}
+// Function prototypes
+RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel);
 
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column
+        for (int j = 0; j < width; j++)
+        {
+            // Get sepia-toned pixel based on original pixel values
+            RGBTRIPLE sepia_pixel = get_clamped_sepia_pixel(image[i][j]);
+
+            // Update the original pixel with the sepia-toned values
+            image[i][j] = sepia_pixel;
+        }
+    }
 }
 
-// Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width])
+// Calculate sepia pixel values based on original pixel values
+RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel)
 {
-    return;
-}
+    // Apply sepia formula to calculate new red, green, and blue values
+    int sepiaRed = round(.393 * original_pixel.rgbtRed + .769 * original_pixel.rgbtGreen + .189 * original_pixel.rgbtBlue);
+    int sepiaGreen = round(.349 * original_pixel.rgbtRed + .686 * original_pixel.rgbtGreen + .168 * original_pixel.rgbtBlue);
+    int sepiaBlue = round(.272 * original_pixel.rgbtRed + .534 * original_pixel.rgbtGreen + .131 * original_pixel.rgbtBlue);
 
-// Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width])
-{
-    return;
+    // Clamp values to ensure they are between 0 and 255
+    sepiaRed = fmin(255, sepiaRed);
+    sepiaGreen = fmin(255, sepiaGreen);
+    sepiaBlue = fmin(255, sepiaBlue);
+
+    // Create and return an RGBTRIPLE with the sepia-toned color values
+    RGBTRIPLE sepia_pixel;
+    sepia_pixel.rgbtRed = sepiaRed;
+    sepia_pixel.rgbtGreen = sepiaGreen;
+    sepia_pixel.rgbtBlue = sepiaBlue;
+
+    return sepia_pixel;
 }
