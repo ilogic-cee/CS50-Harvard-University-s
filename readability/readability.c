@@ -21,7 +21,7 @@ int main(void)
     float L = (float)letters / words * 100;
     float S = (float)sentences / words * 100;
     int index = (int)(0.0588 * L - 0.296 * S - 15.8); // Round down
-    if ((0.0588 * L - 0.296 * S - 15.8) - index >= 0.5)
+    if ((0.0588 * L - 0.296 * S - 15.8 - index) > 0.5)
     {
         index++;
     }
