@@ -1,6 +1,2 @@
-CC = clang
-CFLAGS = -Wall -Werror -ggdb
-
-filter: filter.c helpers.c
-	$(CC) $(CFLAGS) -o filter filter.c helpers.c -lm
-
+filter: filter.c helpers.c bmp.h helpers.h
+    clang -ggdb3 -O0 -std=c11 -Wall -Werror -o filter filter.c helpers.c -lcs50 -lm
