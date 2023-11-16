@@ -23,6 +23,23 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
+// Reflect image horizontally
+void reflect(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column only up to the middle
+        for (int j = 0; j < width / 2; j++)
+        {
+            // Swap pixels from left and right sides horizontally
+            RGBTRIPLE temp = image[i][j];
+            image[i][j] = image[i][width - 1 - j];
+            image[i][width - 1 - j] = temp;
+        }
+    }
+}
+
 // Calculate sepia pixel values based on original pixel values
 RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel)
 {
