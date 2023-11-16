@@ -7,7 +7,7 @@ while amount_due < 50:
     coin = int(input("Insert Coin: "))
 
     # Check if the coin is a valid denomination
-    if coin in [25, 10, 5]:
+    if coin == 25 or coin == 10 or coin == 5:
         # Update the amount due based on the denomination
         amount_due += coin
 
