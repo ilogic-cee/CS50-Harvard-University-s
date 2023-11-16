@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
         return 6;
     }
 
-    int height = abs(bi.biHeight);  // Use abs for absolute value
+    int height = abs((int)bi.biHeight);
     int width = bi.biWidth;
 
     // allocate memory for image
-    RGBTRIPLE (*image)[width] = calloc(abs(bi.biHeight), sizeof(RGBTRIPLE[bi.biWidth]));
+    RGBTRIPLE (*image)[width] = calloc(height, sizeof(RGBTRIPLE[width]));
 
     // ... (rest of your main function logic)
 
