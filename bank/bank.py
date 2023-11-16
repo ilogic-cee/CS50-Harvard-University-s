@@ -4,8 +4,8 @@ def main():
     # Prompt the user for a greeting
     user_greeting = input("Enter a greeting: ")
 
-    # Remove leading whitespace and convert the greeting to lowercase
-    cleaned_greeting = user_greeting.lstrip().lower()
+    # Remove leading and trailing whitespace, and convert the greeting to lowercase
+    cleaned_greeting = user_greeting.strip().lower()
 
     # Check the conditions and output the corresponding amount
     if cleaned_greeting == "hello":
