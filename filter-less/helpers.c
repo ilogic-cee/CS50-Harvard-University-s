@@ -1,6 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "bmp.h"
 #include "helpers.h"
-#include <math.h>
 
 // Function prototypes
 RGBTRIPLE get_clamped_sepia_pixel(RGBTRIPLE original_pixel);
