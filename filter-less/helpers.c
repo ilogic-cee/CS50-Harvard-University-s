@@ -82,3 +82,65 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
+
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Create a temporary copy of the image to store the blurred values
+    RGBTRIPLE(*temp)[width] = calloc(height, width * sizeof(RGBTRIPLE));
+    if (temp == NULL)
+    {
+        fprintf(stderr, "Not enough memory to store temporary image.\n");
+        exit(1);
+    }
+
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column
+        for (int j = 0; j < width; j++)
+        {
+            int totalRed = 0;
+            int totalGreen = 0;
+            int totalBlue = 0;
+            int validNeighbors = 0;
+
+            // Iterate over the 3x3 grid centered on the current pixel
+            for (int di = -1; di <= 1; di++)
+            {
+                for (int dj = -1; dj <= 1; dj++)
+                {
+                    int ni = i + di;
+                    int nj = j + dj;
+
+                    // Check if the neighbor is within the image boundaries
+                    if (ni >= 0 && ni < height && nj >= 0 && nj < width)
+                    {
+                        // Accumulate color values
+                        totalRed += image[ni][nj].rgbtRed;
+                        totalGreen += image[ni][nj].rgbtGreen;
+                        totalBlue += image[ni][nj].rgbtBlue;
+                        validNeighbors++;
+                    }
+                }
+            }
+
+            // Calculate average values and store in temporary image
+            temp[i][j].rgbtRed = round((float)totalRed / validNeighbors);
+            temp[i][j].rgbtGreen = round((float)totalGreen / validNeighbors);
+            temp[i][j].rgbtBlue = round((float)totalBlue / validNeighbors);
+        }
+    }
+
+    // Copy the blurred values back to the original image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp[i][j];
+        }
+    }
+
+    // Free memory for the temporary image
+    free(temp);
+}
