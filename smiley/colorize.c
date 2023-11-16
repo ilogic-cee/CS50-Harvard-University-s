@@ -7,31 +7,59 @@ void colorize(int height, int width, RGBTRIPLE image[height][width]);
 
 int main(int argc, char *argv[])
 {
-    // ... (unchanged code)
+    if (argc != 3)
+    {
+        fprintf(stderr, "Usage: %s infile outfile\n", argv[0]);
+        return 1;
+    }
 
-    // read infile's BITMAPFILEHEADER
+    // Open input file
+    FILE *inptr = fopen(argv[1], "r");
+    if (inptr == NULL)
+    {
+        fprintf(stderr, "Could not open %s.\n", argv[1]);
+        return 2;
+    }
+
+    // Open output file
+    FILE *outptr = fopen(argv[2], "w");
+    if (outptr == NULL)
+    {
+        fclose(inptr);
+        fprintf(stderr, "Could not create %s.\n", argv[2]);
+        return 3;
+    }
+
+    // Read infile's BITMAPFILEHEADER
     BITMAPFILEHEADER bf;
     fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
 
-    // read infile's BITMAPINFOHEADER
+    // Read infile's BITMAPINFOHEADER
     BITMAPINFOHEADER bi;
     fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
-    // ensure infile is (likely) a 24-bit uncompressed BMP 4.0
+    // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
     if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
         bi.biBitCount != 24 || bi.biCompression != 0)
     {
         fclose(outptr);
         fclose(inptr);
         fprintf(stderr, "Unsupported file format.\n");
-        return 6;
+        return 4;
     }
 
-    int height = abs((int)bi.biHeight);
+    int height = abs(bi.biHeight);
     int width = bi.biWidth;
 
-    // allocate memory for image
+    // Allocate memory for image
     RGBTRIPLE (*image)[width] = calloc(height, sizeof(RGBTRIPLE[width]));
+    if (image == NULL)
+    {
+        fprintf(stderr, "Not enough memory to store image.\n");
+        fclose(outptr);
+        fclose(inptr);
+        return 5;
+    }
 
     // ... (rest of your main function logic)
 
