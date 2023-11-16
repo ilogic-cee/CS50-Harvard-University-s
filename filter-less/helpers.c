@@ -158,3 +158,79 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // Free memory for the temporary image
     free(temp);
 }
+
+// Detect edges in image
+void edges(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Create a temporary copy of the image to store the new pixel values
+    RGBTRIPLE(*temp)[width] = calloc(height, width * sizeof(RGBTRIPLE));
+    if (temp == NULL)
+    {
+        fprintf(stderr, "Not enough memory to store temporary image.\n");
+        exit(1);
+    }
+
+    // Sobel operator for edge detection
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+
+    // Iterate over each row
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column
+        for (int j = 0; j < width; j++)
+        {
+            int Gx_red = 0, Gx_green = 0, Gx_blue = 0;
+            int Gy_red = 0, Gy_green = 0, Gy_blue = 0;
+
+            // Iterate over the 3x3 grid centered on the current pixel
+            for (int di = -1; di <= 1; di++)
+            {
+                for (int dj = -1; dj <= 1; dj++)
+                {
+                    int ni = i + di;
+                    int nj = j + dj;
+
+                    // Check if the neighbor is within the image boundaries
+                    if (ni >= 0 && ni < height && nj >= 0 && nj < width)
+                    {
+                        Gx_red += Gx[di + 1][dj + 1] * image[ni][nj].rgbtRed;
+                        Gx_green += Gx[di + 1][dj + 1] * image[ni][nj].rgbtGreen;
+                        Gx_blue += Gx[di + 1][dj + 1] * image[ni][nj].rgbtBlue;
+
+                        Gy_red += Gy[di + 1][dj + 1] * image[ni][nj].rgbtRed;
+                        Gy_green += Gy[di + 1][dj + 1] * image[ni][nj].rgbtGreen;
+                        Gy_blue += Gy[di + 1][dj + 1] * image[ni][nj].rgbtBlue;
+                    }
+                }
+            }
+
+            // Calculate combined gradient magnitude
+            int red = round(sqrt(Gx_red * Gx_red + Gy_red * Gy_red));
+            int green = round(sqrt(Gx_green * Gx_green + Gy_green * Gy_green));
+            int blue = round(sqrt(Gx_blue * Gx_blue + Gy_blue * Gy_blue));
+
+            // Clamp values to ensure they are between 0 and 255
+            red = fmin(255, red);
+            green = fmin(255, green);
+            blue = fmin(255, blue);
+
+            // Update the temporary image with the new values
+            temp[i][j].rgbtRed = red;
+            temp[i][j].rgbtGreen = green;
+            temp[i][j].rgbtBlue = blue;
+        }
+    }
+
+    // Copy the edge-detected values back to the original image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp[i][j];
+        }
+    }
+
+    // Free memory for the temporary image
+    free(temp);
+}
