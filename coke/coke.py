@@ -20,12 +20,10 @@ while amount_due < 50:
     # Print the updated amount
     print(f"Amount Due: {amount_due}")
 
-    # Check if the user paid exactly 50 cents
-    if amount_due == 50:
-        print("Thank you for your purchase!")
-        break
-    elif amount_due > 50:
-        # Calculate and print the change owed
-        change_owed = max(0, amount_due - 50)
-        print(f"Change Owed: {change_owed}")
-        break
+# Check if the user paid exactly 50 cents
+if amount_due == 50:
+    print("Thank you for your purchase!")
+else:
+    # Calculate and print the change owed
+    change_owed = max(0, amount_due - 50)
+    print(f"Change Owed: {change_owed}")
