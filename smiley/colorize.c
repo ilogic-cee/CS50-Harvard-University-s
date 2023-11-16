@@ -1,4 +1,4 @@
-// ... (previous code)
+#include "bmp.h"
 
 void colorize(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -25,5 +25,3 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
-
-// ... (rest of the code)
