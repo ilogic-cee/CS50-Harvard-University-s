@@ -17,6 +17,10 @@ while amount_due < 50:
         # Print an error message for invalid coins
         print("Invalid Coin. Accepted denominations: 25, 10, 5 cents.")
 
-# Calculate and print the change owed
-change_owed = amount_due - 50
-print(f"Change Owed: {change_owed}")
+# Check if the user paid exactly 50 cents
+if amount_due == 50:
+    print("Thank you for your purchase!")
+else:
+    # Calculate and print the change owed
+    change_owed = amount_due - 50
+    print(f"Change Owed: {change_owed}")
