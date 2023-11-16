@@ -1,111 +1,85 @@
-code #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include "bmp.h"
 
-#include "helpers.h"
+void colorize(int height, int width, RGBTRIPLE image[height][width]);
 
 int main(int argc, char *argv[])
 {
-    // ensure proper usage
+    // Check command-line arguments
     if (argc != 3)
     {
-        printf("Usage: colorize infile outfile\n");
+        fprintf(stderr, "Usage: %s infile outfile\n", argv[0]);
         return 1;
     }
 
-    // remember filenames
-    char *infile = argv[1];
-    char *outfile = argv[2];
-
-    // open input file
-    FILE *inptr = fopen(infile, "r");
-    if (inptr == NULL)
+    // Open input file
+    FILE *infile = fopen(argv[1], "rb");
+    if (infile == NULL)
     {
-        printf("Could not open %s.\n", infile);
-        return 4;
+        fprintf(stderr, "Could not open %s.\n", argv[1]);
+        return 2;
     }
 
-    // open output file
-    FILE *outptr = fopen(outfile, "w");
-    if (outptr == NULL)
+    // Open output file
+    FILE *outfile = fopen(argv[2], "wb");
+    if (outfile == NULL)
     {
-        fclose(inptr);
-        printf("Could not create %s.\n", outfile);
-        return 5;
+        fclose(infile);
+        fprintf(stderr, "Could not create %s.\n", argv[2]);
+        return 3;
     }
 
-    // read infile's BITMAPFILEHEADER
+    // Read BMP headers
     BITMAPFILEHEADER bf;
-    fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
+    fread(&bf, sizeof(BITMAPFILEHEADER), 1, infile);
 
-    // read infile's BITMAPINFOHEADER
     BITMAPINFOHEADER bi;
-    fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
+    fread(&bi, sizeof(BITMAPINFOHEADER), 1, infile);
 
-    // ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
-        bi.biBitCount != 24 || bi.biCompression != 0)
-    {
-        fclose(outptr);
-        fclose(inptr);
-        printf("Unsupported file format.\n");
-        return 6;
-    }
-
+    // Allocate memory for image
     int height = abs(bi.biHeight);
     int width = bi.biWidth;
-
-    // allocate memory for image
     RGBTRIPLE (*image)[width] = calloc(height, width * sizeof(RGBTRIPLE));
     if (image == NULL)
     {
-        printf("Not enough memory to store image.\n");
-        fclose(outptr);
-        fclose(inptr);
-        return 7;
+        fclose(outfile);
+        fclose(infile);
+        fprintf(stderr, "Not enough memory to store image.\n");
+        return 4;
     }
 
-    // determine padding for scanlines
-    int padding =  (4 - (width * sizeof(RGBTRIPLE)) % 4) % 4;
-
-    // iterate over infile's scanlines
+    // Read pixels from input file
     for (int i = 0; i < height; i++)
     {
-        // read row into pixel array
-        fread(image[i], sizeof(RGBTRIPLE), width, inptr);
-
-        // skip over padding
-        fseek(inptr, padding, SEEK_CUR);
+        fread(image[i], sizeof(RGBTRIPLE), width, infile);
+        fseek(infile, padding, SEEK_CUR);
     }
 
+    // Call colorize function
     colorize(height, width, image);
 
-    // write outfile's BITMAPFILEHEADER
-    fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
+    // Write BMP headers to output file
+    fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outfile);
+    fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outfile);
 
-    // write outfile's BITMAPINFOHEADER
-    fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
-
-    // write new pixels to outfile
+    // Write modified pixels to output file
     for (int i = 0; i < height; i++)
     {
-        // write row to outfile
-        fwrite(image[i], sizeof(RGBTRIPLE), width, outptr);
+        fwrite(image[i], sizeof(RGBTRIPLE), width, outfile);
 
-        // write padding at end of row
         for (int k = 0; k < padding; k++)
         {
-            fputc(0x00, outptr);
+            fputc(0x00, outfile);
         }
     }
 
-    // free memory for image
+    // Free allocated memory
     free(image);
 
-    // close infile
-    fclose(inptr);
-
-    // close outfile
-    fclose(outptr);
+    // Close files
+    fclose(infile);
+    fclose(outfile);
 
     return 0;
 }
