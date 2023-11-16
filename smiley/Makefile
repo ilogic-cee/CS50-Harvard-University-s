@@ -9,4 +9,3 @@ colorize: colorize.c helpers.c bmp.h helpers.h
 
 clean:
 	rm -f *.o a.out core colorize
-
