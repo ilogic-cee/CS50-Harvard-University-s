@@ -1,2 +1,11 @@
-colorize:
-	clang -fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -o colorize colorize.c helpers.c
+colorize: colorize.o helpers.o
+    clang -o colorize colorize.o helpers.o -I.
+
+colorize.o: colorize.c bmp.h helpers.h
+    clang -c colorize.c -o colorize.o -I.
+
+helpers.o: helpers.c bmp.h helpers.h
+    clang -c helpers.c -o helpers.o -I.
+
+clean:
+    rm -f colorize colorize.o helpers.o
