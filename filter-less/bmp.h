@@ -1,8 +1,14 @@
 // BMP-related data types based on Microsoft's own
+#ifndef BMP_H
+#define BMP_H
+
+// Your existing content here
+
+
 
 #include <stdint.h>
 
-// These data types are essentially aliases for C/C++ primitive data types. 
+// These data types are essentially aliases for C/C++ primitive data types.
 // Adapted from http://msdn.microsoft.com/en-us/library/cc230309.aspx.
 // See https://en.wikipedia.org/wiki/C_data_types#stdint.h for more on stdint.h.
 
@@ -55,3 +61,5 @@ typedef struct
     BYTE  rgbtRed;
 } __attribute__((__packed__))
 RGBTRIPLE;
+
+#endif // BMP_H
