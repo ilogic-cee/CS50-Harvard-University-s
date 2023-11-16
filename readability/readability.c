@@ -42,20 +42,42 @@ int main(void)
 // Implement the count_letters function
 int count_letters(string text)
 {
-    // TODO: Implement counting of letters in the text
-    // You can use isalpha() function to check if a character is a letter
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++)
+    {
+        if (isalpha(text[i]))
+        {
+            count++;
+        }
+    }
+    return count;
 }
 
 // Implement the count_words function
 int count_words(string text)
 {
-    // TODO: Implement counting of words in the text
-    // You may need to iterate through characters and count spaces
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++)
+    {
+        if (isspace(text[i]))
+        {
+            count++;
+        }
+    }
+    // Add 1 to account for the last word
+    return count + 1;
 }
 
 // Implement the count_sentences function
 int count_sentences(string text)
 {
-    // TODO: Implement counting of sentences in the text
-    // You can consider '.', '!', '?' as sentence-ending punctuation
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++)
+    {
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            count++;
+        }
+    }
+    return count;
 }
