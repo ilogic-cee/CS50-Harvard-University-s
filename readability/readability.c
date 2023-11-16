@@ -79,12 +79,13 @@ int count_words(string text)
 }
 
 // Implement the count_sentences function
+// Implement the count_sentences function
 int count_sentences(string text)
 {
     int count = 0;
     for (int i = 0; text[i] != '\0'; i++)
     {
-        if ((text[i] == '.' || text[i] == '!' || text[i] == '?') && (text[i + 1] != '.' && text[i + 1] != '!' && text[i + 1] != '?' && text[i + 1] != '\0'))
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
             count++;
         }
