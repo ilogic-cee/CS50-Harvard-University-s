@@ -12,16 +12,23 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            BYTE gray = (BYTE)(0.299 * image[i][j].rgbtRed + 0.587 * image[i][j].rgbtGreen + 0.114 * image[i][j].rgbtBlue);
-            image[i][j].rgbtRed = gray;
-            image[i][j].rgbtGreen = gray;
-            image[i][j].rgbtBlue = gray;
+
+            // convert pixel to float
+            // BYTE gray = (BYTE)(0.299 * image[i][j].rgbtRed + 0.587 * image[i][j].rgbtGreen + 0.114 * image[i][j].rgbtBlue);
+            float image[i][j].rgbtRed ;
+            float image[i][j].rgbtGreen ;
+            float image[i][j].rgbtBlue ;
+
+        int average = round((Red + Green + Blue)/3);
+        image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average ;
         }
+
     }
+    return; 
 }
 
 // Convert image to sepia
-#include "helpers.h"
+
 
 // Helper function to cap the color values at 255
 int cap(int value)
