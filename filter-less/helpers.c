@@ -41,15 +41,11 @@ int cap(int value)
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     // Iterate over each pixel in the image
-
-    //  comb through each row
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
             // Calculate sepia values
-            // Convert pixels to float
-
             float originalRed = image[i][j].rgbtRed;
             float originalGreen = image[i][j].rgbtGreen;
             float originalBlue = image[i][j].rgbtBlue;
@@ -58,30 +54,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaGreen = round(0.349 * originalRed + 0.686 * originalGreen + 0.168 * originalBlue);
             int sepiaBlue = round(0.272 * originalRed + 0.534 * originalGreen + 0.131 * originalBlue);
 
+            // Cap values at 255
+            sepiaRed = (sepiaRed > 255) ? 255 : sepiaRed;
+            sepiaGreen = (sepiaGreen > 255) ? 255 : sepiaGreen;
+            sepiaBlue = (sepiaBlue > 255) ? 255 : sepiaBlue;
+
             // Update pixel values with sepia values
-            if (sepiaRed > 255)
-            {
-                sepiaRed = 255;
-            }
-            if (sepiaGreen > 255)
-             {
-                sepiaGreen = 255;
-            }
-            if (sepiaBlue > 255)
-            {
-                sepiaBlue = 255 ;
-            }
-
-
-            // Update final pixel values
-
             image[i][j].rgbtRed = sepiaRed;
             image[i][j].rgbtGreen = sepiaGreen;
             image[i][j].rgbtBlue = sepiaBlue;
         }
     }
-    return;
 }
+
 
 // Reflect image horizontally
 
