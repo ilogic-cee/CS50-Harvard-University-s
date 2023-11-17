@@ -50,10 +50,25 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Reflect image horizontally
+#include "helpers.h"
+
+// Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Iterate over each row in the image
+    for (int i = 0; i < height; i++)
+    {
+        // Iterate over each column in the row up to the center
+        for (int j = 0; j < width / 2; j++)
+        {
+            // Swap pixels with their corresponding pixels on the other side
+            RGBTRIPLE temp = image[i][j];
+            image[i][j] = image[i][width - 1 - j];
+            image[i][width - 1 - j] = temp;
+        }
+    }
 }
+
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
