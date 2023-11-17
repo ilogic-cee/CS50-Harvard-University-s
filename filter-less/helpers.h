@@ -1,5 +1,5 @@
-#ifndef YOUR_HEADER_FILE_NAME_H
-#define YOUR_HEADER_FILE_NAME_H
+#ifndef HELPERS_H
+#define HELPERS_H
 #include "bmp.h"
 
 // Convert image to grayscale
