@@ -24,7 +24,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         }
 
     }
-    return; 
+    return;
 }
 
 // Convert image to sepia
@@ -62,7 +62,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Reflect image horizontally
-#include "helpers.h"
+
 
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
@@ -83,7 +83,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 // Blur image
-#include "helpers.h"
+
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
