@@ -6,25 +6,25 @@
 
 
 // Convert image to grayscale
+
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
+            // Get the RGB values of the current pixel
+            int red = image[i][j].rgbtRed;
+            int green = image[i][j].rgbtGreen;
+            int blue = image[i][j].rgbtBlue;
 
-            // convert pixel to float
-            // BYTE gray = (BYTE)(0.299 * image[i][j].rgbtRed + 0.587 * image[i][j].rgbtGreen + 0.114 * image[i][j].rgbtBlue);
-            float image[i][j].rgbtRed ;
-            float image[i][j].rgbtGreen ;
-            float image[i][j].rgbtBlue ;
+            // Calculate the average of the RGB values
+            int average = round((red + green + blue) / 3.0);
 
-        int average = round((Red + Green + Blue)/3);
-        image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average ;
+            // Update the pixel values with the average
+            image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
         }
-
     }
-    return;
 }
 
 // Convert image to sepia
