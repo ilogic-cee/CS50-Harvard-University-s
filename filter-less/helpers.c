@@ -71,7 +71,63 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 // Blur image
+#include "helpers.h"
+
+// Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Create a temporary image to store the blurred result
+    RGBTRIPLE(*temp_image)[width] = calloc(height, width * sizeof(RGBTRIPLE));
+    if (temp_image == NULL)
+    {
+        printf("Not enough memory to store temporary image.\n");
+        return;
+    }
+
+    // Iterate over each pixel in the image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int sumRed = 0, sumGreen = 0, sumBlue = 0;
+            int count = 0;
+
+            // Iterate over the neighboring pixels (3x3 grid centered on the current pixel)
+            for (int di = -1; di <= 1; di++)
+            {
+                for (int dj = -1; dj <= 1; dj++)
+                {
+                    int ni = i + di;
+                    int nj = j + dj;
+
+                    // Check if the neighboring pixel is within bounds
+                    if (ni >= 0 && ni < height && nj >= 0 && nj < width)
+                    {
+                        // Accumulate the RGB values of neighboring pixels
+                        sumRed += image[ni][nj].rgbtRed;
+                        sumGreen += image[ni][nj].rgbtGreen;
+                        sumBlue += image[ni][nj].rgbtBlue;
+                        count++;
+                    }
+                }
+            }
+
+            // Calculate the average RGB values and update the temporary image
+            temp_image[i][j].rgbtRed = round((float)sumRed / count);
+            temp_image[i][j].rgbtGreen = round((float)sumGreen / count);
+            temp_image[i][j].rgbtBlue = round((float)sumBlue / count);
+        }
+    }
+
+    // Copy the blurred result back to the original image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp_image[i][j];
+        }
+    }
+
+    // Free memory for the temporary image
+    free(temp_image);
 }
