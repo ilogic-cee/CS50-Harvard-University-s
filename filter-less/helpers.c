@@ -16,9 +16,37 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Convert image to sepia
+#include "helpers.h"
+
+// Helper function to cap the color values at 255
+int cap(int value)
+{
+    return value > 255 ? 255 : value;
+}
+
+// Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Iterate over each pixel in the image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // Calculate sepia values
+            int originalRed = image[i][j].rgbtRed;
+            int originalGreen = image[i][j].rgbtGreen;
+            int originalBlue = image[i][j].rgbtBlue;
+
+            int sepiaRed = cap(0.393 * originalRed + 0.769 * originalGreen + 0.189 * originalBlue);
+            int sepiaGreen = cap(0.349 * originalRed + 0.686 * originalGreen + 0.168 * originalBlue);
+            int sepiaBlue = cap(0.272 * originalRed + 0.534 * originalGreen + 0.131 * originalBlue);
+
+            // Update pixel values with sepia values
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
+        }
+    }
 }
 
 // Reflect image horizontally
