@@ -9,24 +9,23 @@
 
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
+//iterate through each column of pixel
     for (int i = 0; i < height; i++)
     {
+        //iterate through each row of pixel in each column
         for (int j = 0; j < width; j++)
         {
-            // Get the RGB values of the current pixel
+            //get into the 2D array, obtain value of each colour
             int red = image[i][j].rgbtRed;
-            int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
-
-            // Calculate the average of the RGB values
-            int average = round((red + green + blue) / 3.0);
-
-            // Update the pixel values with the average
-            image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
+            int green = image[i][j].rgbtGreen;
+            //calculate the average value of each pixel, rounded
+            int avg = round(((float)red + (float)blue + (float)green)/3);
+            //set the calculated average to be the new value of each pixel
+            image[i][j].rgbtRed = image[i][j].rgbtBlue = image[i          [j].rgbtGreen = avg;
         }
     }
 }
-
 // Convert image to sepia
 
 
