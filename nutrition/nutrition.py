@@ -16,7 +16,7 @@ def main():
         print(f"Calories: {fruit_calories[fruit_input]}")
     else:
         # Ignore input that isn't a fruit
-        pass
+        print("Invalid fruit")
 
 if __name__ == "__main__":
     main()
