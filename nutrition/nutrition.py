@@ -1,26 +1,28 @@
-def main():
-    # FDA's poster for fruits and their calories
-    fruit_calories = {
-        "apple": 130,
-        "avocado": 50,
-        "sweet cherries": 100,
-        "kiwifruit": 90,
-        "pear": 100,
-        # Add more fruits and their calorie information as needed
-    }
+ruits = {
+    "Apple": 130,
+    "Avocado": 50,
+    "Banana": 110,
+    "Cantaloupe": 50,
+    "Grapefruit": 60,
+    "Grapes": 90,
+    "Honeydew Melon": 50,
+    "Kiwifruit": 90,
+    "Lemon": 15,
+    "Lime": 20,
+    "Nectarine": 60,
+    "Orange": 80,
+    "Peach": 60,
+    "Pear": 100,
+    "Pineapple": 50,
+    "Plums": 70,
+    "Strawberries": 50,
+    "Sweet Cherries": 100,
+    "Tangerine": 50,
+    "Watermelon": 80,
+}
 
-    # Prompt the user to input a fruit
-    fruit_input = input("Enter a fruit: ").lower()
+item = input("Item: ").title().strip()
 
-    # Get the calorie value for the input fruit, defaulting to None if not found
-    calorie_value = fruit_calories.get(fruit_input, None)
-
-    # Check if the input is a valid fruit
-    if calorie_value is not None:
-        # Output the number of calories in one portion of that fruit
-        print(f"Calories: {calorie_value}")
-    else:
-        # Ignore input that isn't a fruit
-
-if __name__ == "__main__":
-    main()
+for fruit in fruits:
+    if item in fruit:
+        print(f"Calories: {fruits[fruit]}")
