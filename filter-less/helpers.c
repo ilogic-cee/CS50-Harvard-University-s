@@ -9,24 +9,23 @@
 
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
+//iterate through each column of pixel
     for (int i = 0; i < height; i++)
     {
+        //iterate through each row of pixel in each column
         for (int j = 0; j < width; j++)
         {
-            // Get the RGB values of the current pixel
+            //get into the 2D array, obtain value of each colour
             int red = image[i][j].rgbtRed;
-            int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
-
-            // Calculate the average of the RGB values
-            int average = round((red + green + blue) / 3.0);
-
-            // Update the pixel values with the average
-            image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
+            int green = image[i][j].rgbtGreen;
+            //calculate the average value of each pixel, rounded
+            int avg = round(((float)red + (float)blue + (float)green)/3);
+            //set the calculated average to be the new value of each pixel
+            image[i][j].rgbtRed = image[i][j].rgbtBlue = image[i          [j].rgbtGreen = avg;
         }
     }
 }
-
 // Convert image to sepia
 
 
@@ -40,33 +39,44 @@ int cap(int value)
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Iterate over each pixel in the image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            // Calculate sepia values
-            float originalRed = image[i][j].rgbtRed;
-            float originalGreen = image[i][j].rgbtGreen;
-            float originalBlue = image[i][j].rgbtBlue;
-
-            int sepiaRed = round(0.393 * originalRed + 0.769 * originalGreen + 0.189 * originalBlue);
-            int sepiaGreen = round(0.349 * originalRed + 0.686 * originalGreen + 0.168 * originalBlue);
-            int sepiaBlue = round(0.272 * originalRed + 0.534 * originalGreen + 0.131 * originalBlue);
-
-            // Cap values at 255
-            sepiaRed = (sepiaRed > 255) ? 255 : sepiaRed;
-            sepiaGreen = (sepiaGreen > 255) ? 255 : sepiaGreen;
-            sepiaBlue = (sepiaBlue > 255) ? 255 : sepiaBlue;
-
-            // Update pixel values with sepia values
-            image[i][j].rgbtRed = sepiaRed;
-            image[i][j].rgbtGreen = sepiaGreen;
-            image[i][j].rgbtBlue = sepiaBlue;
-        }
-    }
+            int red = image[i][j].rgbtRed;
+            int blue = image[i][j].rgbtBlue;
+            int green = image[i][j].rgbtGreen;
+            //new sepia value
+           int sepiaRed = round(0.393 * red + 0.769 * green + 0.189 * blue);
+            if (sepiaRed > 255)
+            {
+                image[i][j].rgbtRed = 255;
+            }
+            else
+            {
+                image[i][j].rgbtRed = sepiaRed;
+            }
+           int sepiaGreen = round(0.349 * red + 0.686 * green + 0.168 * blue);
+            if (sepiaGreen > 255)
+            {
+                image[i][j].rgbtGreen = 255;
+            }
+            else
+            {
+                image[i][j].rgbtGreen = sepiaGreen;
+            }
+           int sepiaBlue = round(0.272 * red + 0.534 * green + 0.131 * blue);
+            if (sepiaBlue > 255)
+            {
+                image[i][j].rgbtBlue = 255;
+            }
+            else
+            {
+                image[i][j].rgbtBlue = sepiaBlue;
+            }
+         }
+      }
 }
-
 
 // Reflect image horizontally
 
@@ -74,21 +84,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Iterate over each row in the image
     for (int i = 0; i < height; i++)
     {
-        // Iterate over each column in the row up to the center
-        for (int j = 0; j < width / 2; j++)
+        // iterate through the array until you get to the mid-point
+        for (int j = 0; j < (width/2); j++)
         {
-            // Swap pixels with their corresponding pixels on the other side
             RGBTRIPLE temp = image[i][j];
-            image[i][j] = image[i][width -  (j + 1)];
+            //just like how [0][9]...[4][5], [i] will swap with [total-1-i]
+            image[i][j] = image[i][width - (j + 1)];
             image[i][width - (j + 1)] = temp;
         }
     }
+    return;
 }
-
-
 // Blur image
 
 
@@ -153,10 +161,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     free(temp_image);
 }
 */
-
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // create a copy of the image
+//create a temporary image to be blurred
     RGBTRIPLE temp[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -169,42 +176,91 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int totalRed, totalBlue, totalGreen;
-            totalRed = totalBlue = totalGreen =0;
-            float counter = 0.00;
-
-            //Get neighnouring pixels
-            for (int x = -1 ; x < 2; x++)
+            int sum_blue;
+            int sum_green;
+            int sum_red;
+            float counter;
+            sum_blue = sum_green = sum_red = counter = 0;
+//CORNERS
+            //corner pixel on bottom right
+            if (i >= 0 && j >= 0)
             {
-                for (int y = -1; y < 2; y++)
-                {
-                    int currentX = i + x;
-                    int currentY = j + y;
-
-                    //Check if neighouring pixel is valid
-                    if (currentX < 0 || currentX > (height -1 ) || currentY < 0 || currentY > (width - 1))
-                    {
-                        continue;
-                        totalRed += image[currentX][currentY].rgbtRed;
-                        totalGreen += image[currentX][currentY].rgbtGreen;
-                        totalBlue += image[currentX][currentY].rgbtBlue;
-                        counter ++;
-                    }
-                    // Calculate average of neighbo
-                        temp[i][j].rgbtRed = round(totalRed / counter);
-                }
+                sum_red += temp[i][j].rgbtRed;
+                sum_green += temp[i][j].rgbtGreen;
+                sum_blue += temp[i][j].rgbtBlue;
+                counter++;
             }
+            //corner pixel on bottom left
+            if (i >= 0 && j - 1 >= 0)
+            {
+                sum_red += temp[i][j-1].rgbtRed;
+                sum_green += temp[i][j-1].rgbtGreen;
+                sum_blue += temp[i][j-1].rgbtBlue;
+                counter++;
+            }
+            //corner pixel on top left
+            if (i - 1 >= 0 && j >= 0)
+            {
+                sum_red += temp[i-1][j].rgbtRed;
+                sum_green += temp[i-1][j].rgbtGreen;
+                sum_blue += temp[i-1][j].rgbtBlue;
+                counter++;
+            }
+            //corner pixel on top right
+            if (i - 1 >= 0 && j - 1 >= 0)
+            {
+                sum_red += temp[i-1][j-1].rgbtRed;
+                sum_green += temp[i-1][j-1].rgbtGreen;
+                sum_blue += temp[i-1][j-1].rgbtBlue;
+                counter++;
+            }
+//FOUR EDGES
+            //pixels on bottom edge
+            if ((i >= 0 && j + 1 >= 0) && (i >= 0 && j + 1 < width))
+            {
+                sum_red += temp[i][j+1].rgbtRed;
+                sum_green += temp[i][j+1].rgbtGreen;
+                sum_blue += temp[i][j+1].rgbtBlue;
+                counter++;
+            }
+            //pixels on top edge
+            if ((i - 1 >= 0 && j + 1 >= 0) && (i - 1 >= 0 && j + 1 < width))
+            {
+                sum_red += temp[i-1][j+1].rgbtRed;
+                sum_green += temp[i-1][j+1].rgbtGreen;
+                sum_blue += temp[i-1][j+1].rgbtBlue;
+                counter++;
+            }
+            //pixels on left edge
+            if ((i + 1 >= 0 && j >= 0) && (i + 1 < height && j >= 0))
+            {
+                sum_red += temp[i+1][j].rgbtRed;
+                sum_green += temp[i+1][j].rgbtGreen;
+                sum_blue += temp[i+1][j].rgbtBlue;
+                counter++;
+            }
+            //pixels on right edge
+            if ((i + 1 >= 0 && j - 1 >= 0) && (i + 1 < height && j - 1 >= 0))
+            {
+                sum_red += temp[i+1][j-1].rgbtRed;
+                sum_green += temp[i+1][j-1].rgbtGreen;
+                sum_blue += temp[i+1][j-1].rgbtBlue;
+                counter++;
+            }
+//MIDDLE PIXELS
+            //middle pixels
+            if ((i + 1 >= 0 && j + 1 >= 0) && (i + 1 < height && j + 1 < width))
+            {
+                sum_red += temp[i+1][j+1].rgbtRed;
+                sum_green += temp[i+1][j+1].rgbtGreen;
+                sum_blue += temp[i+1][j+1].rgbtBlue;
+                counter++;
+            }
+            //find average colour value
+            image[i][j].rgbtRed = round(sum_red / counter);
+            image[i][j].rgbtGreen = round(sum_green / counter);
+            image[i][j].rgbtBlue = round(sum_blue / counter);
         }
     }
-    //
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            image[i][j].rgbtRed = temp[i][j].rgbtRed;
-             image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
-              image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
-
-        }
-    }
+return;
 }
