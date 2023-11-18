@@ -1,7 +1,7 @@
 amount_due = 50
 cents = 0
 
-while cents < amount_due or cents == 50:
+while cents < amount_due:
     coin = int(input("Insert Coin: "))
 
     if coin not in [5, 10, 25]:
@@ -12,4 +12,7 @@ while cents < amount_due or cents == 50:
     amount_due -= coin  # Update amount_due after accepting a valid coin
     print(f"Amount Due: {amount_due}")
 
-print(f"Change Owed: {amount_due - cents}")
+if cents == amount_due:
+    print("Enjoy your Coke!")
+else:
+    print(f"Change Owed: {amount_due - cents}
