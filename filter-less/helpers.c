@@ -264,3 +264,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 return;
 }
+
+     //iterate through the column, from -1 to +1
+            for (int h = -1; h < 2; h++)
+            {
+                //iterate similarly through rows
+                for (int w = -1; w < 2; w++)
+                {
+                    //if pixel is outside the image (column)
+                    if (i + h < 0 || i + h > (height - 1))
+                    {
+                        continue; //skip
+                    }
+                    //if pixel is outside the image (row)
+                    if (j + w  < 0 || j + w > (width - 1))
+                    {
+                        continue; //skip
+                    }
+                    //sum up the values of all the pixels
+                    sum_blue += image[i + h][j + w].rgbtBlue;
+                    sum_red += image[i + h][j + w].rgbtRed;
+                    sum_green += image[i + h][j + w].rgbtGreen;
+                    counter++;
+                }
+            } 
