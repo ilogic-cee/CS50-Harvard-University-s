@@ -16,7 +16,7 @@ def is_valid(s):
         return False
 
     # Check if numbers come at the end and the first number is not '0'
-    if s[-1].isdigit() and s[2].isdigit() and s[2] == '0':
+    if s[-1].isdigit() and s[2:].isdigit() and s[2] == '0':
         return False
 
     # Check if there are no periods, spaces, or punctuation marks
