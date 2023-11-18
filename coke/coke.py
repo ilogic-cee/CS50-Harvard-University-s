@@ -1,19 +1,30 @@
-def main():
-    amount_due = 0
+# Initialize variables
+amount_due = 0
 
-    while amount_due < 50:
-        try:
-            coin = int(input("Insert Coin: "))
-            if coin in [5, 10, 25]:
-                amount_due += coin
-                print(f"Amount Due: {amount_due}")
-            else:
-                print("Invalid coin. Accepted denominations: 5, 10, 25.")
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+# Prompt the user to insert a coin until the amount due is at least 50 cents
+while amount_due < 50:
+    # Get user input for the coin
+    coin = int(input("Insert Coin: "))
 
-    change_owed = amount_due - 50
-    print(f"Change Owed: {max(0, change_owed)}")
+    # Check if the coin is a valid denomination
+    if coin == 25:
+        amount_due += 25
+    elif coin == 10:
+        amount_due += 10
+    elif coin == 5:
+        amount_due += 5
+    else:
+        # Print an error message for invalid coins
+        print("Invalid Coin. Accepted denominations: 25, 10, 5 cents.")
+        continue
 
-if __name__ == "__main__":
-    main()
+    # Print the updated amount
+    print(f"Amount Due: {amount_due}")
+
+# Check if the user paid exactly 50 cents
+if amount_due == 50:
+    print("Thank you for your purchase!")
+else:
+    # Calculate and print the change owed
+    change_owed = max(0, amount_due - 50)
+    print(f"Change Owed: {change_owed}")
