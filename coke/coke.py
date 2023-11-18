@@ -1,7 +1,7 @@
 amount_due = 50
 cents = 0
 
-while cents < amount_due:
+while cents <= amount_due:
     coin = int(input("Insert Coin: "))
 
     if coin not in [5, 10, 25]:
