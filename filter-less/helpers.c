@@ -70,7 +70,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 
 // Reflect image horizontally
 
-
+?
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -177,7 +177,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             for (int x = -1 ; x < 2; x++)
             {
                 for (int y = -1; y < 2; y++)
+                {
+                    int currentX = i + x;
+                    int currentY = j + y;
+
+                    //Check if neighouring pixel is valid
+                    if (currentX < 0 || currentX > (height -1 ) || currentY < 0 || currentY > (width - 1))
+                    {
+                        continue;
+                        totalRed += image[currentX][currentY].rgbtRed;
+                        totalGreen += image[currentX][currentY].rgbtGreen;
+                        totalBlue += image[currentX][currentY].rgbtBlue;
+                        counter ++;
+                    }
+                    // Calculate average of neighbo
+                        temp[i][j].rgbtRed = round(totalRed / counter);
+                }
             }
+        }
+    }
+    //
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
+             image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+              image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
+
         }
     }
 }
