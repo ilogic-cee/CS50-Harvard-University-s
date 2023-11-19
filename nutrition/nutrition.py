@@ -31,3 +31,4 @@ for key in fruits:
     if key == item.lower():
         # Print fruit's calories
         print("Calories:", fruits[key])
+
