@@ -24,11 +24,8 @@ typedef struct node
 // initialise hash table
 node *hash_table[HASHTABLE_SIZE];
 
-/**
-* Returns integer hash value for a given a string
-* https://www.reddit.com/r/cs50/comments/1x6vc8/pset6_trie_vs_hashtable/cf9nlkn/
-**/
-int hash(const char* needs_hashing)
+
+unsigned int hash(const char *word)
 {
     unsigned int hash = 0;
     for (int i=0, n=strlen(needs_hashing); i<n; i++)
