@@ -155,3 +155,4 @@ bool unload(void)
         free(cursor);
     }
     return true;
+}
