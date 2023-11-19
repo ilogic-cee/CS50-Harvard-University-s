@@ -140,9 +140,9 @@ bool unload(void)
     {
         while (table[i] != NULL)
         {
-            node *tmp = table[i]->next; //делаем ноду и переходим на следующую ячейку
-            free(table[i]); //освобождаем текущую
-            table[i] = tmp; //начинаем list со второй ячейки
+            node *tmp = table[i]->next; //
+            free(table[i]); //
+            table[i] = tmp; //
         }
     }
     return true;
