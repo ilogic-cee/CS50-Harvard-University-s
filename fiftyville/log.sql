@@ -9,4 +9,5 @@ SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 
 --check against license plates--
 SELECT p.name, bsl.activity, bsl.license_plate, bsl.year, bsl.month, bsl.day, bsl.hour, bsl.minute
 FROM bakery_security_logs bsl
-
+JOIN people p ON p.license_plate = bsl.license_plate
+WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND bsl.minute BETWEEN 15 AND 25;
