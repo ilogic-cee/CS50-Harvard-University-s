@@ -36,4 +36,4 @@ SELECT * FROM airports;
 SELECT f.*, origin.full_name AS origin_airport, destination.full_name AS destination_airport
 FROM flights f
 JOIN airports origin ON f.origin_airport_id = origin.id
-JOIN airports destination ON f.destination_airport_id 
+JOIN airports destination ON f.destination_airport_id destination.id
