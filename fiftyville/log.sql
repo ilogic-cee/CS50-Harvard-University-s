@@ -33,4 +33,7 @@ WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 --explore airport to find fifyville--
 SELECT * FROM airports;
 --explore  flights out--
+SELECT f.*, origin.full_name AS origin_airport, destination.full_name AS destination_airport
+FROM flights f
+JOIN airports origin ON f.origin_airport_id = origin.id
 
