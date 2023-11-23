@@ -55,4 +55,10 @@ FROM people p
 JOIN passengers ps ON p passport_number = ps.passport_number
 WHERE ps.flight_id = 36
 AND p.name IN ('Bruce','Diana');
+--who did bruce call--
+SELECT p2.name AS receiver
+FROM phone_calls pc
+JOIN people p1 ON pc.caller = p1.phone_number
+JOIN people p2 ON pc.receiver = p2.phone_number
+WHERE p1.name = 'Bruce' AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60; 
 
