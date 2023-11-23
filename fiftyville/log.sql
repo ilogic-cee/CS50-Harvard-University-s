@@ -29,4 +29,5 @@ WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 SELECT p.name, pc.caller, pc.receiver, pc.year, pc.month, pc.day, pc.duration
 FROM phone_calls pc
 JOIN people p ON pc.caller = p.phone_number
-WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60; 
+WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
+--
