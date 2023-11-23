@@ -50,4 +50,9 @@ WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND b
 AND at.atm_location = 'Leggett Street' AND at.year = 2021 AND at.month = 7 AND at.day = 28 AND at.transaction_type = 'withdraw'
 AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
 -- narrow down from bruce/diana--
+SELECT p.name
+FROM people p
+JOIN passengers ps ON p passport_number = ps.passport_number
+WHERE ps.flight_id = 36
+AND p.name IN ('Bruce','Diana');
 
