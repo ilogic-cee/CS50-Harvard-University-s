@@ -5,5 +5,5 @@ WHERE m.id IN (
 SELECT m.id FROM movies m
 JOIN stars s ON m.id = s.movie_id
 JOIN people p ON s.person_id = p.id
-WHERE p.name = 'Kevin Bacon'  AND p.birth = 1958
+WHERE p.name = 'Kevin Bacon' AND p.birth = 1958
 ) AND p.name != 'Kevin Bacon';
