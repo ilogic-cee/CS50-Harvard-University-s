@@ -14,5 +14,5 @@ WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND b
 --check witness 2 regards the atm--
 SELECT * FROM atm_transactions
 WHERE atm_location = 'Leggett Street'
-AND year = 2021 AND month = 7 AND 
+AND year = 2021 AND month = 7 AND day = 28;
 
