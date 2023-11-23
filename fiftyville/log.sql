@@ -46,4 +46,5 @@ JOIN people p ON p license_plate = bsl.license_plate
 JOIN bank_accounts ba ON ba.person_id = p.id
 JOIN atm_transactions at ON at.account_number = ba.account_number
 JOIN phone_calls pc ON pc.caller = p.phone_number
-WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 
+WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND bsl.minute BETWEEN 15 AND 25
+AND a
