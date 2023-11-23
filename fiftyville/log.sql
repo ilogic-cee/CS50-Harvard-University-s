@@ -38,4 +38,12 @@ FROM flights f
 JOIN airports origin ON f.origin_airport_id = origin.id
 JOIN airports destination ON f.destination_airport_id = destination.id
 WHERE origin.id = 8 AND f.year = 2021 AND f.month = 7 AND f.day =29
-ORDER BY f.hour, f.minute; 
+ORDER BY f.hour, f.minute;
+--combine info from all three testimonies--
+SELECT p.name
+FROM bakery_security_logs bsl
+JOIN people p ON p license_plate = bsl.license_plate
+JOIN bank_accounts ba ON ba.person_id = p.id
+JOIN atm_transactions at ON at.account_number = ba.account_number
+JOIN phone_calls pc ON pc.caller = p.phone_number
+WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 
