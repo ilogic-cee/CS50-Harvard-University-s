@@ -1,5 +1,5 @@
 import emoji
+#pip install emoji first
+text = input("Input: ")
 
-input = input("Input: ")
-
-print("Output:", emoji.emojize(input))
+print("Output:", emoji.emojize(text))
