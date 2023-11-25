@@ -10,4 +10,9 @@ def main()
                     print("Too small!")
                     elif guess > number:
                     print("Too Large!")
-                    el
+                elif guess == number:
+                    print("Just right!")
+                    break
+            except ValueError:
+pass
+
