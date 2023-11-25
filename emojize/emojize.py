@@ -1,5 +1,5 @@
 import emoji
 #pip install emoji first
-text = input("Input: ")
+emo = input("Input: ")
 
-print("Output:", emoji.emojize(text))
+print(emoji.emojize(f"{emo}",language='alias'))
