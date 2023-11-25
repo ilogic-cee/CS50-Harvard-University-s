@@ -1,33 +1,29 @@
-import sys
 import requests
-import json
+import sys
 
+if len(sys.argv) != 2:
+    print("Missing command-line argument")
+    sys.exit(1)
 
-def main():
-    g = get_coin()
-    req_coin(g)
+try:
+    bitcoins = float(sys.argv[1])
+except ValueError:
+    print("Command-line argument is not a number")
+    sys.exit(1)
 
+url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 
-def get_coin():
-    #print(sys.argv)
-    if len(sys.argv) == 2:
-        try:
-            if float(sys.argy[1]):
-                return sys.argv[1]
-            except ValueError:
-                print("Command-line argument is not a number")
-            sys.exit(1)
-            else:
-            print("Missing commnand-line argument")
-            sys.exit(1)
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+except requests.RequestException:
+    print("Unable to fetch Bitcoin price")
+    sys.exit(1)
 
+data = response.json()
+price = data["bpi"]["USD"]["rate_float"]
 
-def req_coin(gcoin):
-    req = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-    data = req.json()
-    usd = data["bpi"]["USD"]["rate_float"]
-    result = float(usd) * float(gcoin)
-    print(gcoin)
-    print(f"${result:,.4f}")
-    
-            main()
+cost = bitcoins * price
+formatted_cost = f"{cost:,.4f}"
+
+print(f"{bitcoins} BTC = ${formatted_cost}")
