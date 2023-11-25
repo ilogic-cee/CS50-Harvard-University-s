@@ -13,7 +13,7 @@ def main()
                 elif guess == number:
               sys.exit("Just Right!")
                     break
-            except ValueError:
+            except ValueError: 
                 pass
 
         def get_level():
