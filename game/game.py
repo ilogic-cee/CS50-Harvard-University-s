@@ -7,4 +7,7 @@ def main()
             guess = int(input("Guess: "))
             if guess > 0:
                 if guess < number:
-                    print("")
+                    print("Too small!")
+                    elif guess > number:
+                    print("Too Large!")
+                    el
