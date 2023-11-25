@@ -1,4 +1,6 @@
+#import inflection 
 import inflect
+
 
 l = []
 p = inflect.engine()
