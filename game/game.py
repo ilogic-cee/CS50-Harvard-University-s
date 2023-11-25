@@ -20,5 +20,10 @@ def main()
             while True:
                 try:
                     level = int(input("Level: "))
-                    if level > 0
+                    if level > 0:
+                        return level
+                except ValueError:
+                    pass
+
+                main()
 
