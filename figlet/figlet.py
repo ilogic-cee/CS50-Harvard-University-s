@@ -3,28 +3,25 @@ import random
 from pyfiglet import Figlet
 import cs50
 
-#
-#figlet = figlet()
-commands = ["-f","-font"]
-fonts = figlet.getFonts()
-
- if len(sys.argv) < 1:
-    print("Usage: figlet [FONT] [TEXT]")
+# Check if the user provided zero or two command-line arguments
+if len(sys.argv) not in [1, 3]:
+    print("Invalid usage")
     sys.exit(1)
 
-font = sys.argv[1] if len(sys.argv) > 2 else "standard"
-text = sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read()
+# Check if the first argument is a valid font selection command
+if len(sys.argv) == 3 and sys.argv[1] not in ["-f", "--font"]:
+    print("Invalid usage")
+    sys.exit(1)
 
-print(figlet.format_text(text, font=font))
+# Get the font name
+font_name = sys.argv[2] if len(sys.argv) == 3 else random.choice(Figlet.getFonts())
 
+# Prompt the user for input text
+text = cs50.get_string("Input: ")
 
-    else:
-        sys.exit("Invalid usage")
+# Create a Figlet object and set the font
+figlet = Figlet(font=font_name)
 
-        string = cs50.get_string("Input: ")
-
-            figlet.setFont(font= new_font)
-
-            print(figlet.renderText(string))
-
-
+# Render the input text and print it
+rendered_text = figlet.renderText(text)
+print(rendered_text)
