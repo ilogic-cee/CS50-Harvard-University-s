@@ -11,7 +11,7 @@ def main()
                     elif guess > number:
                     print("Too Large!")
                 elif guess == number:
-                    print("Just right!")
+              sys.exit("Just Right!")
                     break
             except ValueError:
                 pass
