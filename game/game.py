@@ -14,5 +14,11 @@ def main()
                     print("Just right!")
                     break
             except ValueError:
-pass
+                pass
+
+        def get_level():
+            while True:
+                try:
+                    level = int(input("Level: "))
+                    if level > 0
 
