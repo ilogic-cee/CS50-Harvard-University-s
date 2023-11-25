@@ -1,29 +1,33 @@
-from random import choice
+import random
 
-def main()
-    number = choice((list(range(1, get_level()+1))))
+while True:
+    try:
+        level = int(input("Level: "))
+    except ValueError:
+        print("Please enter a positive integer.")
+        continue
+
+    if level < 1:
+        print("Please enter a positive integer.")
+        continue
+
+    secret_number = random.randint(1, level)
+
     while True:
         try:
             guess = int(input("Guess: "))
-            if guess > 0:
-                if guess < number:
-                    print("Too small!")
-                    elif guess > number:
-                    print("Too Large!")
-                elif guess == number:
-              sys.exit("Just Right!")
-                    break
-            except ValueError: 
-                pass
+        except ValueError:
+            print("Please enter a positive integer.")
+            continue
 
-        def get_level():
-            while True:
-                try:
-                    level = int(input("Level: "))
-                    if level > 0:
-                        return level
-                except ValueError:
-                    pass
+        if guess < 1:
+            print("Please enter a positive integer.")
+            continue
 
-                main()
-
+        if guess < secret_number:
+            print("Too small!")
+        elif guess > secret_number:
+            print("Too large!")
+        else:
+            print("Just right!")
+            exit()
