@@ -18,8 +18,11 @@ for code_alias in soup.find_all("li", class_="code-alias"):
 
 def emojize(text):
     # Replace emoji codes and aliases with their corresponding emojis
-    for code, emoji in emoji_map.items():
-        text = text.replace(code, emoji)
+    emoji_search = re.compile(r":(\w+:)")
+    for match in emoji_search.finditer(text):
+        code = match.group(1)
+        emoji = emoji_map.get(code, "")
+        text = text.replace(match.group(0), emoji)
     return text
 
 # Prompt the user for input text
