@@ -49,9 +49,11 @@ const App = () => {
             )
           ),
 
-        // Google Image Search as a link
-        React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
-        React.createElement('a', { href: 'https://www.google.com/search?tbm=isch', className: 'btn btn-secondary mx-3' }, 'Google Image Search')
+          // Additional container for Google Image Search
+          React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
+            React.createElement('form', { action: 'https://www.google.com/search', autoComplete: 'off', id: 'imageSearchBar' },
+              React.createElement('i', { className: 'fa fa-search' }),
+
             )
           )
         )
