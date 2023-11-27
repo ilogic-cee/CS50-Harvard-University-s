@@ -53,6 +53,16 @@ const App = () => {
           React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
             React.createElement('form', { action: 'https://www.google.com/search', autoComplete: 'off', id: 'imageSearchBar' },
               React.createElement('i', { className: 'fa fa-search' }),
+              const App = () => {
+                return (
+                  // ... (your existing code)
+
+                  React.createElement('div', { className: 'd-flex justify-content-center my-4' },
+                    React.createElement('button', { type: 'submit', form: 'searchbar', formAction: 'https://google.com/search', className: 'btn btn-secondary mx-3 btn-google' }, 'CS50ogle Search'),
+                    React.createElement('button', { onClick: myFunction, type: 'submit', form: 'searchbar', formAction: 'https://duckduckgo.com/', className: 'btn btn-secondary mx-3 btn-google', id: 'feeling-lucky-btn' }, "I'm Feeling Lucky")
+                  )
+                );
+              };
 
             )
           )
