@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Advanced Search</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .advanced-search-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .search-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Google Advanced Search</h1>
+            <a href="index.html">Regular Search</a>
+            <a href="image-search.html">Image Search</a>
+        </div>
+
+        <form class="advanced-search-form" action="https://www.google.com/search">
+            <label class="search-label">Find pages with…</label>
+            <input type="text" name="q" class="search-input" placeholder="all these words">
+            <input type="text" name="q" class="search-input" placeholder="this exact word or phrase">
+            <input type="text" name="q" class="search-input" placeholder="any of these words">
+            <input type="text" name="q" class="search-input" placeholder="none of these words">
+            <button type="submit" class="search-button">Advanced Search</button>
+        </form>
+    </div>
+</body>
+</html>
