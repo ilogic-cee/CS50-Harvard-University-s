@@ -1,48 +1,77 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+/* div {
+    border:1px solid black;
+} */
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-  }
+.small {
+	font-size: 12px;
+}
 
-  header h1 {
-    font-size: 32px;
-    font-weight: bold;
-  }
+.font-monospace {
+	font-size: 12px;
+}
 
-  header a {
-    text-decoration: none;
-    color: #007bff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
+.height {
+	height: 100vh
+}
 
-  .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+.form {
+	position: relative
+}
 
-  .search-bar {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+.form .fa-search {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: #9ca3af
+}
 
-  .search-button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.form span {
+	position: absolute;
+	right: 17px;
+	top: 13px;
+	padding: 2px;
+	border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+	padding-left: 7px
+}
+
+.left-pan i {
+	padding-left: 10px
+}
+
+.form-input {
+	height: 55px;
+	text-indent: 33px;
+	border-radius: 10px
+}
+
+.form-input:focus {
+	box-shadow: 1px;
+	border: 1px
+}
+
+.btn-primary {
+	color: white;
+	background-color: CornflowerBlue;
+	border-color: white;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+
+.btn-secondary {
+	color: white;
+	background-color: DarkGray;
+	border-color: white;
+}
+
+.btn-secondary:hover {
+	color: #fff;
+	background-color: #DarkGray;
+	border-color: white;
+}
