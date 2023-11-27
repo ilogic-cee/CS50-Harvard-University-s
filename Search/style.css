@@ -75,3 +75,18 @@
 	background-color: #DarkGray;
 	border-color: white;
 }
+
+
+
+/* Set the font size and padding for the buttons */
+.btn-google {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 10px 15px; /* Adjust the padding as needed */
+  }
+
+  
+  #advanced-search-btn,
+  #feeling-lucky-btn {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 10px 15px; /* Adjust the padding as needed */
+  }
