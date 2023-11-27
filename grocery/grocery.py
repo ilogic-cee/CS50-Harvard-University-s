@@ -1,22 +1,20 @@
-from collections import Counter
+from collections import OrderedDict
+# Syntax of dict = {'key': value}
+mydict = {}
 
-def main():
-    groceries = read_items()
-    print_grocery_list(groceries)
-
-def read_items():
-    groceries = []
+# Infinite loop with break
+while True:
     try:
-        while True:
-            item = input("Enter an item: ").strip().upper()
-            groceries.append(item)
+        item = input().upper()
+        # Search if item matches a key inside the dict
+        if item in mydict:
+            mydict[item] = mydict[item] + 1
+        else:
+            mydict[item] = 1
     except EOFError:
-        return groceries
-
-def print_grocery_list(groceries):
-    counter = Counter(groceries)
-    for item, count in counter.items():
-        print(f"{count} {item}")
-
-if __name__ == "__main__":
-    main()
+         # https://docs.python.org/3/library/collections.html#collections.OrderedDict
+             
+        mydict = OrderedDict(sorted(mydict.items(), key=lambda t: t[0]))
+        for i in mydict:
+            print(mydict[i], i)
+        break
