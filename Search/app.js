@@ -25,7 +25,40 @@ const App = () => {
           )
         )
       ),
-      // The rest of your existing code...
+
+      React.createElement('div', { className: 'container d-flex align-items-center vh-100' },
+        React.createElement('div', { className: 'container mt-5' },
+          React.createElement('div', { className: 'd-flex p-2 justify-content-center' },
+            React.createElement('img', { src: 'CS50ogle.png', width: '400', alt: 'CS50ogle Logo' })
+          ),
+
+          React.createElement('div', { className: 'd-flex justify-content-center' },
+            React.createElement('div', { className: 'col-md-6 justify-content-center' },
+              React.createElement('div', { className: 'form' },
+                React.createElement('form', { action: 'https://google.com/search', autoComplete: 'off', id: 'searchbar' },
+                  React.createElement('i', { className: 'fa fa-search' }),
+                  React.createElement('input', { type: 'text', name: 'q', id: 'searchterm', className: 'form-control form-input', placeholder: 'Search' }),
+                  React.createElement('span', { className: 'left-pan' }, React.createElement('i', { className: 'fa fa-microphone' }))
+                )
+              ),
+
+              React.createElement('div', { className: 'd-flex justify-content-center my-4' },
+                React.createElement('button', { type: 'submit', form: 'searchbar', formAction: 'https://google.com/search', className: 'btn btn-secondary mx-3' }, 'CS50ogle Search'),
+                React.createElement('button', { onClick: myFunction, type: 'submit', form: 'searchbar', formAction: 'https://duckduckgo.com/', className: 'btn btn-secondary mx-3' }, "I'm Feeling Lucky")
+              )
+            )
+          ),
+
+          // Additional container for Google Image Search
+          React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
+            React.createElement('form', { action: 'https://www.google.com/search', autoComplete: 'off', id: 'imageSearchBar' },
+              React.createElement('i', { className: 'fa fa-search' }),
+              React.createElement('input', { type: 'text', name: 'q', className: 'form-control form-input', placeholder: 'Google Image Search' }),
+              React.createElement('button', { type: 'submit', form: 'imageSearchBar', className: 'btn btn-secondary mx-3' }, 'Google Image Search')
+            )
+          )
+        )
+      )
     )
   );
 };
