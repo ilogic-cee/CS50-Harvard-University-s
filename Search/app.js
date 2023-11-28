@@ -50,7 +50,7 @@ const App = () => {
           )
         )
       ),
-      
+
 
       // Additional container for Google Image Search
       React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
