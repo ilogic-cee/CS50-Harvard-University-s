@@ -29,7 +29,7 @@ const App = () => {
       React.createElement('div', { className: 'container d-flex align-items-center vh-100' },
         React.createElement('div', { className: 'container mt-5' },
           React.createElement('div', { className: 'd-flex p-2 justify-content-center' },
-            React.createElement('img', { src: 'google.png', width: '400', alt: 'Googlephoto' })
+            React.createElement('img', { src: 'gooogle.png', width: '300', alt: 'Googlephoto' })
           ),
 
           React.createElement('div', { className: 'd-flex justify-content-center' },
