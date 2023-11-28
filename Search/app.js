@@ -19,7 +19,7 @@ const App = () => {
                 React.createElement('a', { className: 'nav-link', href: 'advanced.html' }, 'Advanced Search')
               ),
               React.createElement('li', { className: 'nav-item ms-auto' },
-                React.createElement('a', { className: 'nav-link', href: 'https://www.linkedin.com/in/ross-coron/' }, 'About')
+                React.createElement('a', { className: 'nav-link', href: 'www.linkedin.com/in/junior-motsoko-970a311b4' }, 'About')
               )
             )
           )
