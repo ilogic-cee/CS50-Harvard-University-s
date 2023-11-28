@@ -54,9 +54,9 @@ const App = () => {
       // Additional container for Google Image Search
       React.createElement('div', { className: 'd-flex justify-content-center mt-4' },
         React.createElement('form', { action: 'https://www.google.com/search', autoComplete: 'off', id: 'imageSearchBar' },
-          React.createElement('i', { className: 'fa fa-search' }),
-          React.createElement('input', { type: 'text', name: 'q', id: 'imageSearchTerm', className: 'form-control form-input', placeholder: 'Image Search' }),
-          React.createElement('button', { type: 'submit', form: 'imageSearchBar', formAction: 'https://www.google.com/search', className: 'btn btn-secondary mx-3 btn-google' }, 'Google Image Search')
+
+
+
         )
       )
     )
