@@ -71,3 +71,11 @@ function myFunction() {
   msgElement.value = '\\' + msgElement.value;
   return true;
 }
+
+/* removing the boarder */
+
+/* Override the border style for the navbar */
+.navbar {
+  border: none; /* Remove the border */
+}
+
