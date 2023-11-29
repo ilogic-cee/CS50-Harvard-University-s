@@ -44,58 +44,37 @@ const App = () => {
           </div>
         </div>
       </nav>
-
-      <div className="container d-flex align-items-center vh-100">
-        <div className="container mt-5">
-          <div className="d-flex p-2 justify-content-center">
-            <img src="gooogle.png" width="200" alt="Googlephoto" />
-          </div>
-
-          <div className="d-flex justify-content-center">
-            <div className="col-md-6 justify-content-center">
-              <div className="form">
-                <form
-                  action="https://google.com/search"
-                  autoComplete="off"
-                  id="searchbar"
-                >
-                  <i className="fa fa-search"></i>
-                  <input
-                    type="text"
-                    name="q"
-                    id="searchterm"
-                    className="form-control form-input"
-                    placeholder="Search"
-                  />
-                  <span className="left-pan">
-                    <i className="fa fa-microphone"></i>
-                  </span>
-                </form>
-              </div>
-
-              <div className="d-flex justify-content-center my-4">
-                <button
-                  type="submit"
-                  form="searchbar"
-                  formAction="https://google.com/search"
-                  className="btn btn-secondary mx-3"
-                >
-                Google
-                </button>
-                <button
-                  onClick={myFunction}
-                  type="submit"
-                  form="searchbar"
-                  formAction="https://duckduckgo.com/"
-                  className="btn btn-secondary mx-3"
-                >
-                  I'm Feeling Lucky
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="search-container">
+    <form action="https://www.google.co.za/search" autocomplete="off" id="searchbar">
+        <div class="search-bar">
+            <i class="fa fa-search"></i>
+            <input
+                type="text"
+                name="q"
+                id="searchterm"
+                class="form-control form-input"
+                placeholder="Search Google"
+            />
+            <span class="left-pan">
+                <i class="fa fa-microphone"></i>
+            </span>
         </div>
-      </div>
+
+        <div class="search-buttons">
+            <button type="submit" form="searchbar" class="google-search-btn">Google Search</button>
+            <button
+                onclick="myFunction()"
+                type="submit"
+                form="searchbar"
+                formaction="https://duckduckgo.com/"
+                class="feeling-lucky-btn"
+            >
+                I'm Feeling Lucky
+            </button>
+        </div>
+    </form>
+</div>
+
 
       {/* Additional container for Google Image Search */}
       <div className="d-flex justify-content-center mt-4">
