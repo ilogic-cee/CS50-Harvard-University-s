@@ -119,21 +119,30 @@
   }
 
 
-  /* for the font to look like google.co.za */
+
+
+
+/* Add this to your existing CSS */
 
 /* Import Google Product Sans font (if allowed) */
 @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
 
 /* Apply Product Sans font to specific elements */
 .navbar-brand,
-.navbar-nav a {
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link {
   font-family: 'Product Sans', sans-serif;
-  font-weight: 700; /* Use 400 for regular if needed */
+  font-weight: 400; /* Use 700 for bold if needed */
 }
 
 /* If the font import is not allowed, use a web-safe font as a fallback */
 .navbar-brand,
-.navbar-nav a {
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link {
   font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
-  font-weight: 700; /* Use 400 for regular if needed */
+  font-weight: 400; /* Use 700 for bold if needed */
 }
