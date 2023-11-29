@@ -117,3 +117,23 @@
 	font-weight: bold;
 	color: #4285f4; /* Google's active link color */
   }
+
+
+  /* for the font to look like google.co.za */
+
+/* Import Google Product Sans font (if allowed) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+/* Apply Product Sans font to specific elements */
+.navbar-brand,
+.navbar-nav a {
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 700; /* Use 400 for regular if needed */
+}
+
+/* If the font import is not allowed, use a web-safe font as a fallback */
+.navbar-brand,
+.navbar-nav a {
+  font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  font-weight: 700; /* Use 400 for regular if needed */
+}
