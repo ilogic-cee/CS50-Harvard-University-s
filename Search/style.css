@@ -1,92 +1,365 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* div {
+    border:1px solid black;
+} */
+
+.small {
+	font-size: 12px;
+}
+
+.font-monospace {
+	font-size: 12px;
+}
+
+.height {
+	height: 100vh
+}
+
+.form {
+	position: relative
+}
+
+.form .fa-search {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: #9ca3af
+}
+
+.form span {
+	position: absolute;
+	right: 17px;
+	top: 13px;
+	padding: 2px;
+	border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+	padding-left: 7px
+}
+
+.left-pan i {
+	padding-left: 10px
+}
+
+.form-input {
+	height: 55px;
+	text-indent: 33px;
+	border-radius: 10px
+}
+
+.form-input:focus {
+	box-shadow: 1px;
+	border: 1px
+}
+
+.btn-primary {
+	color: white;
+	background-color: CornflowerBlue;
+	border-color: white;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+
+.btn-secondary {
+	color: white;
+	background-color: DarkGray;
+	border-color: white;
+}
+
+.btn-secondary:hover {
+	color: #fff;
+	background-color: #DarkGray;
+	border-color: white;
+}
+
+
+
+/* Set the font size and padding for the buttons */
+.btn-secondary {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 6px 12px; /* Adjust the padding as needed */
+  }
+
+  #advanced-search-btn,
+  #feeling-lucky-btn {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 6px 12px; /* Adjust the padding as needed */
+  }
+
+
+/*making css similar to google.com */
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+  }
+
+  .navbar-nav li {
+	margin: 0 10px;
+  }
+
+  .navbar-nav a {
+	text-decoration: none;
+	color: #70757a; /* Google's link color */
+  }
+
+  /* Style for the navigation links on hover */
+  .navbar-nav a:hover {
+	text-decoration: underline;
+  }
+
+  /* Style for the active link */
+  .navbar-nav .active {
+	font-weight: bold;
+	color: #4285f4; /* Google's active link color */
+  }
+
+
+
+/* Add this to your existing CSS */
+
+/* Import Google Product Sans font (if allowed) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+/* Apply Product Sans font to specific elements */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link {
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 400; /* Use 700 for bold if needed */
+}
+
+/* If the font import is not allowed, use a web-safe font as a fallback */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link {
+  font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  font-weight: 400; /* Use 700 for bold if needed */
+}
+
+
+/* to decrease the font size  to your existing CSS */
+
+/* Import Google Product Sans font (if allowed) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+/* Apply Product Sans font to specific elements */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 400; /* Use 700 for bold if needed */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* If the font import is not allowed, use a web-safe font as a fallback */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  font-weight: 400; /* Use 700 for bold if needed */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+/* to decrease the font size  to your existing CSS */
+
+/* Import Google Product Sans font (if allowed) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+/* Apply Product Sans font to specific elements */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 400; /* Use 700 for bold if needed */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* If the font import is not allowed, use a web-safe font as a fallback */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  font-weight: 400; /* Use 700 for bold if needed */
+  font-size: 14px; /* Adjust the font size as needed */
 }
 
 body {
   font-family: Arial, sans-serif;
 }
-
-.head {
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.navbar {
+    background-color: white !important;
 }
 
-.head #links {
-  margin-right: 30px;
-  display: flex;
+
+/* Modify these styles in your existing CSS file */
+.container {
+	text-align: center;
+	margin-top: 100px;
+  }
+
+  .search-bar {
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 4px; /* Adjusted padding for a sleeker look */
 }
 
-.head #links a {
-  margin-left: 30px;
-  font-size: small;
-  color: rgba(0, 0, 0, 0.87);
-  text-decoration: none;
+.form-input {
+    border: none;
+    outline: none;
+    flex: 1; /* Fill available space */
+    padding: 12px; /* Adjusted padding for a more comfortable input area */
+    font-size: 16px; /* Adjusted font size */
 }
 
-.head #links a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+.google-search-btn,
+.feeling-lucky-btn {
+    background-color: #4285f4;
+    color: #ffffff;
+    border: 1px solid #4285f4;
+    border-radius: 24px;
+    padding: 10px 16px; /* Adjusted padding for a more comfortable button */
+    margin-left: 8px; /* Added margin between the buttons */
+    cursor: pointer;
 }
 
-#mainSection {
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.feeling-lucky-btn {
+    background-color: #f8f9fa;
+    color: #3c4043;
+    border: 1px solid #f8f9fa;
 }
 
-#mainSection #inputField {
+/* Add these styles to your existing or new CSS file */
+.search-container {
+	text-align: center;
+	margin-top: 100px;
+	background-color: lightgray; /* Add this line to check if styles are applied */
+  }
+
+  /* ... (rest of the styles) */
+
+
+
+
+'
+
+
+/* div {
+  border:1px solid black;
+} */
+
+.small {
+  font-size: 12px;
+}
+
+.font-monospace {
+  font-size: 12px;
+}
+
+.height {
+  height: 100vh
+}
+
+.form {
+  position: relative
+}
+
+.form .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af
+}
+
+.form span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+  padding-left: 7px
+}
+
+.left-pan i {
+  padding-left: 10px
+}
+
+.form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px
+}
+
+.form-input:focus {
+  box-shadow: 1px;
+  border: 1px
+}
+
+/* Modify these styles in your existing CSS file */
+.search-bar {
   border: 1px solid #dfe1e5;
   border-radius: 24px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  width: 584px;
-  margin-top: 20px;
+  padding: 4px; /* Adjusted padding for a sleeker look */
 }
 
-#mainSection #inputField i {
-  color: #9ca3af;
-  margin-right: 10px;
-}
-
-#mainSection #inputField:hover,
-#mainSection #button input:hover {
-  box-shadow: 0 0 5px gray;
-}
-
-#mainSection #inputField input {
-  width: 100%;
+.form-input {
   border: none;
-  box-shadow: none !important;
-  outline: none !important;
-  font-size: 16px;
+  outline: none;
+  flex: 1; /* Fill available space */
+  padding: 12px; /* Adjusted padding for a more comfortable input area */
+  font-size: 16px; /* Adjusted font size */
 }
 
-#mainSection #button {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-#mainSection #button input {
+.google-search-btn,
+.feeling-lucky-btn {
   background-color: #4285f4;
-  border: 1px solid #4285f4;
-  border-radius: 5px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  margin: 0 5px;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
   color: #ffffff;
+  border: 1px solid #4285f4;
+  border-radius: 24px;
+  padding: 10px 16px; /* Adjusted padding for a more comfortable button */
+  margin-left: 8px; /* Added margin between the buttons */
+  cursor: pointer;
 }
 
-#mainSection #button input:hover {
-  background-color: #357ae8;
-  border: 1px solid #357ae8;
+.feeling-lucky-btn {
+  background-color: #f8f9fa;
+  color: #3c4043;
+  border: 1px solid #f8f9fa;
 }
+
+/* Add these styles to your existing or new CSS file */
+.search-container {
+  text-align: center;
+  margin-top: 100px;
+  background-color: lightgray; /* Add this line to check if styles are applied */
+}
+
+/* ... (rest of the styles) */
