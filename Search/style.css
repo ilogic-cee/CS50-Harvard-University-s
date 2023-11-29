@@ -220,18 +220,18 @@ body {
   }
 
   .search-bar {
-	border: 1px solid #dfe1e5;
-	border-radius: 24px;
-	display: flex;
-	align-items: center;
-	padding: 8px;
-  }
-
-  .form-input {
-	border: none;
-	outline: none;
-	width: 100%;
-  }
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 4px; /* Adjusted padding for a sleeker look */
+}
+.form-input {
+    border: none;
+    outline: none;
+    flex: 1; /* Fill available space */
+    padding: 12px; /* Adjusted padding for a more comfortable input area */
+}
 
   .google-search-btn {
 	background-color: #4285f4;
@@ -265,4 +265,3 @@ body {
 
 
 
-  
