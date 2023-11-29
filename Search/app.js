@@ -72,10 +72,10 @@ function myFunction() {
   return true;
 }
 
-/* Add this to your existing CSS */
+
 
 /* Remove the border from the top of the navbar */
-.navbar-light {
-  border-top: none;
+.navbar {
+  border-top: none !important; /* Use !important to override Bootstrap styles */
 }
 
