@@ -205,6 +205,13 @@
   font-size: 14px; /* Adjust the font size as needed */
 }
 
+body {
+    background-color: white !important;
+}
+.navbar {
+    background-color: white !important;
+}
+
 
 
 
