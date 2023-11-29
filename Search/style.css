@@ -264,3 +264,102 @@ body {
 
 
 
+'
+
+
+/* div {
+  border:1px solid black;
+} */
+
+.small {
+  font-size: 12px;
+}
+
+.font-monospace {
+  font-size: 12px;
+}
+
+.height {
+  height: 100vh
+}
+
+.form {
+  position: relative
+}
+
+.form .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af
+}
+
+.form span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+  padding-left: 7px
+}
+
+.left-pan i {
+  padding-left: 10px
+}
+
+.form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px
+}
+
+.form-input:focus {
+  box-shadow: 1px;
+  border: 1px
+}
+
+/* Modify these styles in your existing CSS file */
+.search-bar {
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  padding: 4px; /* Adjusted padding for a sleeker look */
+}
+
+.form-input {
+  border: none;
+  outline: none;
+  flex: 1; /* Fill available space */
+  padding: 12px; /* Adjusted padding for a more comfortable input area */
+  font-size: 16px; /* Adjusted font size */
+}
+
+.google-search-btn,
+.feeling-lucky-btn {
+  background-color: #4285f4;
+  color: #ffffff;
+  border: 1px solid #4285f4;
+  border-radius: 24px;
+  padding: 10px 16px; /* Adjusted padding for a more comfortable button */
+  margin-left: 8px; /* Added margin between the buttons */
+  cursor: pointer;
+}
+
+.feeling-lucky-btn {
+  background-color: #f8f9fa;
+  color: #3c4043;
+  border: 1px solid #f8f9fa;
+}
+
+/* Add these styles to your existing or new CSS file */
+.search-container {
+  text-align: center;
+  margin-top: 100px;
+  background-color: lightgray; /* Add this line to check if styles are applied */
+}
+
+/* ... (rest of the styles) */
