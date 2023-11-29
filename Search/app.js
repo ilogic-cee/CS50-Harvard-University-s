@@ -3,7 +3,7 @@ const App = () => {
     React.createElement('div', null,
       React.createElement('nav', { className: 'navbar fixed-top navbar-expand-sm navbar-light bg-light' },
         React.createElement('div', { className: 'container-fluid' },
-          React.createElement('a', { className: 'navbar-brand', href: 'index.html' }, 'Google'),
+          React.createElement('a', { className: 'navbar-brand', href: 'index.html' }, ''),
           React.createElement('button', { className: 'navbar-toggler', type: 'button', 'data-bs-toggle': 'collapse', 'data-bs-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
             React.createElement('span', { className: 'navbar-toggler-icon' })
           ),
