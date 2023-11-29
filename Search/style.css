@@ -89,3 +89,31 @@
 	font-size: 14px; /* Adjust the font size as needed */
 	padding: 6px 12px; /* Adjust the padding as needed */
   }
+
+
+/*making css similar to google.com */
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+  }
+
+  .navbar-nav li {
+	margin: 0 10px;
+  }
+
+  .navbar-nav a {
+	text-decoration: none;
+	color: #70757a; /* Google's link color */
+  }
+
+  /* Style for the navigation links on hover */
+  .navbar-nav a:hover {
+	text-decoration: underline;
+  }
+
+  /* Style for the active link */
+  .navbar-nav .active {
+	font-weight: bold;
+	color: #4285f4; /* Google's active link color */
+  }
