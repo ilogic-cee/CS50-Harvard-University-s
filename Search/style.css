@@ -157,11 +157,12 @@ body {
 }
 
 .form-input {
-    border: none;
-    outline: none;
-    flex: 1; /* Fill available space */
-    padding: 12px; /* Adjusted padding for a more comfortable input area */
-    font-size: 16px; /* Adjusted font size */
+  border: none;
+  outline: none;
+  flex: 1; /* Fill available space */
+  padding: 12px; /* Adjusted padding for a more comfortable input area */
+  font-size: 16px; /* Adjusted font size */
+  border-radius: 24px; /* Rounded corners */
 }
 
 .google-search-btn,
