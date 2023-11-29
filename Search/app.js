@@ -72,10 +72,10 @@ function myFunction() {
   return true;
 }
 
-/* removing the boarder */
+/* Add this to your existing CSS */
 
-/* Override the border style for the navbar */
-.navbar {
-  border: none; /* Remove the border */
+/* Remove the border from the top of the navbar */
+.navbar-light {
+  border-top: none;
 }
 
