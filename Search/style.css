@@ -264,29 +264,3 @@ body {
 
 
 
-  #mainSection #inputField {
-    border: 1px solid #dfe1e5; // Search bar border
-    height: 30px; // Search bar height
-    border-radius: 24px; // Search bar rounded corners
-    display: flex; // Arrange elements horizontally
-    align-items: center; // Vertically align elements in the center
-    padding: 10px; // Search bar padding
-    width: 584px; // Search bar width
-  }
-
-  #mainSection #inputField i { // Search icon
-    color: lightgrey;
-  }
-
-  #mainSection #inputField:hover, #mainSection #button input:hover { // Hover effect for search bar and buttons
-    box-shadow: 0 0 5px gray;
-  }
-
-  #mainSection #inputField input { // Search input field
-    width: 100%; // Stretch input field to fill available space
-    border: none; // Remove border from input field
-    box-shadow: none !important; // Override box-shadow for input field
-    outline: none !important; // Remove outline from input field
-    margin-left: 7px; // Add margin to the left of the input field
-    font-size: 16px; // Input field text size
-  }
