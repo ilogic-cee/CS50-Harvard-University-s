@@ -80,7 +80,7 @@ const App = () => {
                   formAction="https://google.com/search"
                   className="btn btn-secondary mx-3"
                 >
-                  CS50ogle Search
+                  Google
                 </button>
                 <button
                   onClick={myFunction}
