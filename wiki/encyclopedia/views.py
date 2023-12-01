@@ -1,15 +1,15 @@
 from django.shortcuts import render
-from markdown2 import Markdown
+import markdown
 
 from . import util
 
 def convert_md_to_html(title):
     content = util.get_entry(title)
-     markdowner = Markdown()
+     markdowner = markdown.Markdown()
     if content == None:
        return None
     else:
-     return markdowner.convert("*boo!*")
+     return markdowner.convert(content)
 
 def index(request):
    return render(request, "encyclopedia/index.html", {
