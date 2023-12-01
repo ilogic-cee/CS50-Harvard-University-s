@@ -5,7 +5,7 @@ from . import util
 
 def convert_md_to_html(title):
     content = util.get_entry(title)
-     markdowner = markdown.Markdown()
+ markdowner = markdown.Markdown()
     if content == None:
        return None
     else:
