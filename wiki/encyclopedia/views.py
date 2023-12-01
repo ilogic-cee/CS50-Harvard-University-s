@@ -18,7 +18,7 @@ def index(request):
 
 def entry(request, title):
     html_content = convert_md_to_html(title)
-    if html_content is None:
+    if html_content == None:
         return render(request, "encyclopedia/error.html")
     else:
         return render(request, "encyclopedia/entry.html", {
