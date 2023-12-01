@@ -28,5 +28,3 @@ def entry(request, title):
             "html_content": html_content
         })
 
-def css_view(request):
-    return render(request, 'css_template.html')
