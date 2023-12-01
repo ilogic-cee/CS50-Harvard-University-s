@@ -17,4 +17,6 @@ def index(request):
     })
 
 def entry(request, title):
-  htm
+  html_content = convert_md_to_html(title)
+  if html_content == None:
+    return render(request, "")
