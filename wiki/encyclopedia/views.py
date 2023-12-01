@@ -21,4 +21,7 @@ def entry(request, title):
     if html_content is None:
         return render(request, "encyclopedia/error.html")
     else:
-        return render(request, "encylopedia/entry.html")
+        return render(request, "encyclopedia/entry.html", {
+            "title": title,
+            "html_content": html_content
+        })
