@@ -9,7 +9,7 @@ def convert_md_to_html(title):
     if content == None:
        return None
     else:
-    markdowner.convert("*boo!*")
+     return markdowner.convert("*boo!*")
 
 def index(request):
     entries = util.list_entries()
