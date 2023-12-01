@@ -12,10 +12,7 @@ def convert_md_to_html(title):
      return markdowner.convert("*boo!*")
 
 def index(request):
-    entries = util.list_entries()
-    css_file = util.get_entry("CSS")
-    coffee = util.get_entry("coffee")
-    return render(request, "encyclopedia/index.html", {
+   return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
 
