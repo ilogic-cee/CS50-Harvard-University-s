@@ -6,6 +6,9 @@ from . import util
 def convert_md_to_html(title):
     content = util.get_entry(title)
      markdowner = Markdown()
+    if content == None:
+       return None
+    else:
     markdowner.convert("*boo!*")
 
 def index(request):
