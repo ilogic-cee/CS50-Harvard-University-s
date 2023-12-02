@@ -116,7 +116,7 @@ def django_view(request):
 
 
 
-def search(request):
+def search_form(request):
     if request.method == "POST":
         entry_search = request.POST.get('q', '')  # Use get() to avoid KeyError
         html_content = convert_md_to_html(entry_search)
@@ -132,6 +132,6 @@ def search(request):
             for entry in allEntries:
                 if entry_search.lower() in entry.lower():
                      recommendation.append(entry)
-            return render(request, )
+            return render(request,  )
     # Handle other cases (e.g., GET requests) if needed
    # return render(request, "encyclopedia/search_form.html")
