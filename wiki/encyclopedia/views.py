@@ -29,6 +29,21 @@ def entry(request, title):
         })
 
 def css_view(request):
-    # Your logic for the css_view goes here
-    return render(request, "encyclopedia/css_view.html")  # You should create this HTML file
+    # Load content from the CSS.md file
+    title = "CSS"
+    content = util.get_entry(title)
 
+    # If the entry doesn't exist, show an error message
+    if content is None:
+        return render(request, "encyclopedia/error.html", {
+            "message": f"This entry for {title} does not exist"
+        })
+
+    # Convert Markdown to HTML
+    html_content = markdown.markdown(content)
+
+    # Render the CSS view
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": html_content
+    })
