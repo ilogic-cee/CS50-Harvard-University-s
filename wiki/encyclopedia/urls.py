@@ -9,4 +9,5 @@ urlpatterns = [
     path('wiki/html', views.html_view, name='html_view'),
     path('wiki/python', views.python_view, name='python_view'),
     path('wiki/<str:title>', views.entry, name='entry'),
+     path('wiki/django', views.django_view, name='django_view'),
 ]

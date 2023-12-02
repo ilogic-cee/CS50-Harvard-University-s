@@ -93,3 +93,23 @@ def render_entry(request, title):
         "title": title,
         "content": html_content
     })
+
+ def django_view(request):
+    # Load content from the Django.md file
+    title = "Django"
+    content = util.get_entry(title)
+
+    # If the entry doesn't exist, show an error message
+    if content is None:
+        return render(request, "encyclopedia/error.html", {
+            "message": f"This entry for {title} does not exist"
+        })
+
+    # Convert Markdown to HTML
+    html_content = markdown.markdown(content)
+
+    # Render the Django view
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": html_content
+    })
