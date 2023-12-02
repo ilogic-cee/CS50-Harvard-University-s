@@ -94,7 +94,7 @@ def render_entry(request, title):
         "content": html_content
     })
 
- def django_view(request):
+def django_view(request):
     # Load content from the Django.md file
     title = "Django"
     content = util.get_entry(title)
