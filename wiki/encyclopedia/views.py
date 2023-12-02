@@ -131,6 +131,7 @@ def search(request):
             allEntries = util.list_entries()
             for entry in allEntries:
                 if entry_search.lower() in entry.lower():
+                     recommendation.append(entry)
             return render(request, "encyclopedia/error.html", {
                 "message": f"No entry found for '{entry_search}'"
             })
