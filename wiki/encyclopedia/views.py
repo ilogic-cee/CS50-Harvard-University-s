@@ -67,3 +67,29 @@ def git_view(request):
         "title": title,
         "content": html_content
     })
+
+
+def html_view(request):
+    return render_entry(request, "HTML")
+
+def python_view(request):
+    return render_entry(request, "Python")
+
+def render_entry(request, title):
+    # Load content from the respective Markdown file
+    content = util.get_entry(title)
+
+    # If the entry doesn't exist, show an error message
+    if content is None:
+        return render(request, "encyclopedia/error.html", {
+            "message": f"This entry for {title} does not exist"
+        })
+
+    # Convert Markdown to HTML
+    html_content = markdown.markdown(content)
+
+    # Render the view for the specific entry
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": html_content
+    })
