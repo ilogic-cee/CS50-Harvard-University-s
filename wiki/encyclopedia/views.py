@@ -128,6 +128,9 @@ def search(request):
             })
         else:
             # Entry not found, display an error message or redirect to a search results page
+            allEntries = util.list_entries()
+            for entry in allEntries:
+                if entry_search.lower() in entry.lower():
             return render(request, "encyclopedia/error.html", {
                 "message": f"No entry found for '{entry_search}'"
             })
