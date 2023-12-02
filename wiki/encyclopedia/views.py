@@ -132,9 +132,6 @@ def search(request):
             for entry in allEntries:
                 if entry_search.lower() in entry.lower():
                      recommendation.append(entry)
-            return render(request, "encyclopedia/error.html", {
-                "message": f"No entry found for '{entry_search}'"
-            })
-
+            return render(request, )
     # Handle other cases (e.g., GET requests) if needed
-    return render(request, "encyclopedia/search_form.html")
+   # return render(request, "encyclopedia/search_form.html")
