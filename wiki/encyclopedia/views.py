@@ -47,3 +47,23 @@ def css_view(request):
         "title": title,
         "content": html_content
     })
+
+def git_view(request):
+    # Load content from the Git.md file
+    title = "Git"
+    content = util.get_entry(title)
+
+    # If the entry doesn't exist, show an error message
+    if content is None:
+        return render(request, "encyclopedia/error.html", {
+            "message": f"This entry for {title} does not exist"
+        })
+
+    # Convert Markdown to HTML
+    html_content = markdown.markdown(content)
+
+    # Render the Git view
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "content": html_content
+    })
