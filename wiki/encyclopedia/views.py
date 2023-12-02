@@ -115,12 +115,22 @@ def django_view(request):
     })
 
 
+
 def search(request):
-    if request.method =="POST":
-        entry_search = request.POST['q']
+    if request.method == "POST":
+        entry_search = request.POST.get('q', '')  # Use get() to avoid KeyError
         html_content = convert_md_to_html(entry_search)
+
         if html_content is not None:
-            return render(request, "encyclopedia/entry.html",{
+            return render(request, "encyclopedia/entry.html", {
                 "title": entry_search,
                 "content": html_content
             })
+        else:
+            # Entry not found, display an error message or redirect to a search results page
+            return render(request, "encyclopedia/error.html", {
+                "message": f"No entry found for '{entry_search}'"
+            })
+
+    # Handle other cases (e.g., GET requests) if needed
+    return render(request, "encyclopedia/search_form.html")
