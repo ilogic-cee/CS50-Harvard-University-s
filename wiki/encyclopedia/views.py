@@ -28,11 +28,7 @@ def entry(request, title):
             "content": html_content
         })
 
-It seems like the `css_view` function is missing in your `views.py` file. You need to add the `css_view` function to resolve the `AttributeError` you are encountering.
 
-Here's the modified `views.py` with the addition of `css_view`:
-
-```python
 from django.shortcuts import render
 import markdown
 
