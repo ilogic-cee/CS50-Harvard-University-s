@@ -11,4 +11,5 @@ urlpatterns = [
     path('wiki/<str:title>', views.entry, name='entry'),
     path('wiki/django', views.django_view, name='django_view'),
     path('search/', views.search, name='search'),
+    path('entry/<str:title>/', views.entry, name='entry'),
 ]
