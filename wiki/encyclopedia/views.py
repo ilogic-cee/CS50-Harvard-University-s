@@ -113,3 +113,8 @@ def django_view(request):
         "title": title,
         "content": html_content
     })
+
+
+def search(request):
+    if request.method =="POST":
+        entry_search = request.POST['q']
