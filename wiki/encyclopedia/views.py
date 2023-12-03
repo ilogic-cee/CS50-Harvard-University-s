@@ -3,9 +3,9 @@ import markdown
 from .forms import CreateEntryForm
 from .util import save_entry, get_entry, list_entries, convert_md_to_html
 import logging
+from .models import Entry
 from . import util
 from django.http import Http404
-from .models import Entry
 from .forms import EditEntryForm  # Assuming you have a form for editing entries
 
 def convert_md_to_html(title):
