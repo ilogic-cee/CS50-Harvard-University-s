@@ -3,7 +3,6 @@ import markdown
 from .forms import CreateEntryForm
 from .util import save_entry, get_entry, list_entries, convert_md_to_html
 import logging
-
 from . import util
 
 def convert_md_to_html(title):
@@ -146,9 +145,7 @@ def search_form(request):
     # return render(request, "encyclopedia/search_form.html")
 logger = logging.getLogger(__name__)
 
-from django.shortcuts import render, redirect
-from .forms import CreateEntryForm
-from .util import save_entry, get_entry, list_entries, convert_md_to_html
+
 
 def new_page(request):
     if request.method == 'POST':
