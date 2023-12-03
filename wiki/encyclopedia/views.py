@@ -141,3 +141,16 @@ def search_form(request):
 
     # Handle other cases (e.g., GET requests) if needed
     # return render(request, "encyclopedia/search_form.html")
+
+def create_page(request):
+    if request.method == 'POST':
+        form = CreateEntryForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+            util.save_entry(title, content)
+            return redirect('entry', title=title)
+    else:
+        form = CreateEntryForm()
+
+    return render(request, 'encyclopedia/create_page.html', {'form': form})
