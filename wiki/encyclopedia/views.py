@@ -153,7 +153,7 @@ def new_page(request):
             content = form.cleaned_data['content']
 
             # Check if the entry already exists
-            if title.lower() in [entry.lower() for entry in list_entries()]:
+            if get_entry(title):
                 return render(request, 'encyclopedia/error.html', {
                     'message': f'The entry "{title}" already exists.'
                 })
