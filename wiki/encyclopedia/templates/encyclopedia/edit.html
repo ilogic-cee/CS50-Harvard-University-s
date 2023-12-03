@@ -10,6 +10,10 @@
         {% csrf_token %}
         {{ form.as_p }}
         {% if form.errors %}
+        <input type="text" name="title" placeholder="Enter a title" value>
+        <br/>
+        <label> Markdown Content:</label>
+        <br/>
             <div class="alert alert-danger">
                 <strong>Error:</strong> There are errors in the form.
                 Please correct them and try again.
