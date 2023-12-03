@@ -13,6 +13,6 @@ urlpatterns = [
     path('search/', views.search_form, name='search'),  # Update to search_form
     path('entry/<str:title>/', views.entry, name='entry'),
     path('new/', views.new_page, name='new_page'), # creating a new URL pattern for a new page
-    path('edit/', views.edit, name="edit"), 
+    path('edit/', views.edit_view, name='edit'),
 
 ]
