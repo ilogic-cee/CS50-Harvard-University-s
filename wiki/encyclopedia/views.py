@@ -199,11 +199,13 @@ def edit_entry(request, entry_title):
     def edit(request):
 
        if request.method == ”POST”:
-
-           title = [request.POST](http://request.POST)[’entry_title’]
-
-           content = util.get_entry(title)
-
+          title = [request.POST][’entry_title’]
+          content = util.get_entry(title)
+          return render(request, "encyclopedia/edit.html"),{
+              "title": title,
+              "content": content
+          })
+          
 # views.py
 class MyView(View):
     def some_method(self):
