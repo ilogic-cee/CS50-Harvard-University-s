@@ -5,6 +5,10 @@ from .util import save_entry, get_entry, list_entries, convert_md_to_html
 import logging
 from . import util
 
+from django.http import Http404
+from .models import Entry
+from .forms import EditEntryForm  # Assuming you have a form for editing entries
+
 def convert_md_to_html(title):
     content = util.get_entry(title)
     markdowner = markdown.Markdown()
@@ -174,4 +178,20 @@ def new_page(request):
 
     return render(request, 'encyclopedia/new_page.html', {'form': form})
 
+
+def edit_entry(request, entry_title):
+    try:
+        entry = Entry.objects.get(title=entry_title)
+    except Entry.DoesNotExist:
+        raise Http404("Entry does not exist")
+
+    if request.method == 'POST':
+        form = EditEntryForm(request.POST, instance=entry)
+        if form.is_valid():
+            form.save()
+            return redirect('entry', title=entry_title)  # Redirect to the updated entry page
+    else:
+        form = EditEntryForm(instance=entry)
+
+    return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
 
