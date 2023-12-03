@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import markdown
+from .forms import CreateEntryForm
 
 
 from . import util
