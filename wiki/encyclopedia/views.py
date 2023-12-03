@@ -195,6 +195,15 @@ def edit_entry(request, entry_title):
 
     return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
 
+    #vs
+    def edit(request):
+
+       if request.method == ”POST”:
+
+           title = [request.POST](http://request.POST)[’entry_title’]
+
+           content = util.get_entry(title)
+
 # views.py
 class MyView(View):
     def some_method(self):
