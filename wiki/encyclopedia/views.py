@@ -146,6 +146,10 @@ def search_form(request):
     # return render(request, "encyclopedia/search_form.html")
 logger = logging.getLogger(__name__)
 
+from django.shortcuts import render, redirect
+from .forms import CreateEntryForm
+from .util import save_entry, get_entry, list_entries, convert_md_to_html
+
 def new_page(request):
     if request.method == 'POST':
         form = CreateEntryForm(request.POST)
@@ -155,8 +159,6 @@ def new_page(request):
 
             # Check if the entry already exists
             existing_entry = get_entry(title)
-            print(existing_entry)  # Add this line for debugging
-
             if existing_entry is not None:
                 return render(request, 'encyclopedia/error.html', {
                     'message': f'The entry "{title}" already exists.'
@@ -167,8 +169,12 @@ def new_page(request):
 
             # Redirect to the new entry's page
             return redirect('entry', title=title)
+        else:
+            # Form is not valid, you can add additional logic or context data here
+            print(form.errors)  # Print form errors to console for debugging
     else:
         form = CreateEntryForm()
 
     return render(request, 'encyclopedia/new_page.html', {'form': form})
+
 
