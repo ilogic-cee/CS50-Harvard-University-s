@@ -42,5 +42,5 @@ def convert_md_to_html(content):
     """
     Converts Markdown content to HTML.
     """
-    markdowner = markdown.Markdown()
-    return markdowner.convert(content)
+def convert_md_to_html(markdown_content):
+    return markdown.markdown(markdown_content)
