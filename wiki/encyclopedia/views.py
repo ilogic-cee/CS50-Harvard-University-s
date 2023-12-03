@@ -194,3 +194,7 @@ def edit_entry(request, entry_title):
 
     return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
 
+class MyView(View):
+
+
+from .models import Entry
