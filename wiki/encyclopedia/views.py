@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 import markdown
 from .forms import CreateEntryForm
 from .util import save_entry, get_entry, list_entries, convert_md_to_html
-
+import logging
 
 from . import util
 
@@ -144,6 +144,7 @@ def search_form(request):
 
     # Handle other cases (e.g., GET requests) if needed
     # return render(request, "encyclopedia/search_form.html")
+logger = logging.getLogger(__name__)
 
 def new_page(request):
     if request.method == 'POST':
