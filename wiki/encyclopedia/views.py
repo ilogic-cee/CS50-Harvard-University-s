@@ -153,7 +153,10 @@ def new_page(request):
             content = form.cleaned_data['content']
 
             # Check if the entry already exists
-            if get_entry(title):
+            existing_entry = get_entry(title)
+            print(existing_entry)  # Add this line for debugging
+
+            if existing_entry is not None:
                 return render(request, 'encyclopedia/error.html', {
                     'message': f'The entry "{title}" already exists.'
                 })
@@ -167,3 +170,4 @@ def new_page(request):
         form = CreateEntryForm()
 
     return render(request, 'encyclopedia/new_page.html', {'form': form})
+
