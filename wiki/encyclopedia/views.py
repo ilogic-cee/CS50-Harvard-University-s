@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import markdown
 from .forms import CreateEntryForm
 from .util import save_entry, get_entry, list_entries, convert_md_to_html
