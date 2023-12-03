@@ -142,7 +142,7 @@ def search_form(request):
     # Handle other cases (e.g., GET requests) if needed
     # return render(request, "encyclopedia/search_form.html")
 
-def create_page(request):
+def new_page(request):
     if request.method == 'POST':
         form = CreateEntryForm(request.POST)
         if form.is_valid():
@@ -153,4 +153,4 @@ def create_page(request):
     else:
         form = CreateEntryForm()
 
-    return render(request, 'encyclopedia/create_page.html', {'form': form})
+    return render(request, 'encyclopedia/new_page.html', {'form': form})
