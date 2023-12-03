@@ -145,14 +145,20 @@ def search_form(request):
     # return render(request, "encyclopedia/search_form.html")
 
 def new_page(request):
-    if request.method == 'POST':
-        form = CreateEntryForm(request.POST)
-        if form.is_valid():
-            title = form.cleaned_data['title']
-            content = form.cleaned_data['content']
-            util.save_entry(title, content)
-            return redirect('entry', title=title)
+    if request.method == 'GET':
+           return render(request, 'encyclopedia/new_page.html')
     else:
-        form = CreateEntryForm()
-
-    return render(request, 'encyclopedia/new_page.html', {'form': form})
+        title = request.POST['title']
+        content = request.POST['content']
+        titleExits = util.get_entry(title)
+        if titleExits is not None:
+            return render(request, "encyclopedia/error.html",{
+                "message": "Entry page already exists"
+            })
+        else:
+            util.save_entry(title, content)
+            html_content = convert_md_to_html(title)
+            return render(request, "encyclopedia/entry.html", {
+                "title": title,
+                "content":html_content 
+            })
