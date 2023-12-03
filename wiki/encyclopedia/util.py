@@ -36,3 +36,9 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
+def convert_md_to_html(content):
+    """
+    Converts Markdown content to HTML.
+    """
+    markdowner = markdown.Markdown()
+    return markdowner.convert(content)
