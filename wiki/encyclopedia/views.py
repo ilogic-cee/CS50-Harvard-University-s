@@ -135,10 +135,9 @@ def search_form(request):
                 if entry_search.lower() in entry.lower():
                     recommendation.append(entry)
 
-           return render(request, "encyclopedia/search_form.html", {
-    "recommendation": recommendation
-})
-
+            return render(request, "encyclopedia/search.html", {
+                "recommendation": recommendation
+            })
 
     # Handle other cases (e.g., GET requests) if needed
     # return render(request, "encyclopedia/search_form.html")
