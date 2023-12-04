@@ -183,22 +183,22 @@ def new_page(request):
 
 def edit_entry(request, entry_title):
     # Get the entry or raise a 404 error if it doesn't exist
-    entry = get_object_or_404(Entry, title=entry_title)
+ #   entry = get_object_or_404(Entry, title=entry_title)
 
-    if request.method == 'POST':
+ #   if request.method == 'POST':
         # Handle form submission
-        form = EditEntryForm(request.POST, instance=entry)
-        if form.is_valid():
-            form.save()
-            print("Form saved successfully")
-            return redirect('entry', title=entry_title)  # Redirect to the updated entry page
-        else:
-            print("Form is invalid:", form.errors)
-    else:
-        # Render the form with the existing entry data
-        form = EditEntryForm(instance=entry)
+    #    form = EditEntryForm(request.POST, instance=entry)
+    #    if form.is_valid():
+    #        form.save()
+    #        print("Form saved successfully")
+    #        return redirect('entry', title=entry_title)  # Redirect to the updated entry page
+    #    else:
+     #       print("Form is invalid:", form.errors)
+  #  else:
+   #     # Render the form with the existing entry data
+  #      form = EditEntryForm(instance=entry)
 
-    return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
+ #   return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
 
 
 
