@@ -1,24 +1,21 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    {{ title }}
+    Encyclopedia
 {% endblock %}
 
 {% block body %}
-    {{ content | safe }}
-
-    <a href="{% url 'edit_entry' entry_title=title %}">Edit</a>
-
-    <!-- The form for submitting edits -->
-    <form action="{% url 'edit_entry' entry_title=title %}" method="POST">
+    <h1>Edit page</h1>
+    <form action="{% url 'new_page' %}" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        {% if form.errors %}
-            <div class="alert alert-danger">
-                <strong>Error:</strong> There are errors in the form.
-                Please correct them and try again.
-            </div>
-        {% endif %}
-        <input type="submit" value="Edit" class="btn btn-danger">
+     <label>Title:</label>
+     <input type="text" name="title" placeholder="Enter a title">
+     <br/>
+     <label>Markdown Content:</label>
+     <br/>
+     <textarea name="content"></textarea>
+     <br/>
+        <input type="submit" value="New page" class="btn btn-primary">
     </form>
 {% endblock %}
+
