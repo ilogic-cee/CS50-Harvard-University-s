@@ -183,7 +183,7 @@ def new_page(request):
 
 #def edit_entry(request, entry_title):
 
-def edit(request):
+def edit_entry(request):
     if request.method == "POST":
         title = request.POST['entry_title']
         content = util.get_entry(title)
