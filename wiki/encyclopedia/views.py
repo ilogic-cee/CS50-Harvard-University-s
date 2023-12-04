@@ -182,14 +182,12 @@ def new_page(request):
 
 
 #def edit_entry(request, entry_title):
- 
-          def edit(request):
 
-       if request.method == ”POST”:
+def edit(request):
+    if request.method == "POST":
+        title = request.POST['entry_title']
+        content = util.get_entry(title)
 
-           title = [request.POST](http://request.POST)[’entry_title’]
-
-           content = util.get_entry(title)
     # Get the entry or raise a 404 error if it doesn't exist
  #   entry = get_object_or_404(Entry, title=entry_title)
 
