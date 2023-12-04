@@ -9,8 +9,6 @@ class Entry(models.Model):
     def __str__(self):
         return self.title
 
-class Entry(models.Model):
-    # your other fields
 
     class Meta:
         # Add this line to set a custom primary key
