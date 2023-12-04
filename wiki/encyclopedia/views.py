@@ -190,12 +190,16 @@ def edit_entry(request, entry_title):
         form = EditEntryForm(request.POST, instance=entry)
         if form.is_valid():
             form.save()
+            print("Form saved successfully")
             return redirect('entry', title=entry_title)  # Redirect to the updated entry page
+        else:
+            print("Form is invalid:", form.errors)
     else:
         # Render the form with the existing entry data
         form = EditEntryForm(instance=entry)
 
     return render(request, 'encyclopedia/edit.html', {'form': form, 'title': entry_title})
+
 
 
 
