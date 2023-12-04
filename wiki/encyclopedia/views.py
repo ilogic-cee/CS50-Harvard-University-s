@@ -8,6 +8,8 @@ from . import util
 from django.http import Http404
 from .forms import EditEntryForm  # Assuming you have a form for editing entries
 from django.views import View
+from django.shortcuts import get_object_or_404
+
 
 def convert_md_to_html(title):
     content = util.get_entry(title)
