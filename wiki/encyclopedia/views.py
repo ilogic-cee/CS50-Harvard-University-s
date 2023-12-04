@@ -186,11 +186,10 @@ def new_page(request):
 def edit_entry(request):
     if request.method == "POST":
         title = request.POST['entry_title']
-        content = util.get_entry(title)
-        return render(request, "encycopedia/edit.html", {
-            "title": title,
-             "content": content
-        })
+        entry = get_object_or_404(Entry, title=title)
+        return render(request, "encyclopedia/edit.html", {
+            "title": entry.title,
+            "content": entry.content 
 
     # Get the entry or raise a 404 error if it doesn't exist
  #   entry = get_object_or_404(Entry, title=entry_title)
