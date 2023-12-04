@@ -10,6 +10,6 @@
     <form action="{% url 'edit_entry' entry_title=title %}" method="POST">
         {% csrf_token %}
         <input type="hidden" name="entry_title" value="{{ title }}">
-        <input type="submit" value="Edit" class="btn btn-danger">
+        <input type="submit" name="edit_action" value="Edit" class="btn btn-danger">
     </form>
 {% endblock %}
