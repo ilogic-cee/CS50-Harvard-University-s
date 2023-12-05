@@ -37,12 +37,6 @@
 	padding-left: 10px
 }
 
-.form-input {
-	height: 55px;
-	text-indent: 33px;
-	border-radius: 10px
-}
-
 .form-input:focus {
 	box-shadow: 1px;
 	border: 1px
@@ -76,12 +70,6 @@
 
 /* Set the font size and padding for the buttons */
 .btn-secondary {
-	font-size: 14px; /* Adjust the font size as needed */
-	padding: 6px 12px; /* Adjust the padding as needed */
-  }
-
-  #advanced-search-btn,
-  #feeling-lucky-btn {
 	font-size: 14px; /* Adjust the font size as needed */
 	padding: 6px 12px; /* Adjust the padding as needed */
   }
