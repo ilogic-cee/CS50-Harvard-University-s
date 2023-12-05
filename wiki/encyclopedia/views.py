@@ -10,6 +10,8 @@ from .forms import EditEntryForm  # Assuming you have a form for editing entries
 from django.views import View
 from django.shortcuts import get_object_or_404
 import random
+from .utils import convert_md_to_html
+
 
 
 
