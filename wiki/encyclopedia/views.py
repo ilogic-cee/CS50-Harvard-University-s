@@ -227,3 +227,4 @@ class MyView(View):
         from .models import Entry  # Import within the method
         entry_instance = Entry.objects.get(pk=1)
         # Your code here
+
