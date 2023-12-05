@@ -15,5 +15,5 @@ urlpatterns = [
     path('new/', views.new_page, name='new_page'), # creating a new URL pattern for a new page
     path('edit/<str:entry_title>/', views.edit_entry, name='edit_entry'),
     path('save_edit', views.save_edit, name="save_edit"),
-    path('random/', views.custom_random_page, name='random_page'),  #
+    path('random/', views.custom_random_page, name='random_page'),  
 ]
