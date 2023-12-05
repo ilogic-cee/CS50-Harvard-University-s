@@ -152,12 +152,7 @@ body {
   }
 
 /*Took the .search__input implementation and replaced it in .form-input*/
-.form-input {
-  flex: 1;
-  padding: 10px 20px;
-  border: none;
-  outline: none;
-}
+.form-input 
 
 
 /* Add these styles to your existing or new CSS file */
