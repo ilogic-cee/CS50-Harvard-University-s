@@ -236,3 +236,11 @@ class MyView(View):
         entry_instance = Entry.objects.get(pk=1)
         # Your code here
 
+def rand(request):
+    allEntries = util.list_entries()
+    rand_entry = random.choice(allEntries)
+    html_content = convert_md_html(rand_entry)
+    return render(request, "encyclopedia/entry.html"{
+        "title": rand_entry,
+        "content": html_content
+    })
