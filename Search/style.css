@@ -232,7 +232,6 @@ body {
   margin-top: 20px; /* Add margin for separation from the logo */
 }
 
-
   .form-input {
     border: none;
     outline: none;
@@ -241,30 +240,22 @@ body {
     font-size: 16px; /* Adjusted font size */
     border-radius: 24px; /* Rounded corners */
   }
-.google-search-btn,
-.feeling-lucky-btn {
-  margin: 5px;
-  padding: 10px 15px;
-  background-color: #f8f8f8;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
+  .google-search-btn,
+  .feeling-lucky-btn {
+    background-color: #f8f8f8;
+    color: #4285f4; /* Google's color for search button */
+    border: none;
+    border-radius: 24px;
+    padding: 10px 16px; /* Adjusted padding for a more comfortable button */
+    margin-top: 10px; /* Add margin for separation from the search bar */
+    cursor: pointer;
+  }
 
-.feeling-lucky-btn {
-  background-color: #f8f9fa;
-  color: #3c4043;
-  border: 1px solid #f8f9fa;
-}
-
-/* Add these styles to your existing or new CSS file */
-.search-container {
-  text-align: center;
-  margin-top: 100px;
-  background-color: lightgray; /* Add this line to check if styles are applied */
-}
-
-/* ... (rest of the styles) */
+  .feeling-lucky-btn {
+    background-color: #f8f9fa;
+    color: #3c4043;
+    border: 1px solid #f8f9fa;
+  }
 
 
 
