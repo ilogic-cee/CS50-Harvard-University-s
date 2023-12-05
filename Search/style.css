@@ -160,13 +160,12 @@ body {
 
 .google-search-btn,
 .feeling-lucky-btn {
-    background-color: #4285f4;
-    color: #ffffff;
-    border: 1px solid #4285f4;
-    border-radius: 24px;
-    padding: 10px 16px; /* Adjusted padding for a more comfortable button */
-    margin-left: 8px; /* Added margin between the buttons */
-    cursor: pointer;
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .feeling-lucky-btn {
