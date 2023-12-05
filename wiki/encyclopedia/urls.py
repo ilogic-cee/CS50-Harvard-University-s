@@ -20,3 +20,4 @@ urlpatterns = [
     path('edit/<str:entry_title>/', views.edit_entry, name='edit_entry'),
     path('save_edit', views.save_edit, name="save_edit"),
 ]
+
