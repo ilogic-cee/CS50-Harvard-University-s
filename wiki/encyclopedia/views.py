@@ -3,10 +3,8 @@ import markdown
 from .forms import CreateEntryForm
 from .utils import save_entry, get_entry, list_entries, convert_md_to_html
 import logging
-from .models import Entry
 from . import util
 from django.http import Http404
-from .forms import EditEntryForm  # Assuming you have a form for editing entries
 from django.views import View
 from django.shortcuts import get_object_or_404
 import random
