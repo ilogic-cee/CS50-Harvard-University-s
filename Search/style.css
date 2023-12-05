@@ -138,7 +138,7 @@ body {
 	margin-top: 100px;
   }
 
-/
+/*Took the .search__input implementation and replaced it in .form-input*/
 .form-input {
   display: flex;
   align-items: center;
