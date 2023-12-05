@@ -12,6 +12,8 @@ from django.shortcuts import get_object_or_404
 import random
 
 
+
+
 def convert_md_to_html(title):
     content = util.get_entry(title)
     markdowner = markdown.Markdown()
@@ -246,6 +248,7 @@ def custom_random_page(request):
     try:
         random_entry = Entry.objects.get(title=random_entry_title)
     except Entry.DoesNotExist:
+        raise Http404("Entry does not exist")
         # Handle the case where the entry does not exist
         return render(request, "encyclopedia/entry_not_found.html", {"title": random_entry_title})
 
