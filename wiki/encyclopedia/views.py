@@ -242,6 +242,10 @@ class MyView(View):
 def custom_random_page(request):
     # Get a random entry title using a custom utility function
     all_entries = list_entries()
+
+    if not all_entries:
+        raise Http404("No entries found")
+
     random_entry_title = random.choice(all_entries)
 
     # Retrieve the full entry details from the database using Django's ORM
