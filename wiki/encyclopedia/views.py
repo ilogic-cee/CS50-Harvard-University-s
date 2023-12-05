@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 import markdown
 from .forms import CreateEntryForm
-from .util import save_entry, get_entry, list_entries, convert_md_to_html
+from .utils import save_entry, get_entry, list_entries, convert_md_to_html
 import logging
 from .models import Entry
 from . import util
@@ -10,7 +10,7 @@ from .forms import EditEntryForm  # Assuming you have a form for editing entries
 from django.views import View
 from django.shortcuts import get_object_or_404
 import random
-from .utils import convert_md_to_html
+
 
 
 
