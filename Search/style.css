@@ -1,5 +1,137 @@
-* {
-  margin: 0;
+.small {
+	font-size: 12px;
+}
+
+.font-monospace {
+	font-size: 12px;
+}
+
+.height {
+	height: 100vh
+}
+
+.form {
+	position: relative
+}
+
+.form .fa-search {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: #9ca3af
+}
+
+.form span {
+	position: absolute;
+	right: 17px;
+	top: 13px;
+	padding: 2px;
+	border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+	padding-left: 7px
+}
+
+.left-pan i {
+	padding-left: 10px
+}
+
+.form-input {
+	height: 55px;
+	text-indent: 33px;
+	border-radius: 10px
+}
+
+.form-input:focus {
+	box-shadow: 1px;
+	border: 1px
+}
+
+.btn-primary {
+	color: white;
+	background-color: CornflowerBlue;
+	border-color: white;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+
+.btn-secondary {
+	color: white;
+	background-color: DarkGray;
+	border-color: white;
+}
+
+.btn-secondary:hover {
+	color: #fff;
+	background-color: #DarkGray;
+	border-color: white;
+}
+
+
+
+/* Set the font size and padding for the buttons */
+.btn-secondary {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 6px 12px; /* Adjust the padding as needed */
+  }
+
+  #advanced-search-btn,
+  #feeling-lucky-btn {
+	font-size: 14px; /* Adjust the font size as needed */
+	padding: 6px 12px; /* Adjust the padding as needed */
+  }
+
+
+/*making css similar to google.com */
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+  }
+
+  .navbar-nav li {
+	margin: 0 10px;
+  }
+
+  .navbar-nav a {
+	text-decoration: none;
+	color: #70757a; /* Google's link color */
+  }
+
+  /* Style for the navigation links on hover */
+  .navbar-nav a:hover {
+	text-decoration: underline;
+  }
+
+  /* Style for the active link */
+  .navbar-nav .active {
+	font-weight: bold;
+	color: #4285f4; /* Google's active link color */
+  }
+
+
+
+/* Add this to your existing CSS */
+
+/* Import Google Product Sans font (if allowed) */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+
+/* If the font import is not allowed, use a web-safe font as a fallback */
+.navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  font-weight: 400; /* Use 700 for bold if needed */
+  font-size: 14px; /* Adjust the font size as needed */
 }
 
 body {
@@ -7,83 +139,29 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 30px;
-  align-items: center;
+.navbar {
+    background-color: white !important;
 }
 
-.header a {
-  margin-right: 20px;
-  text-decoration: inherit;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 15px;
-}
 
-.header a:hover {
-  text-decoration: underline;
-}
+/* Modify these styles in your existing CSS file */
+.container {
+	text-align: center;
+	margin-top: 100px;
+  }
 
-.header__right {
-  display: flex;
-  align-items: center;
-  min-width: 13vw;
-  justify-content: space-between;
-}
 
-.header__right .header__apps {
-  margin-right: 10px;
-}
-
-/* Main Body */
-
-.mainBody {
-  flex: 1;
-  display: flex;
-  margin-top: 12%;
-  flex-direction: column;
-}
-
-.mainBody img {
-  object-fit: contain;
-  height: 100px;
-}
-
-/* search */
-.search__input {
-  display: flex;
-  align-items: center;
-  border: 1px solid lightgray;
-  height: 30px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  width: 75vw;
-  margin: 0 auto;
-  margin-top: 40px;
-  max-width: 560px;
-}
-
-.search__input input {
-  flex: 1;
-  padding: 10px 20px;
+.form-input {
   border: none;
   outline: none;
+  flex: 1; /* Fill available space */
+  padding: 12px; /* Adjusted padding for a more comfortable input area */
+  font-size: 16px; /* Adjusted font size */
+  border-radius: 24px; /* Rounded corners */
 }
 
-.search__input .material-icons {
-  color: gray;
-}
-
-.search__buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.search__buttons button {
+.google-search-btn,
+.feeling-lucky-btn {
   margin: 5px;
   padding: 10px 15px;
   background-color: #f8f8f8;
@@ -91,3 +169,124 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.feeling-lucky-btn {
+    background-color: #f8f9fa;
+    color: #3c4043;
+    border: 1px solid #f8f9fa;
+}
+
+/* Add these styles to your existing or new CSS file */
+.search-container {
+	text-align: center;
+	margin-top: 100px;
+	background-color: lightgray; /* Add this line to check if styles are applied */
+  }
+
+
+
+.small {
+  font-size: 12px;
+}
+
+.font-monospace {
+  font-size: 12px;
+}
+
+.height {
+  height: 100vh
+}
+
+.form {
+  position: relative
+}
+
+.form .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af
+}
+
+.form span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+  padding-left: 7px
+}
+
+.left-pan i {
+  padding-left: 10px
+}
+
+.form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px
+}
+
+.form-input:focus {
+  box-shadow: 1px;
+  border: 1px
+}
+
+
+.search-bar {
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  background-color: #f2f2f2; /* Light gray background */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the search bar horizontally */
+  padding: 10px; /* Adjusted padding for a sleeker look */
+  margin-top: 20px;
+
+  .form-input {
+    border: none;
+    outline: none;
+    flex: 1; /* Fill available space */
+    padding: 12px; /* Adjusted padding for a more comfortable input area */
+    font-size: 16px; /* Adjusted font size */
+    border-radius: 24px; /* Rounded corners */
+  }
+.google-search-btn,
+.feeling-lucky-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.feeling-lucky-btn {
+  background-color: #f8f9fa;
+  color: #3c4043;
+  border: 1px solid #f8f9fa;
+}
+
+/* Add these styles to your existing or new CSS file */
+.search-container {
+  text-align: center;
+  margin-top: 100px;
+  background-color: lightgray; /* Add this line to check if styles are applied */
+}
+
+/* ... (rest of the styles) */
+
+
+
+
+
+
+
+
+
+
+
+v
