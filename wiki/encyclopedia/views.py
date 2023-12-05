@@ -239,16 +239,11 @@ class MyView(View):
         entry_instance = Entry.objects.get(pk=1)
         # Your code here
 
-def custom_random_page(request):
-    allEntries = util.list_entries()
-    # Get a random entry title using the rand function
-    random_entry_title = rand()
-
-    # Convert Markdown to HTML
-    html_content = convert_md_html(random_entry_title)
-
-    # Render the entry details
+def rand(request):
+    allEntries = list_entries()
+    rand_entry = random.choice(allEntries)
+    html_content = convert_md_html(rand_entry)
     return render(request, "encyclopedia/entry.html", {
-        "title": random_entry_title,
+        "title": rand_entry,
         "content": html_content
-    })
+    }) 
