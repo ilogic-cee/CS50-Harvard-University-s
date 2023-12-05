@@ -239,7 +239,7 @@ class MyView(View):
         entry_instance = Entry.objects.get(pk=1)
         # Your code here
 
-def custom_random_page(request):
+def random_page(request):
     # Get a random entry title using a custom utility function
     all_entries = list_entries()
     random_entry_title = random.choice(all_entries)
