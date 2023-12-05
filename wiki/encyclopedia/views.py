@@ -183,18 +183,20 @@ def new_page(request):
 
 #def edit_entry(request, entry_title):
 
-def edit_entry(request):
+def edit_entry(request, entry_title):
     if request.method == "POST":
         title = request.POST['entry_title']
-        entry = get_object_or_404(Entry, title=title)
+        content = util.get_entry(title)
         return render(request, "encyclopedia/edit.html", {
-            "title": entry.title,
-            "content": entry.content
+            "title": title,
+            "content": content
+        })
+
     else:
         # Handle GET request or redirect to an appropriate page
         # You might want to redirect to the entry page or show an error message
         return render(request, "encyclopedia/some_error_page.html")
-        
+
     # Get the entry or raise a 404 error if it doesn't exist
  #   entry = get_object_or_404(Entry, title=entry_title)
 
