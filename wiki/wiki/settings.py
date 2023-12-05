@@ -116,6 +116,9 @@ USE_TZ = True
 
 DEBUG = True
 
+'DIRS': [os.path.join(BASE_DIR, 'encyclopedia/templates')],
+
+
 
 
 # Static files (CSS, JavaScript, Images)
