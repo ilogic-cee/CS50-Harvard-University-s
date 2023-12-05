@@ -240,10 +240,9 @@ class MyView(View):
         # Your code here
 
 def custom_random_page(request):
-    allEntries = list_entries()
-    rand_entry = random.choice(allEntries)
-    html_content = convert_md_html(random_entry_title)
+    random_entry_title = rand()
+    html_content = convert_md_to_html(random_entry_title)
     return render(request, "encyclopedia/entry.html", {
-        "title": rand_entry,
+        "title": random_entry_title,
         "content": html_content
     })
