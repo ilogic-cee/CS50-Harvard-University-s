@@ -236,11 +236,23 @@ class MyView(View):
         entry_instance = Entry.objects.get(pk=1)
         # Your code here
 
-def rand(request):
-    allEntries = util.list_entries()
-    rand_entry = random.choice(allEntries)
-    html_content = convert_md_html(rand_entry)
-    return render(request, "encyclopedia/entry.html"{
-        "title": rand_entry,
+def custom_random_page(request):
+    # Get a random entry title using a custom utility function
+    all_entries = list_entries()
+    random_entry_title = random.choice(all_entries)
+
+    # Retrieve the full entry details from the database using Django's ORM
+    try:
+        random_entry = Entry.objects.get(title=random_entry_title)
+    except Entry.DoesNotExist:
+        # Handle the case where the entry does not exist
+        return render(request, "encyclopedia/entry_not_found.html", {"title": random_entry_title})
+
+    # Convert Markdown to HTML
+    html_content = convert_md_html(random_entry.content)
+
+    # Render the entry details
+    return render(request, "encyclopedia/entry.html", {
+        "title": random_entry.title,
         "content": html_content
     })
