@@ -105,10 +105,39 @@ small {
 
 
 body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-  }
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+    color: #555;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    height: 60px;
+}
+
+
+ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+
+li a:hover {
+    text-decoration: underline;
+}
+
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+
 
   .navbar {
     background-color: white !important;
