@@ -65,14 +65,62 @@ small {
 	border-color: #0062cc;
 }
 /* Secondary button styles */
-.btn-secondary {
-	color: white;
-	background-color: DarkGray;
-	border-color: white;
-}
+	.btn-secondary {
+		font-size: 14px;
+		padding: 6px 12px;
+	  }
+
+
+
 /* Secondary button styles */
 .btn-secondary:hover {
 	color: #fff;
 	background-color: #DarkGray;
 	border-color: white;
 }
+
+.navbar-nav {
+	display: flex;
+	align-items: center;
+  }
+
+  .navbar-nav li {
+	margin: 0 10px;
+  }
+
+  .navbar-nav a:hover {
+	text-decoration: underline;
+  }
+
+  .navbar-nav .active {
+	font-weight: bold;
+	color: #4285f4;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+  .navbar-brand,
+.navbar-nav a,
+#image-search-link,
+#advanced-search-link,
+#search-link,
+#about-link {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+  }
+
+  .navbar {
+    background-color: white !important;
+}
+
+
+.container {
+	text-align: center;
+	margin-top: 90px;
+  }
