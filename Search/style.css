@@ -62,7 +62,6 @@ small {
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
-	background-color: white;
 	border-color: #0062cc;
 }
 /* Secondary button styles */
@@ -89,7 +88,9 @@ body {
 	height: 100vh;
   }
 
-
+  .navbar {
+    background-color: white !important;
+}
 
 /* Styles for a container element */
 .container {
@@ -97,7 +98,15 @@ body {
 	margin-top: 20px;
   }
 
-
+  .google-search-btn,
+  .feeling-lucky-btn {
+	margin: 5px;
+	padding: 10px 15px;
+	background-color: #f8f8f8;
+	outline: none;
+	border: none;
+	cursor: pointer;
+  }
 
   .feeling-lucky-btn {
 	background-color: #f8f9fa;
