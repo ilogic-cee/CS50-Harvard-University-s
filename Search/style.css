@@ -1,19 +1,23 @@
-mall {
+/* Global styles */
+small {
 	font-size: 12px;
 }
 
+/* Font style for monospace text */
 .font-monospace {
 	font-size: 12px;
 }
 
+
+/* Set the height of an element to 100% of the viewport height */
 .height {
 	height: 100vh
 }
-
+/* Styles for the search form */
 .form {
 	position: relative
 }
-
+/* Positioning and styling for the search icon */
 .form .fa-search {
 	position: absolute;
 	top: 20px;
@@ -21,6 +25,7 @@ mall {
 	color: #9ca3af
 }
 
+/* Positioning and styling for the span element in the form */
 .form span {
 	position: absolute;
 	right: 17px;
@@ -28,44 +33,44 @@ mall {
 	padding: 2px;
 	border-left: 1px solid #d1d5db
 }
-
+/* Padding for the left-pan class */
 .left-pan {
 	padding-left: 7px
 }
-
+/* Additional padding for the left-pan icon */
 .left-pan i {
 	padding-left: 10px
 }
-
+/* Styles for the form input */
 .form-input {
 	height: 55px;
 	text-indent: 33px;
 	border-radius: 10px
 }
-
+/* Focus styles for the form input */
 .form-input:focus {
 	box-shadow: 1px;
 	border: 1px
 }
-
+/* Primary button styles */
 .btn-primary {
 	color: white;
 	background-color: CornflowerBlue;
 	border-color: white;
 }
-
+* Hover styles for the primary button */
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
 	border-color: #0062cc;
 }
-
+/* Secondary button styles */
 .btn-secondary {
 	color: white;
 	background-color: DarkGray;
 	border-color: white;
 }
-
+/* Secondary button styles */
 .btn-secondary:hover {
 	color: #fff;
 	background-color: #DarkGray;
