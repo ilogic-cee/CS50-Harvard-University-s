@@ -116,22 +116,25 @@ body {
 	margin-top: 20px;
   }
 
-  .google-search-btn,
-  .feeling-lucky-btn {
-	margin: 5px;
-	padding: 10px 15px;
-	background-color: #f8f8f8;
-	outline: none;
-	border: none;
-	cursor: pointer;
-  }
+/* Styles for the Google Search and I'm Feeling Lucky buttons */
+.google-search-btn,
+.feeling-lucky-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 
+/* Additional styles for the "I'm Feeling Lucky" button */
   .feeling-lucky-btn {
 	background-color: #f8f9fa;
 	color: #3c4043;
 	border: 1px solid #f8f9fa;
   }
 
+  /* Styles for the search container */
   .search-container {
 	text-align: center;
 	margin-top: 100px;
