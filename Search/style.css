@@ -74,6 +74,27 @@ small {
 
 
 
+/* Font style for navigation links */
+.navbar-brand,
+.navbar-nav a,
+.image-search-link,
+.advanced-search-link,
+.search-link,
+.about-link {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Hover styles for navigation links */
+.navbar-nav a:hover,
+.image-search-link:hover,
+.advanced-search-link:hover,
+.search-link:hover,
+.about-link:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
 
 
 /* Secondary button styles */
@@ -118,5 +139,5 @@ body {
   .search-container {
 	text-align: center;
 	margin-top: 100px;
-	background-color: lightgray; 
+	background-color: lightgray;
   }
