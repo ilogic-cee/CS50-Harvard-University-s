@@ -118,5 +118,5 @@ body {
   .search-container {
 	text-align: center;
 	margin-top: 100px;
-	background-color: lightgray; /* Add this line to check if styles are applied */
+	background-color: lightgray; 
   }
