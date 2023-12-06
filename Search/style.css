@@ -58,7 +58,7 @@ small {
 	background-color: CornflowerBlue;
 	border-color: white;
 }
-* Hover styles for the primary button */
+/* Hover styles for the primary button */
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
