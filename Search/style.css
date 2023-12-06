@@ -97,3 +97,17 @@ body {
 	text-align: center;
 	margin-top: 20px;
   }
+
+
+
+  .feeling-lucky-btn {
+	background-color: #f8f9fa;
+	color: #3c4043;
+	border: 1px solid #f8f9fa;
+  }
+
+  search-container {
+	text-align: center;
+	margin-top: 100px;
+	background-color: lightgray; /* Add this line to check if styles are applied */
+  }
