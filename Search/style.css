@@ -101,15 +101,16 @@ small {
 
   @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
 
-  .navbar-brand,
+.navbar-brand,
 .navbar-nav a,
-#image-search-link,
-#advanced-search-link,
-#search-link,
-#about-link {
+.image-search-link,
+.advanced-search-link,
+.search-link,
+.about-link {
   font-family: 'Arial', sans-serif;
   font-weight: 400;
   font-size: 14px;
+}
 
 body {
 	display: flex;
@@ -121,8 +122,8 @@ body {
     background-color: white !important;
 }
 
-
+/* Styles for a container element */
 .container {
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 20px;
   }
