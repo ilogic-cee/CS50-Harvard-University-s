@@ -1,0 +1,139 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+small {
+	font-size: 10px;
+}
+
+/* Font style for monospace text */
+.font-monospace {
+	font-size: 12px;
+}
+
+
+/* Set the height of an element to 100% of the viewport height */
+.height {
+	height: 100vh
+}
+/* Styles for the search form */
+.form {
+	position: relative
+}
+/* Positioning and styling for the search icon */
+.form .fa-search {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: #9ca3af
+}
+
+/* Positioning and styling for the span element in the form */
+.form span {
+	position: absolute;
+	right: 17px;
+	top: 13px;
+	padding: 2px;
+	border-left: 1px solid #d1d5db
+}
+/* Padding for the left-pan class */
+.left-pan {
+	padding-left: 7px
+}
+/* Additional padding for the left-pan icon */
+.left-pan i {
+	padding-left: 10px
+}
+/* Styles for the form input */
+.form-input {
+	height: 55px;
+	text-indent: 33px;
+	border-radius: 10px
+}
+/* Focus styles for the form input */
+.form-input:focus {
+	box-shadow: 1px;
+	border: 1px
+}
+/* Primary button styles */
+.btn-primary {
+	color: white;
+	background-color: CornflowerBlue;
+	border-color: white;
+}
+/* Hover styles for the primary button */
+.btn-primary:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+/* Secondary button styles */
+	.btn-secondary {
+		font-size: 14px;
+		padding: 6px 12px;
+	  }
+
+
+
+/* Font style for navigation links */
+.navbar-brand,
+.navbar-nav a,
+.image-search-link,
+.advanced-search-link,
+.search-link,
+.about-link {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Hover styles for navigation links */
+.navbar-nav a:hover,
+.image-search-link:hover,
+.advanced-search-link:hover,
+.search-link:hover,
+.about-link:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+
+/* Secondary button styles */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Helvetica, sans-serif;
+    color: #555;
+}
+
+
+
+/* Styles for a container element */
+.container {
+	text-align: center;
+	margin-top: 20px;
+  }
+
+  .google-search-btn,
+  .feeling-lucky-btn {
+	margin: 5px;
+	padding: 10px 15px;
+	background-color: #f8f8f8;
+	outline: none;
+	border: none;
+	cursor: pointer;
+  }
+
+  .feeling-lucky-btn {
+	background-color: #f8f9fa;
+	color: #3c4043;
+	border: 1px solid #f8f9fa;
+  }
+
+  .search-container {
+	text-align: center;
+	margin-top: 100px;
+	background-color: lightgray;
+  }
