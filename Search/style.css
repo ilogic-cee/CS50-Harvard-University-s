@@ -1,3 +1,5 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
 
 
 /* Styles for the Google Search and I'm Feeling Lucky buttons */
@@ -64,7 +66,7 @@
 }
 
 
-* Primary button styles */
+/* Primary button styles */
 .btn-primary {
 	color: white;
 	background-color: CornflowerBlue;
