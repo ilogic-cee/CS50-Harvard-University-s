@@ -1,6 +1,7 @@
 const App = () => {
   return (
     <div>
+           {/* Navigation bar */}
       <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="index.html"></a>
@@ -44,6 +45,7 @@ const App = () => {
           </div>
         </div>
       </nav>
+      {/* Search container */}
       <div class="search-container">
     <form action="https://www.google.co.za/search" autocomplete="off" id="searchbar">
         <div class="search-bar">
@@ -59,7 +61,7 @@ const App = () => {
                 <i class="fa fa-microphone"></i>
             </span>
         </div>
-
+          {/* Search buttons */}
         <div class="search-buttons">
             <button type="submit" form="searchbar" class="google-search-btn">Google Search</button>
             <button
@@ -87,9 +89,9 @@ const App = () => {
     </div>
   );
 };
-
+// Rendering the App component to the root element
 ReactDOM.render(<App />, document.getElementById('root'));
-
+// Custom JavaScript function
 function myFunction() {
   var msgElement = document.getElementById('searchterm');
   msgElement.value = '\\' + msgElement.value;
