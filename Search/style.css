@@ -141,7 +141,240 @@ body {
   .search-bar {
     display: flex;
     align-items: center;
-    border: 1px solid lightgray;
+    .small {
+      font-size: 12px;
+    }
+
+    .font-monospace {
+      font-size: 12px;
+    }
+
+    .height {
+      height: 100vh
+    }
+
+    .form {
+      position: relative
+    }
+
+    .form .fa-search {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #9ca3af
+    }
+
+    .form span {
+      position: absolute;
+      right: 17px;
+      top: 13px;
+      padding: 2px;
+      border-left: 1px solid #d1d5db
+    }
+
+    .left-pan {
+      padding-left: 7px
+    }
+
+    .left-pan i {
+      padding-left: 10px
+    }
+
+    .form-input:focus {
+      box-shadow: 1px;
+      border: 1px
+    }
+
+    .btn-primary {
+      color: white;
+      background-color: CornflowerBlue;
+      border-color: white;
+    }
+
+    .btn-primary:hover {
+      color: #fff;
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-secondary {
+      color: white;
+      background-color: DarkGray;
+      border-color: white;
+    }
+
+    .btn-secondary:hover {
+      color: #fff;
+      background-color: #DarkGray;
+      border-color: white;
+    }
+
+
+
+    /* Set the font size and padding for the buttons */
+    .btn-secondary {
+      font-size: 14px; /* Adjust the font size as needed */
+      padding: 6px 12px; /* Adjust the padding as needed */
+      }
+
+
+    /*making css similar to google.com */
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      }
+
+      .navbar-nav li {
+      margin: 0 10px;
+      }
+
+      .navbar-nav a {
+      text-decoration: none;
+      color: #70757a; /* Google's link color */
+      }
+
+      /* Style for the navigation links on hover */
+      .navbar-nav a:hover {
+      text-decoration: underline;
+      }
+
+      /* Style for the active link */
+      .navbar-nav .active {
+      font-weight: bold;
+      color: #4285f4; /* Google's active link color */
+      }
+
+
+
+    /* Add this to your existing CSS */
+
+    /* Import Google Product Sans font (if allowed) */
+    @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+
+    /* If the font import is not allowed, use a web-safe font as a fallback */
+    .navbar-brand,
+    .navbar-nav a,
+    #image-search-link,
+    #advanced-search-link,
+    #search-link,
+    #about-link {
+      font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+      font-weight: 400; /* Use 700 for bold if needed */
+      font-size: 14px; /* Adjust the font size as needed */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .navbar {
+        background-color: white !important;
+    }
+
+
+    /* Modify these styles in your existing CSS file */
+    .container {
+      text-align: center;
+      margin-top: 100px;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        width: 75vw;
+        margin: 0 auto;
+        margin-top: 40px;
+        max-width: 560px;
+      }
+
+    /*Took the .search__input implementation and replaced it in .form-input*/
+
+
+
+    /* Add these styles to your existing or new CSS file */
+    .search-container {
+      text-align: center;
+      margin-top: 100px;
+      background-color: lightgray; /* Add this line to check if styles are applied */
+      }
+
+
+
+    .small {
+      font-size: 12px;
+    }
+
+    .font-monospace {
+      font-size: 12px;
+    }
+
+    .height {
+      height: 100vh
+    }
+
+    .form {
+      position: relative
+    }
+
+    .form .fa-search {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #9ca3af
+    }
+
+    .form span {
+      position: absolute;
+      right: 17px;
+      top: 13px;
+      padding: 2px;
+      border-left: 1px solid #d1d5db
+    }
+
+    .left-pan {
+      padding-left: 7px
+    }
+
+    .left-pan i {
+      padding-left: 10px
+    }
+
+    .form-input {
+      height: 55px;
+      text-indent: 33px;
+      border-radius: 10px
+    }
+
+    .form-input:focus {
+      box-shadow: 1px;
+      border: 1px
+    }
+
+
+    .feeling-lucky-btn {
+        background-color: #f8f9fa;
+        color: #3c4043;
+        border: 1px solid #f8f9fa;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
     height: 30px;
     padding: 10px 20px;
     border-radius: 999px;
