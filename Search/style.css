@@ -62,6 +62,7 @@ small {
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
+	background-color: white;
 	border-color: #0062cc;
 }
 /* Secondary button styles */
@@ -88,9 +89,7 @@ body {
 	height: 100vh;
   }
 
-  .navbar {
-    background-color: white !important;
-}
+
 
 /* Styles for a container element */
 .container {
