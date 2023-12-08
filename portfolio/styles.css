@@ -1,24 +1,18 @@
 /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");`
 
 /*===== VARIABLES CSS =====*/
 :root {
-  --background-color: #000; /* Dark background color */
-  --text-color: #00ff00; /* Green text color */
-  --link-color: #4CAF50; /* Green link color */
-
   --header-height: 3rem;
   --font-semi: 600;
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
-  --hue-color: 120;
-  --first-color: hsl(var(--hue-color), 100%, 30%);
-  --second-color: hsl(var(--hue-color), 100%, 10%);
+  --hue-color: 224;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
-  --body-font: 'Courier New', monospace;
+  --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
@@ -52,16 +46,14 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
 }
 
-h1, h2 {
+h1, h2, p {
   margin: 0;
-}
-
-p {
-  font-family: 'Inconsolata', monospace;
 }
 
 ul {
@@ -71,7 +63,7 @@ ul {
 }
 
 a {
-  color: var(--link-color);
+  text-decoration: none;
 }
 
 img {
@@ -82,7 +74,12 @@ img {
 
 /*===== CLASS CSS ===== */
 .section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
   color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
 }
 
 .section-title::after {
@@ -205,13 +202,9 @@ img {
   align-self: center;
 }
 
-//
-.home__title-color {
-  color: var(--text-color);
-  font-family: var(--body-font);
+.home__title {
   font-size: var(--big-font-size);
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-bottom: var(--mb-5);
 }
 
 .home__title-color {
@@ -503,13 +496,9 @@ img {
   .nav__toggle {
     display: none;
   }
-
-  .nav__link,
-  .footer__title,
-  .footer__copy {
-    color: var(--text-color);
+  .nav__link {
+    color: var(--second-color);
   }
-
   .home {
     padding: 8rem 0 2rem;
   }
@@ -547,5 +536,3 @@ img {
     width: 450px;
   }
 }
-
-
