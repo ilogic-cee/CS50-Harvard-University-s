@@ -48,14 +48,15 @@ html {
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  color: var(--second-color);
+  font-family: 'Inconsolata', monospace;
 }
 
-h1, h2, p {
+h1, h2 {
   margin: 0;
+}
+
+p {
+  font-family: 'Inconsolata', monospace;
 }
 
 ul {
