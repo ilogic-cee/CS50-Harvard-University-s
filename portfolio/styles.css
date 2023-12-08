@@ -205,10 +205,15 @@ img {
   align-self: center;
 }
 
-.home__title {
-  font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+.home__title-color {
+  color: #00ff00; /* Green color, you can change this to your preferred color */
+  font-family: 'Courier New', monospace; /* Use a monospace font for a hacker-like feel */
+  font-size: 1.5em; /* Adjust the font size accordingly */
+  text-transform: uppercase; /* Convert text to uppercase for a stylized look */
+  letter-spacing: 2px; /* Add letter spacing for emphasis */
+  /* Add any other styling you want to customize the appearance */
 }
+
 
 .home__title-color {
   color: var(--first-color);
