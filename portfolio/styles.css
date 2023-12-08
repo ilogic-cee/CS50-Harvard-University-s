@@ -205,13 +205,14 @@ img {
   align-self: center;
 }
 
+//
 .home__title-color {
-  color: #00ff00;
-  font-family: 'Courier New', monospace;
-  font-size: 1.5em;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
-
 
 .home__title-color {
   color: var(--first-color);
@@ -502,9 +503,13 @@ img {
   .nav__toggle {
     display: none;
   }
-  .nav__link {
-    color: var(--second-color);
+
+  .nav__link,
+  .footer__title,
+  .footer__copy {
+    color: var(--text-color);
   }
+
   .home {
     padding: 8rem 0 2rem;
   }
