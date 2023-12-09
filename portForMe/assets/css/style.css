@@ -14685,3 +14685,9 @@ body.white-version {
   color: var(--color-white) !important; }
 
 
+/* button styling */
+  tw-social-button {
+    margin: 0 12px;
+  }
+
+
