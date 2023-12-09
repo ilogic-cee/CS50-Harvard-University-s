@@ -47,10 +47,10 @@
 
 
 :root {
-  --color-primary: #1BA1F2;  /* Blue color, similar to Facebook */
-  --color-secondary: #0077B5;  /* Darker blue, similar to LinkedIn */
-  --color-tertiary: #000000;  /* Black */
-  --color-gray: #f6f6f6;  /* Light gray */
+  --color-primary: #1BA1F2;
+  --color-secondary: #0077B5; 
+  --color-tertiary: #000000;
+  --color-gray: #f6f6f6;
 
   --color-subtitle: #1DE1E7;  //akashi subtitle
   --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
