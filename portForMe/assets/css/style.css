@@ -49,7 +49,7 @@
 :root {
   --color-primary: #1877f2;   // main clolor
   --color-secondary: #1877f2;
-  --color-tertiary: #ffffff;
+  --color-tertiary: #000000;
   --color-gray: #f6f6f6;
   --color-subtitle: #1DE1E7;  //akashi subtitle
   --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
