@@ -12006,6 +12006,9 @@ div#featured-project-carousel {
           color: var(--color-primary); }
           .contact-about-area .description span a:hover::before {
             width: 100%; }
+            .social-area .name {
+              color: blue;
+            }
   .contact-about-area .social-area .name {
     font-size: 14px;
     font-family: var(--font-secondary);
@@ -12947,7 +12950,7 @@ div#featured-project-carousel {
   .mt_dec-sm--60 {
     margin-top: -40px; } }
 
-    
+
 /* Add this to your CSS stylesheet */
 .backto-top i[data-feather="arrow-up"] {
   color: blue; /* Change 'blue' to your desired color */
