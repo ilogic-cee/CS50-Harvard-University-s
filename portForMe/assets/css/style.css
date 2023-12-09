@@ -9106,6 +9106,11 @@ figcaption {
       color: #1877f2 !important; /*  !important */
     }
 
+    .section-title .subtitle {
+      color: #1877f2 !important; /* Use !important to force application */
+      fill: #1877f2 !important; /* Some elements use the fill property for color */
+    }
+
 .section-title span.subtitle {
   color: #ff014f;
   text-transform: uppercase;
