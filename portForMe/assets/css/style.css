@@ -47,10 +47,10 @@
 
 
 :root {
-  --color-primary: #1877f2;   // main clolor
-  --color-secondary: #1877f2;
-  --color-tertiary: #0d1013;
-  --color-gray: #000000;
+  --color-primary: #00ff00;  /* Green color, you can adjust it */
+  --color-secondary: #00cc00;  /* Darker green */
+  --color-tertiary: #000000;  /* Black */
+  --color-gray: #111111;  /* Dark gray */
   --color-subtitle: #1DE1E7;  //akashi subtitle
   --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
   --background-color-2: #212428;
@@ -102,7 +102,7 @@
   --s-black: 900;
   --transition: 0.4s;
   --font-primary: 'IBM Plex Mono', monospace;
-  --font-secondary: 'Montserrat', sans-serif;
+  --font-secondary: 'Arial', sans-serif;
   --font-size-b1: 18px;
   --font-size-b2: 22px;
   --font-size-b3: 14px;
