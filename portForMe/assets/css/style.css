@@ -9026,7 +9026,7 @@ p.has-drop-cap:not(:focus):first-letter {
   height: auto; }
 
   .section-title .title {
-    color: #0077B5 !important; /* Use !important to force application */
+    color: #0077B5 !important; /* !important */
   }
 .column-galary .section-title .title {
   font-size: 40px; }
@@ -9101,6 +9101,10 @@ figcaption {
   .section-flex {
     flex: none;
     display: block !important; } }
+
+    section-title .subtitle {
+      color: #1877f2 !important; /*  !important */
+    }
 
 .section-title span.subtitle {
   color: #ff014f;
