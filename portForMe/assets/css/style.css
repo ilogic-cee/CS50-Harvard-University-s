@@ -12946,6 +12946,10 @@ div#featured-project-carousel {
 @media only screen and (max-width: 575px) {
   .mt_dec-sm--60 {
     margin-top: -40px; } }
+/* Add this to your CSS stylesheet */
+.backto-top i[data-feather="arrow-up"] {
+  color: blue; /* Change 'blue' to your desired color */
+}
 
     .back-to-top {
       /* Other styles */
