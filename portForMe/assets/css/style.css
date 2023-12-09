@@ -12006,9 +12006,12 @@ div#featured-project-carousel {
           color: var(--color-primary); }
           .contact-about-area .description span a:hover::before {
             width: 100%; }
-            .social-area .name {
-              color: blue;
-            }
+
+          /* Add this CSS code to change the font color to blue */
+.social-area .name {
+  color: blue;
+}
+
   .contact-about-area .social-area .name {
     font-size: 14px;
     font-family: var(--font-secondary);
