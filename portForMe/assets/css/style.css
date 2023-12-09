@@ -9647,7 +9647,9 @@ figcaption {
   border: 5px solid #32363b;
   box-shadow: var(--shadow-1);
   object-fit: cover; }
-
+.title-area .title {
+    color: #0077B5 !important; /* Use !important to force application */
+  }
 .banner-details-wrapper-sticky .banner-title-area .title {
   color: #ffffff;
   font-weight: 700;
