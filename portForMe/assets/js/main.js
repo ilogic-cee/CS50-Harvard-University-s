@@ -1,11 +1,18 @@
 (function ($) {
     'use strict';
 
+
     var imJs = {
-        m: function (e) {
+        _window: $(window),
+        _document: $(document),
+        _body: $('body'),
+        _html: $('html'),
+
+        m: function () {
             imJs.d();
             imJs.methods();
         },
+
         d: function (e) {
             this._window = $(window),
             this._document = $(document),
@@ -58,7 +65,7 @@
             document.getElementById(tabId).style.display = 'block';
         }
 
-        
+
         showContent('googleContent');
         demoActive: function (e) {
             $('.rn-right-demo').on('click', function (e) {
