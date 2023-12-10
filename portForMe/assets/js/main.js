@@ -1,18 +1,11 @@
 (function ($) {
     'use strict';
 
-
     var imJs = {
-        _window: $(window),
-        _document: $(document),
-        _body: $('body'),
-        _html: $('html'),
-
-        m: function () {
+        m: function (e) {
             imJs.d();
             imJs.methods();
         },
-
         d: function (e) {
             this._window = $(window),
             this._document = $(document),
@@ -38,9 +31,7 @@
             imJs.activePopupDemo();
 
         },
-        changeColor: function (element) {
-            element.querySelector('.brand-link').classList.toggle('clicked');
-        },
+
 
         activePopupDemo: function (e) {
             $('.popuptab-area li a.demo-dark').on('click', function (e) {
@@ -54,18 +45,6 @@
             })
         },
 
-        function showContent(tabId) {
-            // Hide all content sections
-            document.getElementById('googleContent').style.display = 'none';
-            document.getElementById('sneakerAlotContent').style.display = 'none';
-            document.getElementById('thaboAIHubContent').style.display = 'none';
-
-            // Show the content for the selected tab
-            document.getElementById(tabId).style.display = 'block';
-        }
-
-
-        showContent('googleContent');
         demoActive: function (e) {
             $('.rn-right-demo').on('click', function (e) {
                 $('.demo-modal-area').addClass('open');
@@ -327,7 +306,7 @@
         },
 
         featherAtcivation: function () {
-            feather.replace();
+            feather.replace()
         },
 
 
@@ -444,4 +423,4 @@
     imJs.m();
 
 
-})(jQuery, window);
+})(jQuery, window)
