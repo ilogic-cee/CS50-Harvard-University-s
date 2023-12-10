@@ -179,6 +179,12 @@ body {
     body {
       overflow: hidden; } }
 
+
+body {
+  background-color: #f8f9fa; 
+}
+
+
       .nav-link {
         font-family: 'IBM Plex Mono', monospace;
       }
@@ -11481,7 +11487,7 @@ div#featured-project-carousel {
   }
 
   .brand-link.clicked {
-      color: blue; 
+      color: blue;
   }
 
 .brand-wrapper-three {
