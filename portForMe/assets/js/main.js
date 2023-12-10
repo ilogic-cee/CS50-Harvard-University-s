@@ -29,10 +29,13 @@
             imJs.awsActivation();
             imJs.demoActive();
             imJs.activePopupDemo();
-            
-        },
 
-        
+        },
+        function changeColor(element) {
+            element.querySelector('.brand-link').classList.toggle('clicked');
+        }
+
+
         activePopupDemo: function (e) {
             $('.popuptab-area li a.demo-dark').on('click', function (e) {
                 $('.demo-modal-area').addClass('dark-version');
@@ -88,8 +91,8 @@
 			});
         },
 
-        
-        
+
+
         wowActive: function () {
             new WOW().init();
         },
@@ -324,7 +327,7 @@
                     $(scrollTop).css('opacity', '0');
                 }
             });
-            
+
             //Click event to scroll to top
             $(scrollTop).on('click', function () {
                 $('html, body').animate({
