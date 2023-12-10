@@ -118,6 +118,10 @@
   --h6: 20px; }
 
 /*To modify the header's background color to a shade of any color besides black.*/
+  .rn-header {
+
+    background-color: ; /* or any other shade of gray you prefer */
+}
 
 
   ::-webkit-scrollbar {
@@ -176,9 +180,9 @@ body {
       overflow: hidden; } }
 
 
-      body {
-        background-color: #f8f9fa !important;
-    }
+body {
+  background-color: #f8f9fa;
+}
 
 body.feature-background {
   background-color: #f8f9fa;
