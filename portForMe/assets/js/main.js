@@ -38,10 +38,9 @@
             imJs.activePopupDemo();
 
         },
-        function changeColor(element) {
+        changeColor: function (element) {
             element.querySelector('.brand-link').classList.toggle('clicked');
-        }
-
+        },
 
         activePopupDemo: function (e) {
             $('.popuptab-area li a.demo-dark').on('click', function (e) {
