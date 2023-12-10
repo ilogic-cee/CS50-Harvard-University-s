@@ -328,7 +328,7 @@
         },
 
         featherAtcivation: function () {
-            feather.replace()
+            feather.replace();
         },
 
 
@@ -445,4 +445,4 @@
     imJs.m();
 
 
-})(jQuery, window)
+})(jQuery, window);
