@@ -7866,8 +7866,12 @@ Copyright (c) 2015 Daniel Eden
   white-space: nowrap;
   left: 0;
   top: 0;
-  color: #0077B5;
 }
+
+.cd-words-wrapper b {
+  color: #0077B5; /* Blue color code */
+}
+
 
 .cd-words-wrapper b.is-visible {
   position: relative; }
