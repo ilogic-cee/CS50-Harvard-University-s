@@ -48,6 +48,18 @@
             })
         },
 
+        function showContent(tabId) {
+            // Hide all content sections
+            document.getElementById('googleContent').style.display = 'none';
+            document.getElementById('sneakerAlotContent').style.display = 'none';
+            document.getElementById('thaboAIHubContent').style.display = 'none';
+
+            // Show the content for the selected tab
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        
+        showContent('googleContent');
         demoActive: function (e) {
             $('.rn-right-demo').on('click', function (e) {
                 $('.demo-modal-area').addClass('open');
