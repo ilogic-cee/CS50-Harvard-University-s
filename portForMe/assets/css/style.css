@@ -123,43 +123,6 @@
     background-color: ; /* or any other shade of gray you prefer */
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.animate-typing {
-  animation: typing 2s steps(20) forwards, blink .5s step-end infinite;
-  border-right: .15em solid #333;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 
 
