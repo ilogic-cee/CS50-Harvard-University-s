@@ -11475,6 +11475,15 @@ div#featured-project-carousel {
   .brand-activation-item-5 .rn-brand .inner {
     margin: 28px 0; }
 
+    .brand-link {
+      color: #000;
+      text-decoration: none;
+  }
+
+  .brand-link.clicked {
+      color: blue; 
+  }
+
 .brand-wrapper-three {
   display: flex;
   justify-content: center;
