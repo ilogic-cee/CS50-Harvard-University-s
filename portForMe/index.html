@@ -2068,6 +2068,17 @@
     <script src="assets/js/vendor/particles.js"></script>
     <!-- main JS -->
     <script src="assets/js/main.js"></script>
+
+    function showContent(tabId) {
+        // Hide all content sections
+        document.getElementById('googleContent').style.display = 'none';
+        document.getElementById('sneakerAlotContent').style.display = 'none';
+        document.getElementById('thaboAIHubContent').style.display = 'none';
+
+        // Show the content for the selected tab
+        document.getElementById(tabId).style.display = 'block';
+    }
+    showContent('googleContent');
 </body>
 
 </html>
