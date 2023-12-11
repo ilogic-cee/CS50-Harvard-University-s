@@ -127,14 +127,14 @@
 
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
     border-radius: 10px;
   }
   ::-webkit-scrollbar-track {
-    background:none !important;
+    background: #f8f9fa;
   }
   ::-webkit-scrollbar-thumb {
-    background:#fd4520;
+    background:#0077B5;
     border-radius: 10px;
   }
 
