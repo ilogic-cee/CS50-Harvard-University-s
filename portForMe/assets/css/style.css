@@ -127,7 +127,6 @@
 
 
 
-
 /*New font logo IlogicCee*/
   .logo a {
     font-family: 'IBM Plex Mono', monospace;
@@ -9635,6 +9634,10 @@ figcaption {
           height: 100%;
           border-radius: 8px;
           object-fit: cover; }
+
+          /* Customizing the vertical scrollbar */
+
+
   .slide.slider-style-4 {
     height: 100vh;
     padding-bottom: 0;
