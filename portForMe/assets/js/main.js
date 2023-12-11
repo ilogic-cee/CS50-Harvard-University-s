@@ -1,3 +1,6 @@
+import 'tailwindcss/tailwind.css';
+import 'tailwindcss-animations-extended';
+
 (function ($) {
     'use strict';
 
