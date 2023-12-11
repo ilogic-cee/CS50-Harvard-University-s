@@ -5224,6 +5224,24 @@ textarea:-ms-input-placeholder {
   margin-top: 0 !important;
   padding-top: 0; }
 
+  
+/* Change color of social icons to LinkedIn blue */
+.social-share i.feather-github {
+  color: #0077B5; /* LinkedIn blue color */
+}
+
+.social-share i.feather-youtube {
+  color: #0077B5; /* LinkedIn blue color */
+}
+
+.social-share i.feather-instagram {
+  color: #0077B5; /* LinkedIn blue color */
+}
+
+.social-share i.feather-linkedin {
+  color: #0077B5; /* LinkedIn blue color */
+}
+
 .social-share-style-1 .title {
   font-size: 14px;
   text-transform: uppercase;
