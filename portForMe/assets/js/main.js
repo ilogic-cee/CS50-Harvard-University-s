@@ -1,6 +1,3 @@
-import 'tailwindcss/tailwind.css';
-import 'tailwindcss-animations-extended';
-
 (function ($) {
     'use strict';
 
@@ -32,7 +29,6 @@ import 'tailwindcss-animations-extended';
             imJs.awsActivation();
             imJs.demoActive();
             imJs.activePopupDemo();
-            this.buildTailwindCSS();
 
         },
 
