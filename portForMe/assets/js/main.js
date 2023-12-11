@@ -32,6 +32,7 @@ import 'tailwindcss-animations-extended';
             imJs.awsActivation();
             imJs.demoActive();
             imJs.activePopupDemo();
+            this.buildTailwindCSS();
 
         },
 
