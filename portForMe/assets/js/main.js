@@ -37,6 +37,7 @@ import 'tailwindcss-animations-extended';
         },
 
 
+
         activePopupDemo: function (e) {
             $('.popuptab-area li a.demo-dark').on('click', function (e) {
                 $('.demo-modal-area').addClass('dark-version');
