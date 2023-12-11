@@ -126,22 +126,6 @@
 
 
 
-  ::-webkit-scrollbar {
-    width: 12px;
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f8f9fa;
-  }
-  ::-webkit-scrollbar-thumb {
-    background:#0077B5;
-    border-radius: 10px;
-  }
-
-
-  ::-webkit-scrollbar-thumb:hover {
-    background:rgba(255, 51, 51, 0.925)
-  }
 
 
 /*New font logo IlogicCee*/
@@ -5224,7 +5208,7 @@ textarea:-ms-input-placeholder {
   margin-top: 0 !important;
   padding-top: 0; }
 
-  
+
 /* Change color of social icons to LinkedIn blue */
 .social-share i.feather-github {
   color: #0077B5; /* LinkedIn blue color */
