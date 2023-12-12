@@ -30,6 +30,7 @@
             imJs.demoActive();
             imJs.activePopupDemo();
 
+
         },
 
 
@@ -94,6 +95,8 @@
             new WOW().init();
         },
 
+
+/*
         smothScroll: function () {
             $(document).on('click', '.smoth-animation', function (event) {
                 event.preventDefault();
@@ -111,6 +114,23 @@
                 }, 300);
             });
         },
+
+        */
+
+
+        $(document).on('click', '.smoth-animation', function () {
+            redirectToPage('home.html'); // Adjust the page URL as needed
+        });
+
+        $(document).on('click', '.smoth-animation-two', function () {
+            redirectToPage('features.html'); // Adjust the page URL as needed
+        });
+
+        // Add similar code for other buttons and their respective HTML files
+        $(document).on('click', '.smoth-animation-portfolio', function () {
+            redirectToPage('portfolio.html'); // Adjust the page URL as needed
+        });
+
 
 
         stickyAdjust: function (e) {
