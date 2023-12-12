@@ -150,7 +150,7 @@
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
 }
 
 
@@ -9454,7 +9454,7 @@ figcaption {
       .slide .thumbnail .inner img {
         border: 0;
         vertical-align: middle;
-        max-width: 100%;
+        max-width: 50%;
         height: auto; }
     .slide .thumbnail.box-gradient::before {
       width: 100%;
