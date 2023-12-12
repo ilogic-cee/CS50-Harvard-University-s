@@ -42,16 +42,15 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap");
 :root {
-  --color-primary: #1BA1F2;
-  --color-secondary: #0077B5;
-  --color-tertiary: #000000;
-  --color-gray: #0000ff;
-
+  --color-primary: #1FDE7F;  // main clolor
+  --color-secondary: #28C678;
+  --color-tertiary: #0d1013;
+  --color-gray: #f6f6f6;
   --color-subtitle: #1DE1E7;  //akashi subtitle
   --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
   --background-color-2: #212428;
@@ -102,8 +101,8 @@
   --s-extra-bold: 800;
   --s-black: 900;
   --transition: 0.4s;
-  --font-primary: 'IBM Plex Mono', monospace;
-  --font-secondary: 'Arial', sans-serif;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
   --font-size-b1: 18px;
   --font-size-b2: 22px;
   --font-size-b3: 14px;
@@ -117,54 +116,38 @@
   --h5: 30px;
   --h6: 20px; }
 
-/*To modify the header's background color to a shade of any color besides black.*/
-  .rn-header {
-
-    background-color: ; /* or any other shade of gray you prefer */
-}
 
 
 
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #0077b5;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}
-
-
-::-webkit-scrollbar-horizontal {
-  height: 12px;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  background-color: #0077b5;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track:horizontal {
-  background-color: #f1f1f1;
-}
 
 
 
 
-/*New font logo IlogicCee*/
-  .logo a {
-    font-family: 'IBM Plex Mono', monospace;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background:none !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:#fd4520;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background:rgba(255, 51, 51, 0.925)
   }
 
 
+
+
+
+
 * {
-  box-sizing: border-box;
- }
+  box-sizing: border-box; }
 
 html {
   margin: 0;
@@ -179,7 +162,6 @@ body {
   line-height: var(--line-height-b1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'IBM Plex Mono', monospace;
   font-family: var(--font-primary);
   color: var(--color-body);
   font-weight: var(--p-regular); }
@@ -192,24 +174,6 @@ body {
   @media only screen and (max-width: 767px) {
     body {
       overflow: hidden; } }
-
-
-body {
-  background-color: #f8f9fa;
-}
-
-body.feature-background {
-  background-color: #f8f9fa;
-}
-.body.feature-background {
-  background-color: #212428;
-}
-
-
-
-      .nav-link {
-        font-family: 'IBM Plex Mono', monospace;
-      }
 
 h1,
 h2,
@@ -5236,24 +5200,6 @@ textarea:-ms-input-placeholder {
   margin-top: 0 !important;
   padding-top: 0; }
 
-
-/* Change color of social icons to LinkedIn blue */
-.social-share i.feather-github {
-  color: #0077B5; /* LinkedIn blue color */
-}
-
-.social-share i.feather-youtube {
-  color: #0077B5; /* LinkedIn blue color */
-}
-
-.social-share i.feather-instagram {
-  color: #0077B5; /* LinkedIn blue color */
-}
-
-.social-share i.feather-linkedin {
-  color: #0077B5; /* LinkedIn blue color */
-}
-
 .social-share-style-1 .title {
   font-size: 14px;
   text-transform: uppercase;
@@ -7863,11 +7809,6 @@ Copyright (c) 2015 Daniel Eden
   font-size: 3rem;
   line-height: 1.2; }
 
-  .cd-headline .cd-words-wrapper {
-    display: inline-block; /* This makes the words appear in a single line */
-    white-space: nowrap; /* This prevents the words from wrapping to the next line */
-  }
-
 @media only screen and (min-width: 768px) {
   .cd-headline {
     font-size: 4.4rem;
@@ -7895,13 +7836,7 @@ Copyright (c) 2015 Daniel Eden
   position: absolute;
   white-space: nowrap;
   left: 0;
-  top: 0;
-}
-
-.cd-words-wrapper b {
-  color: #0077B5; /* Blue color code */
-}
-
+  top: 0; }
 
 .cd-words-wrapper b.is-visible {
   position: relative; }
@@ -7932,7 +7867,7 @@ xclip
   right: 0;
   width: 2px;
   height: 80%;
-  background-color: #0077B5;
+  background-color: #fd4520;
   transform: translateY(-50%); }
 
 .cd-headline.clip b {
@@ -9082,9 +9017,6 @@ p.has-drop-cap:not(:focus):first-letter {
   line-height: 1;
   height: auto; }
 
-  .section-title .title {
-    color: #0077B5 !important; /* !important */
-  }
 .column-galary .section-title .title {
   font-size: 40px; }
 
@@ -9158,18 +9090,6 @@ figcaption {
   .section-flex {
     flex: none;
     display: block !important; } }
-
-    .subtitle {
-      font-family: 'IBM Plex Mono', monospace;
-  }
-    section-title .subtitle {
-      color: #1877f2 !important; /*  !important */
-    }
-
-    .section-title .subtitle {
-      color: #1877f2 !important; /* Use !important to force application */
-      fill: #1877f2 !important; /* Some elements use the fill property for color */
-    }
 
 .section-title span.subtitle {
   color: #ff014f;
@@ -9454,7 +9374,7 @@ figcaption {
       .slide .thumbnail .inner img {
         border: 0;
         vertical-align: middle;
-        max-width: 50%;
+        max-width: 100%;
         height: auto; }
     .slide .thumbnail.box-gradient::before {
       width: 100%;
@@ -9663,10 +9583,6 @@ figcaption {
           height: 100%;
           border-radius: 8px;
           object-fit: cover; }
-
-          /* Customizing the vertical scrollbar */
-
-
   .slide.slider-style-4 {
     height: 100vh;
     padding-bottom: 0;
@@ -9723,9 +9639,7 @@ figcaption {
   border: 5px solid #32363b;
   box-shadow: var(--shadow-1);
   object-fit: cover; }
-.title-area .title {
-    color: #0077B5 !important; /* Use !important to force application */
-  }
+
 .banner-details-wrapper-sticky .banner-title-area .title {
   color: #ffffff;
   font-weight: 700;
@@ -11539,15 +11453,6 @@ div#featured-project-carousel {
   .brand-activation-item-5 .rn-brand .inner {
     margin: 28px 0; }
 
-    .brand-link {
-      color: #000;
-      text-decoration: none;
-  }
-
-  .brand-link.clicked {
-      color: blue;
-  }
-
 .brand-wrapper-three {
   display: flex;
   justify-content: center;
@@ -12093,13 +11998,6 @@ div#featured-project-carousel {
           color: var(--color-primary); }
           .contact-about-area .description span a:hover::before {
             width: 100%; }
-
-
-.social-area .name {
-  color: #0077B5 !important; /* !important   */
-}
-
-
   .contact-about-area .social-area .name {
     font-size: 14px;
     font-family: var(--font-secondary);
@@ -13040,18 +12938,6 @@ div#featured-project-carousel {
 @media only screen and (max-width: 575px) {
   .mt_dec-sm--60 {
     margin-top: -40px; } }
-
-
-/* Add this to your CSS stylesheet */
-.backto-top i[data-feather="arrow-up"] {
-  color: blue; /* Change 'blue' to your desired color */
-}
-
-    .back-to-top {
-      /* Other styles */
-      font-family: 'Your Icon Font Family', sans-serif; /* Use the appropriate font family for your icons */
-      /* Other styles */
-  }
 
 .backto-top > div {
   position: fixed;
@@ -14756,11 +14642,5 @@ body.white-version {
 
 .white-version .slider-style-6 .cd-headline span {
   color: var(--color-white) !important; }
-
-
-/* button styling */
-  tw-social-button {
-    margin: 0 12px;
-  }
 
 
