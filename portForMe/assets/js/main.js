@@ -95,6 +95,8 @@
             new WOW().init();
         },
 
+
+/*
         smothScroll: function () {
             $(document).on('click', '.smoth-animation', function (event) {
                 event.preventDefault();
@@ -112,6 +114,8 @@
                 }, 300);
             });
         },
+
+        */
 
 
         stickyAdjust: function (e) {
