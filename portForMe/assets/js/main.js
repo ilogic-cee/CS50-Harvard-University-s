@@ -96,7 +96,6 @@
         },
 
 
-
         smothScroll: function () {
             $(document).on('click', '.smoth-animation', function (event) {
                 event.preventDefault();
@@ -118,7 +117,7 @@
 
 
 
-   
+
 
 
 
