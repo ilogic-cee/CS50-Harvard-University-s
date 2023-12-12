@@ -315,6 +315,10 @@ smothScroll_Two: function () {
 
         },
 
+
+
+
+
         featherAtcivation: function () {
             feather.replace()
         },
