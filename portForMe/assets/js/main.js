@@ -106,16 +106,16 @@
                 }, 300);
             });
         },
-        // two scroll spy
-        smothScroll_Two: function () {
-            $(document).on('click', '.smoth-animation-two', function (event) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top - 50
-                }, 300);
-            });
-        },
 
+
+smothScroll_Two: function () {
+    $(document).on('click', '.smoth-animation-two', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 0
+        }, 300);
+    });
+},
 
 
 
