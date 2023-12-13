@@ -2,7 +2,7 @@
 run (On Screen): Speaking of the description, down there, you'll find timestamps. Yeah, I got you covered, so you can skip around if you want to revisit any specific part of the demo.
 
 [03:31 - 04:00]
-[Enhanced Functionality]
+[Enhanced Functionaliy]
 Arun (On Screen): Now, let's talk about the enhanced functionality. The Search Google Clone brings not just regular search, but also Google Image Search and Google Advanced Search. Check out these links in the upper-right corner to switch between them seamlessly.
 
 [04:01 - 04:30]
