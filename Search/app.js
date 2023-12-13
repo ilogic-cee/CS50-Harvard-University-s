@@ -67,8 +67,8 @@ const App = () => {
         <div class="search-buttons">
             <button type="submit" form="searchbar" class="google-search-btn">Google Search</button>
             <button
-                onclick="myFunction()"
-                type="submit"
+                onclick={handleFeelingLucky}
+                type="button"
                 form="searchbar"
                 formaction="https://duckduckgo.com/"
                 class="feeling-lucky-btn"
