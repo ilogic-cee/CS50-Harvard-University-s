@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-  function handleFeelingLucky() {
-            var searchTerm = encodeURIComponent(document.getElementById("searchterm").value);
-            // Redirect to the "I'm Feeling Lucky" search
-            window.location.href = `https://www.google.com/search?btnI&q=${searchTerm}`;
+        function handleFeelingLucky() {
+            var searchTerm = document.getElementById("searchterm").value;
+            window.location.href = `https://www.google.com/search?btnI&q=${encodeURIComponent(searchTerm)}`;
+        }
     </script>
-</head>
+
 </head>
 
 <body>
