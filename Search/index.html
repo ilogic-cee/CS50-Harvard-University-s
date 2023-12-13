@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- HTML head section with title and external stylesheet links for Bootstrap, Font Awesome, and custom styling. -->
 <head>
     <title>Search</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,7 +10,8 @@
 </head>
 
 <body>
-   <!-- Bootstrap navigation bar with toggle button, responsive navigation links, and social link. -->
+
+    <!-- Bootstrap navigation bar with toggle button, responsive navigation links, and social link. -->
     <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,44 +36,43 @@
         </div>
     </nav>
 
-
-  <!-- Centered search bar within a container with Google logo, search input, and buttons for search and "I'm Feeling Lucky." -->
+    <!-- Centered search bar within a container with Google logo, search input, and buttons for search and "I'm Feeling Lucky." -->
     <div class="container d-flex align-items-center vh-100">
         <div class="container mt-5">
             <div class="d-flex p-2 justify-content-center">
                 <img src="gooogle.png" width="200">
             </div>
 
-
             <div class="d-flex justify-content-center">
                 <div class="col-md-6 justify-content-center">
                     <div class="form">
-                        <form autocomplete="off" id="searchbar"></form>
+                        <!-- Single form element -->
                         <form action="https://google.com/search" autocomplete="off" id="searchbar">
-                            <i class="fa fa-search"></i> <input type="text" name="q" id="searchterm" class="form-control form-input" placeholder="Search Google or type a URL"> <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                            <i class="fa fa-search"></i>
+                            <input type="text" name="q" id="searchterm" class="form-control form-input" placeholder="Search Google or type a URL">
+                            <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                            <!-- Submit buttons for the form -->
+                            <div class="d-flex justify-content-center my-4">
+                                <button type="submit" form="searchbar" formaction="https://google.com/search" class="button">Google Search</button>
+                                <button onclick="myFunction()" type="button" class="button">I'm Feeling Lucky</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-    <!-- Flex container with buttons for submitting a search query, featuring Google Search and "I'm Feeling Lucky" options. -->
-            <div class="d-flex justify-content-center my-4">
-                <button type="submit" form="searchbar" formaction="https://google.com/search" class="button">Google Search</button>
-                <button onclick="myFunction()" type="submit" form="button" formaction="https://google.com/search?btnI" class="button">I'm Feeling Lucky</button>
-                </form>
-            </div>
         </div>
     </div>
+
     <!-- JavaScript block loading Bootstrap and jQuery libraries, along with a custom script to manipulate the search term input. -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         function myFunction() {
             var msgElement = document.getElementById("searchterm");
             msgElement.value = '\\' + msgElement.value;
 
-            return true;
+
         }
     </script>
 </body>
