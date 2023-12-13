@@ -88,7 +88,7 @@ small {
 .navbar {
 	border-top: none;
   }
-  
+
 /* Hover styles for navigation links */
 .navbar-nav a:hover,
 .image-search-link:hover,
@@ -111,9 +111,6 @@ body {
     color: CornflowerBlue;
 	border-top: none;
 }
-body {
-	border-top: none;
-  }
 
 
 /* Styles for a container element */
@@ -122,7 +119,9 @@ body {
 	margin-top: 20px;
   }
 
-
+  .navbar.fixed-top {
+	border-top: none;
+  }
 
 /* Styles for the Google Search and I'm Feeling Lucky buttons */
 .google-search-btn,
@@ -149,6 +148,3 @@ body {
 	background-color: CornflowerBlue;
   }
 
-  .search-container {
-	border-top: none;
-  }
