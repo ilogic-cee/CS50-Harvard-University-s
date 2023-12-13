@@ -69,7 +69,7 @@ const App = () => {
             <button
                 onclick={handleFeelingLucky}
                 type="button"
-                form="searchbar"
+
                 formaction="https://duckduckgo.com/"
                 class="feeling-lucky-btn"
             >
