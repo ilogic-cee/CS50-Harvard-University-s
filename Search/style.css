@@ -145,3 +145,7 @@ body {
 	margin-top: 100px;
 	background-color: CornflowerBlue;
   }
+
+  .search-container {
+	border-top: none;
+  }
