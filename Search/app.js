@@ -2,7 +2,7 @@ const App = () => {
   const handleFeelingLucky = () => {
     window.location.href = "https://www.google.com/search?btnI";
   return (
-    \
+
            {/* Navigation bar */}
       <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
         <div className="container-fluid">
@@ -69,8 +69,6 @@ const App = () => {
             <button
                 onclick={handleFeelingLucky}
                 type="button"
-
-                formaction="https://duckduckgo.com/"
                 class="feeling-lucky-btn"
             >
                 I'm Feeling Lucky
