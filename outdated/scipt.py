@@ -1,30 +1,16 @@
-welcome to my youtube channel, I am IlogicCee, and this is my submisison for
-run (On Screen): Speaking of the description, down there, you'll find timestamps. Yeah, I got you covered, so you can skip around if you want to revisit any specific part of the demo.
+hello, world welcome to my YouTube channel, I am IlogicCee jr ,
+and this is my submission for cs50 Web Programming with python and JavaScript project 0,
 
-[03:31 - 04:00]
-[Enhanced Functionaliy]
-Arun (On Screen): Now, let's talk about the enhanced functionality. The Search Google Clone brings not just regular search, but also Google Image Search and Google Advanced Search.
-Check out these links in the upper-right corner to switch between them seamlessly.
+the project is called search, where i had to design a front end for google search, google image search and google advanced search
 
-[04:01 - 04:30]
-[Google Image Search]
-Arun (Screen Recording): Now, let's explore the Image Search page. You can type in a query, hit search, and voila! You'll be taken to the Google Image search results for that page.
+[Google Search Page]
+First off, we've got our Google Search page, Check out the upper-right corner, we have four visible link text in our search page, , which is search, it redirects to the Google Search page, Image search, advanced search and IlogicCee,
 
-[04:31 - 05:00]
-[Google Advanced Search]
-Arun (Screen Recording): And here's the Advanced Search page. Just like Google's own, you can input specific search criteria. When you hit the "Advanced Search" button,
-you're taken to the search results page for your query.
+[Google Search Functionality]
 
-[05:01 - 05:30]
-[Additional Features]
-Arun (On Screen): Oh, and check this out! On the main Google Search page, we've got an "I'm Feeling Lucky" button. Clicking this will take you directly to the first search result
-for your query, bypassing the normal results page. Now, that's a time-saver!
+and here we are, on the search results page for our query Our. search bar is centered with rounded corners, close to Google's.
 
-[05:31 - 06:00]
-[Closing Thoughts]
-Arun (On Screen): And there you have it, guys. That was a quick tour of the enhanced Search Google Clone project. If you've got questions or thoughts, drop them in the comments below.
-Don't forget to check out the timestamps for easy navigation. Until next time, I'm Arun from Mr. Who's the Boss, signing off.
-
+NOW let's type a query “rugby sa” and hit "Google Search.” button;
 [Closing Shot]
 [Outro Music Playing]
 [Wide shot of Arun reaching to turn off the camera]-
