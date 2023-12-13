@@ -56,15 +56,15 @@ small {
 }
 /* Primary button styles */
 .btn-primary {
-	color: white;
+	color: CornflowerBlue;
 	background-color: CornflowerBlue;
-	border-color: white;
+	border-color: CornflowerBlue;
 }
 /* Hover styles for the primary button */
 .btn-primary:hover {
 	color: #fff;
-	background-color: #0069d9;
-	border-color: #0062cc;
+	background-color: CornflowerBlue;
+	border-color: CornflowerBlue;
 }
 /* Secondary button styles */
 	.btn-secondary {
@@ -105,7 +105,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: Helvetica, sans-serif;
-    color: #555;
+    color: CornflowerBlue;
 }
 
 
@@ -131,7 +131,7 @@ body {
 
 /* Additional styles for the "I'm Feeling Lucky" button */
   .feeling-lucky-btn {
-	background-color: #f8f9fa;
+	background-color: CornflowerBlue;
 	color: #3c4043;
 	border: 1px solid #f8f9fa;
   }
@@ -140,5 +140,5 @@ body {
   .search-container {
 	text-align: center;
 	margin-top: 100px;
-	background-color: lightgray;
+	background-color: CornflowerBlue;
   }
