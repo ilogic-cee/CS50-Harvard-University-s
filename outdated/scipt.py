@@ -1,4 +1,4 @@
-welcome to my youtube channel, I am IlogicCee, 
+welcome to my youtube channel, I am IlogicCee, and this is my submisison for
 run (On Screen): Speaking of the description, down there, you'll find timestamps. Yeah, I got you covered, so you can skip around if you want to revisit any specific part of the demo.
 
 [03:31 - 04:00]
