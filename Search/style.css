@@ -24,7 +24,7 @@ small {
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	color: CornflowerBlue; 
+	color: CornflowerBlue;
 }
 
 /* Positioning and styling for the span element in the form */
@@ -33,7 +33,7 @@ small {
 	right: 17px;
 	top: 13px;
 	padding: 2px;
-	border-left: 1px solid #d1d5db
+	border-left: 1px solid #d1d5db;
 }
 /* Padding for the left-pan class */
 .left-pan {
