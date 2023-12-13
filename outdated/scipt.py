@@ -23,7 +23,7 @@ Arun (On Screen): And there you have it, guys. That was a quick tour of the enha
 
 [Closing Shot]
 [Outro Music Playing]
-[Wide shot of Arun reaching to turn off the camera]
+[Wide shot of Arun reaching to turn off the camera]-
 
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
