@@ -85,7 +85,10 @@ small {
     font-weight: 400;
     font-size: 16px;
 }
-
+.navbar {
+	border-top: none;
+  }
+  
 /* Hover styles for navigation links */
 .navbar-nav a:hover,
 .image-search-link:hover,
