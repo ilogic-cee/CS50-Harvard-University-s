@@ -106,8 +106,11 @@ body {
     overflow: hidden;
     font-family: Helvetica, sans-serif;
     color: CornflowerBlue;
+	border-top: none;
 }
-
+body {
+	border-top: none;
+  }
 
 
 /* Styles for a container element */
