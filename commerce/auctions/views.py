@@ -14,32 +14,43 @@ from .models import User
 def index(request):
     return render(request, "auctions/index.html")
 
+from django.shortcuts import render, redirect
+from .models import Listing
+from .forms import CreateListingForm
+
 def createListing(request):
-    if request.method == "GET":
-        allCategories = Category.objects.all()
-        return render(request, "auctions/create.html", {
-            "categories": allCategories
-        })
+    if request.method == "POST":
+        # Creating and validating the form
+        form = CreateListingForm(request.POST)
+        if form.is_valid():
+            # Extracting data from the validated form
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            image_url = form.cleaned_data['image_url']
+            price = form.cleaned_data['price']
+            category = form.cleaned_data['category']
+            starting_bid = form.cleaned_data['starting_bid']
+
+            # Creating a new listing with the form data
+            new_listing = Listing(
+                title=title,
+                description=description,
+                image_url=image_url,
+                price=price,
+                category=category,
+                starting_bid=starting_bid,
+            )
+
+            # Saving the new listing
+            new_listing.save()
+
+            return redirect('index')
     else:
-        title = request.POST["title"]
-        description = request.POST["description"]
-        imageurl = request.POST["imageurl"]
-        price = request.POST["price"]
-        category = request.POST["category"]
-        currentUser = request.user
+        # Rendering the form for a GET request
+        form = CreateListingForm()
 
-        categoryData = Category.objects.get(categoryName=category)
-        newListing = Listing(
-            title = title,
-            description=description,
-            imageUrl = imageurl,
-            price=float(price),
-            category=categoryData,
-            owner=currentUser
-        )
+    return render(request, 'auctions/create.html', {'form': form})
 
-        newListing.save()
-        return HttpResponseRedirect(reverse(index))
 
 
 
