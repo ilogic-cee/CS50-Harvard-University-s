@@ -44,7 +44,6 @@ def createListing(request):
                 imageUrl=image_url,  # Correct field name
                 price=price,
                 category=category,
-                starting_bid=starting_bid,
             )
 
             # Saving the new listing
