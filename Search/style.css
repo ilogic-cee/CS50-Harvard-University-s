@@ -115,6 +115,7 @@ small {
     font-family: Helvetica, sans-serif;
     color: CornflowerBlue;
 	border-top: none;
+	margin: 0;
 }
 
 .button:hover {
@@ -126,6 +127,7 @@ small {
 .container {
 	text-align: center;
 	margin-top: 20px;
+	background-color: #fff; 
   }
 
   .navbar.fixed-top {
