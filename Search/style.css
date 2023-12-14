@@ -23,10 +23,10 @@ small {
 .form .fa-search {
     display: none;
 }
-
+/* Styles for the fixed-top navbar */
 .navbar.fixed-top {
-    background-color: #fff !important; /* Set the background color to white */
-    border: none !important; /* Remove any border */
+    background-color: #fff !important;
+    border: none !important;
 }
 
 /* Positioning and styling for the span element in the form */
@@ -74,7 +74,7 @@ small {
 		font-size: 14px;
 		padding: 6px 12px;
 	  }
-
+/* Navbar styles */
 	  .navbar {
 		background-color: #fff;
 		border: none;
@@ -117,6 +117,7 @@ small {
     cursor: pointer;
     margin-right: 10px;
 }
+/* Body styles */
  body {
 	padding: 0;
     display: flex;
@@ -128,11 +129,13 @@ small {
 	border-top: none;
 	margin: 0;
 }
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
+/* Hover styles for button */
 .button:hover {
     background-color: #2a66c8; /* Darken the background color on hover */
 }
@@ -146,6 +149,7 @@ html, body {
 	border-top: none !important;
   }
 
+  /* Fixed-top navbar styles */
   .navbar.fixed-top {
 	border-top: none;
   }
@@ -175,7 +179,9 @@ html, body {
 	background-color: CornflowerBlue;
   }
 
-  uttons{
+
+  /* Styles for buttons */
+  .buttons{
 	margin-top:30px;
   }
   .button{
