@@ -26,7 +26,9 @@ def createListing(request):
             return redirect("index")
     else:
         title = request.POST["title"]
-description = request.POST
+        description = request.POST["description"]
+        imageurl = request.POST["imageurl"]
+        description = request.POST["description"]
         form = ListingForm()
 
 
