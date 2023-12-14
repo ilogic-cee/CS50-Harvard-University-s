@@ -108,7 +108,7 @@ body {
 	background-color: #f2f2f2;
 }
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -116,7 +116,7 @@ body {
     font-family: Helvetica, sans-serif;
     color: CornflowerBlue;
 	border-top: none;
-}
+}*/
 
 
 /* Styles for a container element */
