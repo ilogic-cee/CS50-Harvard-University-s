@@ -16,6 +16,7 @@ class Listing(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=300)
     imageUrl = models.CharField(max_length=1000)
+    starting_bid = models.FloatField()
     price = models.FloatField()
     isActive = models.BooleanField(default=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name="user")
