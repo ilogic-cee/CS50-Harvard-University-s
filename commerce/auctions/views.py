@@ -25,7 +25,10 @@ def createListing(request):
             listing.save()
             return redirect("index")
     else:
+        title = request.POST["title"]
+description = request.POST
         form = ListingForm()
+
 
     return render(request, "auctions/create.html", {"categories":allCategories})
 
