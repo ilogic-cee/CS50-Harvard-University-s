@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .forms import ListingForm
 from django.contrib.auth.decorators import login_required
+from .models import User, Category, Listing
 
 
 from .models import User
@@ -15,7 +16,7 @@ def index(request):
 
 def createListing(request):
     if request.method == "POST":
-        all
+        allCategories = Category.objects.all()
         form = ListingForm(request.POST)
         if form.is_valid():
             # Process the form data and save the listing
