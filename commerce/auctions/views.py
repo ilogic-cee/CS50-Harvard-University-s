@@ -15,7 +15,7 @@ def index(request):
     return render(request, "auctions/index.html")
 
 def createListing(request):
-    if request.method == "POST":
+    if request.method == "GET":
         allCategories = Category.objects.all()
         form = ListingForm(request.POST)
         if form.is_valid():
@@ -39,6 +39,7 @@ def createListing(request):
             category=category,
             owner=currentUser
         )
+
 newListing.save()
 return HttpResponseRedirect(reverse(index))
         form = ListingForm()
