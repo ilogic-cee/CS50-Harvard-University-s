@@ -45,15 +45,16 @@ small {
 }
 /* Styles for the form input */
 .form-input {
-	height: 55px;
-	text-indent: 33px;
-	border-radius: 10px
+    height: 45px; /* Adjust the height */
+    text-indent: 33px;
+    border-radius: 25px; /* Increase the border-radius for a rounder look */
 }
 /* Focus styles for the form input */
 .form-input:focus {
-	box-shadow: 1px;
-	border: 1px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow on focus */
+    border: 1px solid #4285f4; /* Change the border color on focus */
 }
+
 /* Primary button styles */
 .btn-primary {
 	color: CornflowerBlue;
@@ -102,14 +103,13 @@ small {
 
 /* Secondary button styles */
 .button {
-	background-color: #4285f4;
-	color: #fff;
-	border: none;
-	padding: 8px 16px;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-right: 10px;
-	border-top: none;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 12px 24px; /* Increase padding for a more prominent button */
+    border-radius: 25px; /* Match the border-radius of the input for consistency */
+    cursor: pointer;
+    margin-right: 10px;
 }
  body {
     display: flex;
