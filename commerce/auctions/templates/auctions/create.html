@@ -25,16 +25,15 @@
         <input type="number" name="price" class="form-control" id="price" placeholder="Price:">
       </div>
 
-    {% for cat in categoes %}
-    <option value="volvo">{{ cat }}</option>
+
+
       <div class="form-group">
-{% endfor %}
+
             <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Select Category</label>
             <select id="categorySelect" name="category" class="w-full px-3 py-2 border rounded-md">
-              <option value="fashion">Fashion</option>
-              <option value="toys">Toys</option>
-              <option value="electronics">Electronics</option>
-              <option value="home">Home</option>
+                {% for cat in categoes %}
+                <option value="volvo">{{ cat }}</option>
+              {% endfor %}
               <!-- Add more options as needed -->
             </select>
 
