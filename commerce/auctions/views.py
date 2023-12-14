@@ -35,7 +35,7 @@ def createListing(request):
             new_listing = Listing(
                 title=title,
                 description=description,
-                imageurl=imageurl,
+                image_url=image_url,
                 price=price,
                 category=category,
                 starting_bid=starting_bid,
