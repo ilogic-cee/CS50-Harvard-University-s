@@ -7,9 +7,18 @@
     {% csrf_token %}
     <div class="form-group">
       <label for="title">Enter Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Enter Title">
-
+      <input type="text" name="title" class="form-control" id="title" placeholder="Enter Title">
     </div>
-\
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" class="form-control" id="description" placeholder="description">
+      </div>
+
+      <div class="form-group">
+        <label for="imageurl">image URL</label>
+        <input type="text" name="title" class="form-control" id="title" placeholder="image URL">
+      </div>
   </form>
+
 {% endblock %}
