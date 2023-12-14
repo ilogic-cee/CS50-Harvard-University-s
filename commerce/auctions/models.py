@@ -19,7 +19,8 @@ class Listing(models.Model):
     price = models.FloatField()
     isActive = models.BooleanField(default=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name="user")
+
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, related_name="category")
 
 def  __str__(self):
-    return self.title 
+    return self.title
