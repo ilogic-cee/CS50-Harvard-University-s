@@ -15,6 +15,7 @@ def index(request):
 
 def createListing(request):
     if request.method == "POST":
+        all
         form = ListingForm(request.POST)
         if form.is_valid():
             # Process the form data and save the listing
