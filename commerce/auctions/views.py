@@ -28,6 +28,7 @@ def createListing(request):
     return render(request, "auctions/create.html", {"form": form})
 
 
+
 def login_view(request):
     if request.method == "POST":
 
