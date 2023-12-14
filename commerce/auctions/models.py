@@ -24,4 +24,4 @@ class Listing(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, related_name="category")
 
 def  __str__(self):
-    return self.
+    return self
