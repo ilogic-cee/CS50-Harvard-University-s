@@ -53,7 +53,7 @@ def createListing(request):
         )
         newListing.save()
 
-        return redirect("index")
+        return HttpResponseRedirect(reverse(index))
 
 
 
