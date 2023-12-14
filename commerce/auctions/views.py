@@ -17,7 +17,9 @@ def index(request):
 def createListing(request):
     if request.method == "GET":
         allCategories = Category.objects.all()
+        return render(request, "")
         form = ListingForm(request.POST)
+
         if form.is_valid():
             # Process the form data and save the listing
             listing = form.save(commit=False)
