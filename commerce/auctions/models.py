@@ -5,8 +5,8 @@ from django.db import models
 class User(AbstractUser):
     pass
 
-class Category(models.model):
-    categoryName =models.CharField(max_length=50)
+class Category(models.Model):
+    categoryName = models.CharField(max_length=50)
 
 class Listing(models.Model):
     title =models.CharField(max_length=30)
