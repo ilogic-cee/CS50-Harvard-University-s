@@ -84,7 +84,8 @@ small {
 }
 .navbar {
 	border-top: none;
-  }
+	background-color: #fff; 
+}
 
 /* Hover styles for navigation links */
 .navbar-nav a:hover,
@@ -127,7 +128,7 @@ small {
 .container {
 	text-align: center;
 	margin-top: 20px;
-	background-color: #fff; 
+	background-color: #fff;
   }
 
   .navbar.fixed-top {
