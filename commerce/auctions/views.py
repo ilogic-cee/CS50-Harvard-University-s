@@ -27,12 +27,14 @@ def createListing(request):
         price = request.POST["price"]
         category = request.POST["category"]
         currentUser = request.user
+
+        categoryData = Category.objects.get(categoryName=category)
         newListing = Listing(
             title = title,
             description=description,
             imageUrl = imageurl,
             price=float(price),
-            category=category,
+            category=categoryData,
             owner=currentUser
         )
 
