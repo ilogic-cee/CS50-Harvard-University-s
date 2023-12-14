@@ -5,6 +5,8 @@ from django.db import models
 class User(AbstractUser):
     pass
 
+class Category(models.model):
+    categoryName =models.CharField(max_length=50)
 
 class Listing(models.Model):
     title =models.CharField(max_length=30)
@@ -14,3 +16,4 @@ class Listing(models.Model):
     isActive = models.BooleanField(default=True)
     owner models.ForeighKey(User, on_delete=models.CASCADE, blank=true, null=true, related_name="user")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=true, null==true, related_name="category")
+
