@@ -69,6 +69,12 @@ small {
 		padding: 6px 12px;
 	  }
 
+	  .navbar {
+		background-color: #fff;
+		border: none;
+		border-top:  none !important;
+		background-color: #fff;
+	}
 
 
 /* Font style for navigation links */
@@ -81,10 +87,6 @@ small {
     font-family: 'Arial', sans-serif;
     font-weight: 400;
     font-size: 16px;
-}
-.navbar {
-	border-top:  none !important;
-	background-color: #fff;
 }
 
 /* Hover styles for navigation links */
