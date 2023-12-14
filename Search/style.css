@@ -83,7 +83,7 @@ small {
     font-size: 16px;
 }
 .navbar {
-	border-top:  none !important; 
+	border-top:  none !important;
 	background-color: #fff;
 }
 
@@ -134,7 +134,7 @@ html, body {
 	text-align: center;
 	margin-top: 20px;
 	background-color: #fff;
-	border-top: none;
+	border-top: none !important;
   }
 
   .navbar.fixed-top {
