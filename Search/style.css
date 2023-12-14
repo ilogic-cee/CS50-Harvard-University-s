@@ -121,6 +121,10 @@ small {
 	border-top: none;
 }
 
+.button:hover {
+    background-color: #2a66c8; /* Darken the background color on hover */
+}
+
 
 /* Styles for a container element */
 .container {
