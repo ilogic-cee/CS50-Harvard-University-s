@@ -28,9 +28,8 @@
 
 
       <div class="form-group">
-
-            <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Select Category</label>
-            <select id="category" name="category" class="w-full px-3 py-2 border rounded-md">
+            <label for="category">Choose a Category</label>
+            <select id="category" name="category">
                 {% for cat in categoes %}
                 <option value="volvo">{{ cat }}</option>
               {% endfor %}
