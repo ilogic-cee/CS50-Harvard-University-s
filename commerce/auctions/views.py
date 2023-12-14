@@ -28,7 +28,8 @@ def createListing(request):
         title = request.POST["title"]
         description = request.POST["description"]
         imageurl = request.POST["imageurl"]
-        description = request.POST["description"]
+        price = request.POST["price"]
+        category = request.POST["category"]
         form = ListingForm()
 
 
