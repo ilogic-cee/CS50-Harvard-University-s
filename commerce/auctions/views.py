@@ -41,9 +41,10 @@ def createListing(request):
             new_listing = Listing(
                 title=title,
                 description=description,
-                imageUrl=image_url,  # Correct field name
-                price=price,
+                imageUrl=imageurl,
+                price=float(price),
                 category=category,
+                owner=currentUser
             )
 
             # Saving the new listing
