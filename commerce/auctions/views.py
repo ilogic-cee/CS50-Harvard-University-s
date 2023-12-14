@@ -37,7 +37,7 @@ def createListing(request):
         description = request.POST["description"]
         imageurl = request.POST["imageurl"]
         price = request.POST["price"]
-        category_name = request.POST["category"]
+        category = request.POST["category"]
         currentUser = request.user
 
         # Retrieve the Category instance based on the selected category name
