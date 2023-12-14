@@ -22,9 +22,9 @@ small {
 /* Positioning and styling for the search icon */
 .form .fa-search {
 	position: absolute;
-	top: 20px;
-	left: 20px;
-	color: CornflowerBlue;
+	top: 10px;
+	left: 10px;
+	color: #000;
 }
 
 /* Positioning and styling for the span element in the form */
