@@ -6,10 +6,10 @@
   <form action="{% url 'create' %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
-      <label for="title">Email address</label>
-      <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter email">
+      <label for="title">Enter Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter Title">
 
     </div>
-
+\
   </form>
 {% endblock %}
