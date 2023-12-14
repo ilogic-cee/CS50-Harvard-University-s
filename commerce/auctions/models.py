@@ -15,5 +15,5 @@ class Listing(models.Model):
     price = models.FloatField()
     isActive = models.BooleanField(default=True)
     owner models.ForeighKey(User, on_delete=models.CASCADE, blank=true, null=true, related_name="user")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=true, null==true, related_name="category")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=true, null=true, related_name="category")
 
