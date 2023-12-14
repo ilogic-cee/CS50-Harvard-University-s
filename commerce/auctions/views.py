@@ -39,6 +39,8 @@ def createListing(request):
             category=category,
             owner=currentUser
         )
+newListing.save()
+return HttpResponseRedirect(reverse(index))
         form = ListingForm()
 
 
