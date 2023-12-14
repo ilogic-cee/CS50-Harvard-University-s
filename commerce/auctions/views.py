@@ -38,10 +38,7 @@ def createListing(request):
 
 newListing.save()
 return HttpResponseRedirect(reverse(index))
-        form = ListingForm()
-
-
-    return render(request, "auctions/create.html", {"categories":allCategories})
+  
 
 
 
