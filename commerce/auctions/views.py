@@ -6,7 +6,7 @@ from .forms import ListingForm
 from django.contrib.auth.decorators import login_required
 from .models import User, Category, Listing
 from django.shortcuts import render, redirect
-from .forms import CreateListingForm  
+from .forms import CreateListingForm
 
 
 from .models import User
