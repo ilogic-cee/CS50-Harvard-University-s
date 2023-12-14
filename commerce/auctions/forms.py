@@ -1,6 +1,6 @@
 # auctions/forms.py
 from django import forms
-from .forms import ListingForm
+from .models import Listing
 
 
 
