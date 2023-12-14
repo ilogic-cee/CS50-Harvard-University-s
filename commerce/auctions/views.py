@@ -17,15 +17,9 @@ def index(request):
 def createListing(request):
     if request.method == "GET":
         allCategories = Category.objects.all()
-        return render(request, "")
-        form = ListingForm(request.POST)
+        return render(request, "auctions/create.html", {
 
-        if form.is_valid():
-            # Process the form data and save the listing
-            listing = form.save(commit=False)
-            listing.created_by = request.user
-            listing.save()
-            return redirect("index")
+        })
     else:
         title = request.POST["title"]
         description = request.POST["description"]
