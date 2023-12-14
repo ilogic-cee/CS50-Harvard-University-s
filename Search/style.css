@@ -24,6 +24,10 @@ small {
     display: none;
 }
 
+.navbar.fixed-top {
+    background-color: #fff !important; /* Set the background color to white */
+    border: none !important; /* Remove any border */
+}
 
 /* Positioning and styling for the span element in the form */
 .form span {
