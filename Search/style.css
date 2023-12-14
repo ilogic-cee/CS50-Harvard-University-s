@@ -119,6 +119,84 @@ body {
 }*/
 
 
+header {
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+	text-align: left;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+	margin-right: 10px;
+}
+
+
+
+.links {
+	text-decoration: none;
+	color: #757575;
+	font-size: 14px;
+}
+
+.signbutton {
+	background-color: #4285f4;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+.logo {
+	text-align: center;
+	margin-top: 150px;
+}
+
+
+.bar {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.searchbar {
+	width: 600px;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 16px;
+	margin-right: 4px;
+}
+
+.voice {
+	height: 24px;
+	vertical-align: middle;
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.buttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.button {
+	background-color: #4285f4;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+
 /* Styles for a container element */
 .container {
 	text-align: center;
