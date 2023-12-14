@@ -18,6 +18,13 @@ from django.shortcuts import render, redirect
 from .models import Listing
 from .forms import CreateListingForm
 
+# auctions/views.py
+from django.shortcuts import render, redirect
+from .models import Listing
+from .forms import CreateListingForm
+
+
+
 def createListing(request):
     if request.method == "POST":
         # Creating and validating the form
@@ -26,7 +33,7 @@ def createListing(request):
             # Extracting data from the validated form
             title = form.cleaned_data['title']
             description = form.cleaned_data['description']
-            image_url = form.cleaned_data['image_url']
+            image_url = form.cleaned_data['imageUrl']  # Correct field name
             price = form.cleaned_data['price']
             category = form.cleaned_data['category']
             starting_bid = form.cleaned_data['starting_bid']
@@ -35,7 +42,7 @@ def createListing(request):
             new_listing = Listing(
                 title=title,
                 description=description,
-                image_url=image_url,
+                imageUrl=image_url,  # Correct field name
                 price=price,
                 category=category,
                 starting_bid=starting_bid,
