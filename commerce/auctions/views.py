@@ -11,8 +11,18 @@ def index(request):
     return render(request, "auctions/index.html")
 
 def createListing(request):
-     if request.method == "GET":
-          return render(request, "auctions/create.html")
+    if request.method == "POST":
+        form = ListingForm(request.POST)
+        if form.is_valid():
+            # Process the form data and save the listing
+            listing = form.save(commit=False)
+            listing.created_by = request.user
+            listing.save()
+            return redirect("index")
+    else:
+        form = ListingForm()
+
+    return render(request, "auctions/create.html", {"form": form})
 
 
 def login_view(request):
