@@ -32,7 +32,7 @@
             <label for="category">Choose a Category:</label>
             <select name="category" id="category">
                 {% for cat in categories %}
-                <option value="cat">{{ cat }}</option>
+                <option value="{{ cat }}">{{ cat }}</option>
               {% endfor %}
               <!-- Add more options as needed -->
             </select>
