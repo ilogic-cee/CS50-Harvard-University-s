@@ -9,11 +9,11 @@ class Category(models.Model):
     categoryName = models.CharField(max_length=50)
 
 class Listing(models.Model):
-    title =models.CharField(max_length=30)
+    title = models.CharField(max_length=30)
     description = models.CharField(max_length=300)
     imageUrl = models.CharField(max_length=1000)
     price = models.FloatField()
     isActive = models.BooleanField(default=True)
-    owner models.ForeighKey(User, on_delete=models.CASCADE, blank=true, null=true, related_name="user")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=true, null=true, related_name="category")
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name="user")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, related_name="category")
 
