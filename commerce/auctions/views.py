@@ -36,9 +36,9 @@ def createListing(request):
             owner=currentUser
         )
 
-newListing.save()
-return HttpResponseRedirect(reverse(index))
-  
+        newListing.save()
+        return HttpResponseRedirect(reverse(index))
+
 
 
 
