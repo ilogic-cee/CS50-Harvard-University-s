@@ -83,7 +83,7 @@ small {
     font-size: 16px;
 }
 .navbar {
-	border-top: none;
+	border-top:  none !important; 
 	background-color: #fff;
 }
 
