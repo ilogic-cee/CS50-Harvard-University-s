@@ -27,7 +27,7 @@ def createListing(request):
     else:
         form = ListingForm()
 
-    return render(request, "auctions/create.html", {"categories":all})
+    return render(request, "auctions/create.html", {"categories":allCategories})
 
 
 
