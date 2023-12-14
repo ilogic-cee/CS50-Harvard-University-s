@@ -24,6 +24,9 @@
         <label for="price">price</label>
         <input type="number" name="price" class="form-control" id="price" placeholder="Price:">
       </div>
+
+    {% for cat in categoes %}
+    <option value="volvo">{{ cat }}</option>
       <div class="form-group">
 
             <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Select Category</label>
@@ -37,6 +40,7 @@
 
 
      </div>
+
       <button type="submit" class="btn btn-success">
         New listitng!
       </button>
