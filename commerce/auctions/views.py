@@ -23,14 +23,15 @@ def createListing(request):
         category = request.POST["category"]
         currentUser = request.user
 
-        categoryData =category.objects.get(categoryName=category)
+        categoryData = Category.objects.get(categoryName=category)
+
 
         newListing = Listing(
             title=title,
             description=description,
             imageUrl=imageurl,
             price=float(price),
-            category=category,
+            category=categoryData,
             owner=currentUser
         )
         newListing.save()
