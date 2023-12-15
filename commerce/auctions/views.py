@@ -6,6 +6,20 @@ from django.urls import reverse
 from .models import User, Category, Listing
 
 
+
+
+def listing(request, id):
+    listingData = Listing.objects.get(pk=id)
+    isListingInWatchlist = request.user in listingData.watchlist.all()
+    allComments = Comment.objects.filter(listing=listingData)
+    isOwner = request.user.username == listingData.owner.username
+    return render(request, "auctions/listing.html", {
+        "listing": listingData,
+        "isListingInWatchlist": isListingInWatchlist,
+        "allComments": allComments,
+        "isOwner": isOwner
+    })
+
 def index(request):
     activeListings = Listing.objects.filter(isActive=True)
     allCategories = Category.objects.all()
