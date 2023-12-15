@@ -47,6 +47,7 @@ def displayWatchlist(request):
         "listings": listings
     })
 
+
 def createListing(request):
     if request.method == "GET":
         allCategories = Category.objects.all()
