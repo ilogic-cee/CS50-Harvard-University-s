@@ -27,12 +27,12 @@ def createListing(request):
         categoryData = Category.objects.get(categoryName=category)
 
 
-        newListing = Listing(
+         newListing = Listing(
             title=title,
             description=description,
             imageUrl=imageurl,
             price=float(price),
-            category=categoryData,
+            category=category,
             owner=currentUser
         )
         newListing.save()
