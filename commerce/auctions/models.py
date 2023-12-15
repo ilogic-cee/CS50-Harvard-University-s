@@ -20,7 +20,7 @@ class Listing(models.Model):
     price = models.FloatField()
     isActive = models.BooleanField(default=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name="user")
-
+    starting_bid = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, related_name="category")
 
 def  __str__(self):
