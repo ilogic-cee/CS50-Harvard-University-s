@@ -16,11 +16,12 @@ def createListing(request):
             "categories": allCategories,
         })
     else:
-        title = request.POST["title"]
-        description = request.POST["description"]
-        imageurl = request.POST["imageurl"]
-        price = request.POST["price"]
-        category = request.POST["category"]
+        title = request.POST['title']
+        description = request.POST['description']
+        imageurl = request.POST['imageurl']
+        price = request.POST['price']
+        category = request.POST['category']
+
         currentUser = request.user
 
         categoryData = Category.objects.get(categoryName=category)
