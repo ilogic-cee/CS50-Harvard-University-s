@@ -28,8 +28,7 @@ def createListing(request):
         category = request.POST["category"]
         currentUser = request.user
 
-        # Retrieve the Category instance based on the selected category name
-        category = get_object_or_404(Category, name=category_name)
+        categoryData =categoru.objects.get(categoryName=category)
 
         newListing = Listing(
             title=title,
