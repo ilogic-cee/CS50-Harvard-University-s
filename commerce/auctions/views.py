@@ -36,9 +36,16 @@ def displayCategory(request):
         allCategories = Category.objects.all()
         return render(request, "auctions/index.html", {
             "listings": activeListings,
-            "categories":allCategories, 
+            "categories":allCategories,
         })
 
+
+def displayWatchlist(request):
+    currentUser = request.user
+    listings = currentUser.listingWatchlist.all()
+    return render(request, "auctions/watchlist.html", {
+        "listings": listings
+    })
 
 def createListing(request):
     if request.method == "GET":
