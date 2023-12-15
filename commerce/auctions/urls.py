@@ -11,6 +11,4 @@ urlpatterns = [
     path("displayCategory", views.displayCategory, name="displayCategory"),
     path("create", views.createListing, name="create"),
     path("watchlist", views.displayWatchlist, name="watchlist"),
-
-
 ]
