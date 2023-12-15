@@ -8,7 +8,6 @@ from .models import User, Category, Listing
 from django.shortcuts import render, redirect
 from .forms import CreateListingForm
 from django.shortcuts import render, redirect
-from django.shortcuts import render, redirect
 from .models import User
 
 
