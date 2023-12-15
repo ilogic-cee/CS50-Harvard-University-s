@@ -18,7 +18,7 @@ def createListing(request):
     if request.method == "GET":
         allCategories = Category.objects.all()
         return render(request, "auctions/create.html", {
-            "categories": allCategories
+            "categories": allCategories,
         })
     else:
         title = request.POST["title"]
