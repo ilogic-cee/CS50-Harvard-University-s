@@ -3,7 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .models import User, Category, Listing 
+from .models import User, Category, Listing
 
 
 def index(request):
@@ -23,7 +23,7 @@ def createListing(request):
         category = request.POST["category"]
         currentUser = request.user
 
-        categoryData =categoru.objects.get(categoryName=category)
+        categoryData =category.objects.get(categoryName=category)
 
         newListing = Listing(
             title=title,
