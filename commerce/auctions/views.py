@@ -16,18 +16,18 @@ def createListing(request):
             "categories": allCategories,
         })
     else:
-        title = request.POST['title']
-        description = request.POST['description']
-        imageurl = request.POST['imageurl']
-        price = request.POST['price']
-        category = request.POST['category']
+        title = request.POST["title"]
+        description = request.POST["description"]
+        imageurl = request.POST["imageurl"]
+        price = request.POST["price"]
+        category_name = request.POST["category"]  # Corrected variable name
+
+        # Retrieve the Category instance based on the selected category name
+        category = Category.objects.get(categoryName=category_name)
 
         currentUser = request.user
 
-        categoryData = Category.objects.get(categoryName=category)
-
-
-         newListing = Listing(
+        newListing = Listing(
             title=title,
             description=description,
             imageUrl=imageurl,
@@ -38,6 +38,7 @@ def createListing(request):
         newListing.save()
 
         return HttpResponseRedirect(reverse(index))
+
 
 
 
