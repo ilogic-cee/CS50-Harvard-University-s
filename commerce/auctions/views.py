@@ -21,7 +21,7 @@ from .forms import CreateListingForm
 
 # auctions/views.py
 from django.shortcuts import render, redirect
-from .models import Listing
+from .forms import ListingForm
 from .forms import CreateListingForm
 
 
