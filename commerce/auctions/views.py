@@ -6,16 +6,14 @@ from django.urls import reverse
 from .models import User, Category, Listing
 
 
-def index(request, id):
+def index(request):
     activeListings = Listing.objects.filter(isActive=True)
     allCategories = Category.objects.all()
     return render(request, "auctions/index.html", {
         "listings": activeListings,
-        "categories": allCategiries,
+        "categories": allCategories,
     })
 
-def index(request):
-    return render(request, "auctions/index.html")
 
 def createListing(request):
     if request.method == "GET":
