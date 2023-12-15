@@ -28,6 +28,12 @@ def index(request):
         "categories": allCategories,
     })
 
+def displayCategory(request):
+    if request.method == "POST":
+        categoryFromForm = request.POST['category']
+        category = Category.objects.get(categoryName=categoryFromForm)
+        activeListings = Listing.objects.filter(isActive=True, category=category)
+        
 
 def createListing(request):
     if request.method == "GET":
