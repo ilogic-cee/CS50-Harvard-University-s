@@ -7,24 +7,13 @@ from django.contrib.auth.decorators import login_required
 from .models import User, Category, Listing
 from django.shortcuts import render, redirect
 from .forms import CreateListingForm
-
-
+from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect
 from .models import User
 
 
 def index(request):
     return render(request, "auctions/index.html")
-
-from django.shortcuts import render, redirect
-from .models import Listing
-from .forms import CreateListingForm
-
-# auctions/views.py
-from django.shortcuts import render, redirect
-from .forms import ListingForm
-from .forms import CreateListingForm
-
-
 
 def createListing(request):
     if request.method == "GET":
