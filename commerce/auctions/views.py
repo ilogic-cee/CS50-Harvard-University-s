@@ -36,7 +36,7 @@ def displayCategory(request):
         allCategories = Category.objects.all()
         return render(request, "auctions/index.html", {
             "listings": activeListings,
-            "categories":allCategories,
+            "categories": allCategories,
         })
 
 
