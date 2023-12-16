@@ -4,7 +4,7 @@ from django.db import models
 
 class User(AbstractUser):
     pass
-        
+
 
 class Category(models.Model):
     categoryName = models.CharField(max_length=50)
@@ -16,8 +16,10 @@ class Category(models.Model):
 class Bid(models.Model):
     bid = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, related_name='userBid')
+    bid_time = models.DateTimeField(auto_now_add=True)
 
-
+    def __str__(self):
+        return f"{self.user.username} bid {self.bid} at {self.bid_time}"
 
 class Listing(models.Model):
     title = models.CharField(max_length=30)
