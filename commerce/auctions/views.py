@@ -159,8 +159,7 @@ def createListing(request):
             "categories": allCategories,
         })
     # Check if the request method is POST
-    elif request.method == "POST":
-        # Retrieve data from the POST request
+    else:
         title = request.POST['title']
         description = request.POST['description']
         imageurl = request.POST['imageurl']
@@ -173,7 +172,7 @@ def createListing(request):
         categoryData = Category.objects.get(categoryName=category)
 
         # Create a new bid for the listing
-        bid = Bid(bid=float(price), user=currentUser)
+        bid = Bid(bid=int(price), user=currentUser)
         bid.save()
 
         # Create a new listing with the bid
