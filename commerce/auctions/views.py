@@ -126,8 +126,12 @@ def addWatchlist(request, id):
 
 
 def index(request):
+      # Get all active listings (where isActive is True)
     activeListings = Listing.objects.filter(isActive=True)
+
+     # Get all categories
     allCategories = Category.objects.all()
+    # Render the index.html template with the list of active listings and all categories
     return render(request, "auctions/index.html", {
         "listings": activeListings,
         "categories": allCategories,
