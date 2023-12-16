@@ -10,17 +10,25 @@ from .models import User, Category, Listing, Comment, Bid
 
 
 def listing(request, id):
+    # Retrieve the listing data from the database based on the provided id
     listingData = Listing.objects.get(pk=id)
+
+    # Check if the current user is in the watchlist of the listing
     isListingInWatchlist = request.user in listingData.watchlist.all()
+
+    # Retrieve all comments associated with the listing
     allComments = Comment.objects.filter(listing=listingData)
+
+    # Check if the current user is the owner of the listing
     isOwner = request.user.username == listingData.owner.username
+
+    # Render the 'listing.html' template with the listing details and additional context
     return render(request, "auctions/listing.html", {
         "listing": listingData,
         "isListingInWatchlist": isListingInWatchlist,
         "allComments": allComments,
         "isOwner": isOwner
     })
-
 
 
 
