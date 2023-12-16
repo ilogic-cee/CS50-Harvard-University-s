@@ -164,8 +164,6 @@ def createListing(request):
         category = request.POST['category']
 
         currentUser = request.user
-
-
         categoryData = Category.objects.get(categoryName=category)
 
 
