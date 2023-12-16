@@ -52,6 +52,7 @@ def addBid(request, id):
     isListingInWatchlist = request.user in listingData.watchlist.all()
     allComments = Comment.objects.filter(listing=listingData)
     isOwner = request.user.username == listingData.owner.username
+    if listingData.price:
     if int(newBid) > listingData.price.bid:
         updateBid = Bid(user=request.user, bid=int(newBid))
         updateBid.save()
@@ -68,7 +69,7 @@ def addBid(request, id):
     else:
         return render(request, "auctions/listing.html", {
                     "listing": listingData,
-                    "message": "Bid was updated failed",
+                    "message": "Bid was not updated. Please try again later",
                     "update": False,
                     "isListingInWatchlist": isListingInWatchlist,
                     "allComments": allComments,
