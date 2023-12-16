@@ -169,10 +169,6 @@ def createListing(request):
         categoryData = Category.objects.get(categoryName=category)
 
 
-        bid = Bid(bid=int(price), user=currentUser)
-        bid.save()
-
-
         newListing = Listing(
             title=title,
             description=description,
