@@ -151,33 +151,45 @@ def displayCategory(request):
 
 
 def createListing(request):
+    # Check if the request method is GET
     if request.method == "GET":
+        # Retrieve all categories for rendering in the create.html template
         allCategories = Category.objects.all()
         return render(request, "auctions/create.html", {
             "categories": allCategories,
         })
-   elif request.method == "POST":
+    # Check if the request method is POST
+    elif request.method == "POST":
+        # Retrieve data from the POST request
         title = request.POST['title']
         description = request.POST['description']
         imageurl = request.POST['imageurl']
         price = request.POST['price']
         category = request.POST['category']
 
+        # Get the current user
         currentUser = request.user
+        # Get the category data based on the selected category name
         categoryData = Category.objects.get(categoryName=category)
 
+        # Create a new bid for the listing
+        bid = Bid(bid=float(price), user=currentUser)
+        bid.save()
 
+        # Create a new listing with the bid
         newListing = Listing(
             title=title,
             description=description,
             imageUrl=imageurl,
             price=float(price),
             category=categoryData,
-            owner = currentUser
+            owner=currentUser
         )
+        # Save the new listing to the database
         newListing.save()
 
-        return HttpResponseRedirect(reverse(index))
+        # Redirect to the index page after successful listing creation
+        return redirect(reverse('index'))
 
 
 def login_view(request):
