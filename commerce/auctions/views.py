@@ -14,7 +14,7 @@ def listing(request, id):
     listingData = Listing.objects.get(pk=id)
 
     # Check if the current user is in the watchlist of the listing
-    isListingInWatchlist = request.user in listingData.watchlist.all()
+    isListingInWatchlist = request.user.is_authenticated and request.user in listingData.watchlist.all()
 
     # Retrieve all comments associated with the listing
     allComments = Comment.objects.filter(listing=listingData)
