@@ -47,6 +47,7 @@ def closeAuction(request, id):
 
 
 def addBid(request, id):
+    print("Received ID:", id)
     newBid = request.POST['newBid']
     listingData = Listing.objects.get(pk=id)
     isListingInWatchlist = request.user in listingData.watchlist.all()
