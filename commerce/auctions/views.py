@@ -52,29 +52,41 @@ def addBid(request, id):
     isListingInWatchlist = request.user in listingData.watchlist.all()
     allComments = Comment.objects.filter(listing=listingData)
     isOwner = request.user.username == listingData.owner.username
+
+    # Check if the listing has a price (Bid instance) associated with it
     if listingData.price:
-    if int(newBid) > listingData.price.bid:
-        updateBid = Bid(user=request.user, bid=int(newBid))
-        updateBid.save()
-        listingData.price = updateBid
-        listingData.save()
+        # Access the bid attribute only if the price is not None
+        if int(newBid) > listingData.price.bid:
+            updateBid = Bid(user=request.user, bid=int(newBid))
+            updateBid.save()
+            listingData.price = updateBid
+            listingData.save()
+            return render(request, "auctions/listing.html", {
+                "listing": listingData,
+                "message": "Bid was updated successfully",
+                "update": True,
+                "isListingInWatchlist": isListingInWatchlist,
+                "allComments": allComments,
+                "isOwner": isOwner,
+            })
+        else:
+            return render(request, "auctions/listing.html", {
+                "listing": listingData,
+                "message": "Bid was not updated. Please enter a higher bid.",
+                "update": False,
+                "isListingInWatchlist": isListingInWatchlist,
+                "allComments": allComments,
+                "isOwner": isOwner,
+            })
+    else:
         return render(request, "auctions/listing.html", {
             "listing": listingData,
-            "message": "Bid was updated successfully",
-            "update": True,
+            "message": "Bid was not updated. Please try again later.",
+            "update": False,
             "isListingInWatchlist": isListingInWatchlist,
             "allComments": allComments,
             "isOwner": isOwner,
         })
-    else:
-        return render(request, "auctions/listing.html", {
-                    "listing": listingData,
-                    "message": "Bid was not updated. Please try again later",
-                    "update": False,
-                    "isListingInWatchlist": isListingInWatchlist,
-                    "allComments": allComments,
-                    "isOwner": isOwner,
-                })
 
 
 
