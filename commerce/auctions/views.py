@@ -166,7 +166,7 @@ def createListing(request):
         currentUser = request.user
 
 
-        CategoryData = Category.objects.get(categoryName=category)
+        categoryData = Category.objects.get(categoryName=category)
 
 
         bid = Bid(bid=int(price), user=currentUser)
