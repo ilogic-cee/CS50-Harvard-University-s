@@ -177,7 +177,7 @@ def createListing(request):
             title=title,
             description=description,
             imageUrl=imageurl,
-            price=bid,
+            price=float(price),
             category=categoryData,
             owner = currentUser
         )
