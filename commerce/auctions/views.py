@@ -156,7 +156,7 @@ def createListing(request):
         return render(request, "auctions/create.html", {
             "categories": allCategories,
         })
-    else:
+   elif request.method == "POST":
         title = request.POST['title']
         description = request.POST['description']
         imageurl = request.POST['imageurl']
