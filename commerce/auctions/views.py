@@ -180,7 +180,7 @@ def createListing(request):
             title=title,
             description=description,
             imageUrl=imageurl,
-            price=float(price),
+            price=bid,
             category=categoryData,
             owner=currentUser
         )
@@ -188,7 +188,7 @@ def createListing(request):
         newListing.save()
 
         # Redirect to the index page after successful listing creation
-        return redirect(reverse('index'))
+        return HttpResponseRedirect(reverse('index'))
 
 
 def login_view(request):
