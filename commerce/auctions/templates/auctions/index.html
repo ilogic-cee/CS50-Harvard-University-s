@@ -19,7 +19,7 @@
  <div class="row mx-3">
     <div class="flex flex-wrap justify-center gap-6">
         {% for listing in listings %}
-        <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-3 pb-3 pt-16 max-w-xs mx-2 my-2" style="width: 18rem;>
+        <article class="card mx-3" style="width: 18rem;">
             <img src="{{ listing.imageUrl }}" alt="{{ listing.title }}" class="absolute inset-0 h-full w-full object-cover rounded-t-2xl">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
             <h3 class="z-10 mt-2 text-sm font-bold text-white">{{ listing.title }}</h3>
