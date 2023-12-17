@@ -1,33 +1,36 @@
 {% extends "auctions/layout.html" %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'auctions/static/styles.css' %}">
-
-
 {% block body %}
-    <h2 class="text-3xl font-semibold mb-4">Active Listings</h2>
+    <h2 class="text-4xl font-bold text-center mb-8">Active Listings</h2>
 
-    <form action="{% url 'displayCategory' %}" method="POST" class="mb-6">
+    <form action="{% url 'displayCategory' %}" method="POST" class="my-3 flex justify-center">
         {% csrf_token %}
-        <label for="category" class="text-lg font-medium">Choose a category:</label>
-        <select name="category" id="category" class="border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-blue-300">
+        <label for="category" class="mr-4 text-lg">Choose a category:</label>
+        <select name="category" id="category" class="p-2 border rounded">
             {% for cat in categories %}
                 <option value="{{ cat }}">{{ cat }}</option>
             {% endfor %}
         </select>
-        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 ml-2 rounded-md focus:outline-none focus:ring focus:border-yellow-400">Select</button>
+        <button type="submit" class="bg-yellow-500 text-white py-2 px-4 ml-4 rounded hover:bg-yellow-700">
+            Select
+        </button>
     </form>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="flex flex-wrap justify-center mx-3">
         {% for listing in listings %}
-            <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                <img src="{{ listing.imageUrl }}" class="w-full h-36 object-cover" alt="{{ listing.title }}">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-4 mb-8">
+                <img src="{{ listing.imageUrl }}" class="w-full h-64 object-cover" alt="{{ listing.title }}">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">{{ listing.title }}</div>
                     <p class="text-gray-700 text-base">{{ listing.description }}</p>
-                    <p class="text-gray-900 text-base font-semibold mt-2">Price: ${{ listing.price.bid }}</p>
+                    <p class="text-gray-900 text-xl mt-2">${{ listing.price.bid }}</p>
                 </div>
-                <div class="px-6 py-4">
-                    <a href="{% url 'listing' listing.id %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-blue-300">Details</a>
+                <div class="px-6 pt-4 pb-2">
+                    <a href="{% url 'listing' listing.id %}"
+                        class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full">
+                        Details
+                    </a>
                 </div>
             </div>
         {% endfor %}
