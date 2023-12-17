@@ -24,7 +24,7 @@
                     <h5 class="card-title">{{ listing.title }}</h5>
                     <p class="card-text">{{ listing.description }}</p>
                     <p class="card-text">Price: <strong>${{ listing.price.bid }}</strong></p>
-                    <a href="{% url 'listing' listing.id %}" class="btn btn-primary">Details</a>
+                    <a href="{% url 'listing' listing.id %}" class="z-10 mt-1 text-xs font-semibold text-blue-500 hover:text-blue-700">Details</a>
                 </div>
             </div>
         {% endfor %}
