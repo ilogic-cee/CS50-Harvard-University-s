@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for listing in listings %}
             <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                <img src="{{ listing.imageUrl }}" class="w-full h-48 object-cover" alt="{{ listing.title }}">
+                <img src="{{ listing.imageUrl }}" class="w-full h-36 object-cover" alt="{{ listing.title }}">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">{{ listing.title }}</div>
                     <p class="text-gray-700 text-base">{{ listing.description }}</p>
