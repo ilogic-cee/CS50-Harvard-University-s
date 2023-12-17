@@ -16,22 +16,18 @@
         </button>
     </form>
 
-    <div class="flex flex-wrap justify-center mx-3">
+    <div class="row mx-3">
         {% for listing in listings %}
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-4 mb-8">
-                <img src="{{ listing.imageUrl }}" class="w-full h-64 object-cover" alt="{{ listing.title }}">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">{{ listing.title }}</div>
-                    <p class="text-gray-700 text-base">{{ listing.description }}</p>
-                    <p class="text-gray-900 text-xl mt-2">${{ listing.price.bid }}</p>
-                </div>
-                <div class="px-6 pt-4 pb-2">
-                    <a href="{% url 'listing' listing.id %}"
-                        class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full inline-block">
-                        View Details
-                    </a>
+            <div class="card mx-3" style="width: 18rem;">
+                <img src="{{ listing.imageUrl }}" class="card-img-top" alt="{{ listing.title }}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ listing.title }}</h5>
+                    <p class="card-text">{{ listing.description }}</p>
+                    <p class="card-text">Price: <strong>${{ listing.price.bid }}</strong></p>
+                    <a href="{% url 'listing' listing.id %}" class="btn btn-primary">Details</a>
                 </div>
             </div>
         {% endfor %}
     </div>
+
 {% endblock %}
