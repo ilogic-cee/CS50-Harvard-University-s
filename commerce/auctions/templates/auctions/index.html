@@ -1,8 +1,7 @@
 {% extends "auctions/layout.html" %}
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'auctions/static/styles.css' %}">
+
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2 class="text-4xl font-bold text-center mb-8">Active Listings</h2>
 
     <form action="{% url 'displayCategory' %}" method="POST" class="my-3 flex justify-center">
         {% csrf_token %}
@@ -17,19 +16,15 @@
         </button>
     </form>
 
-    <div class="flex flex-wrap justify-center mx-3">
+    <div class="flex flex-wrap justify-center gap-6">
         {% for listing in listings %}
-            <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-4 my-4">
-                <img src="{{ listing.imageUrl }}" alt="{{ listing.title }}" class="absolute inset-0 h-full w-full object-cover rounded-t-2xl">
+            <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
+                <img src="{{ listing.imageUrl }}" alt="{{ listing.title }}" class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
                 <h3 class="z-10 mt-3 text-3xl font-bold text-white">{{ listing.title }}</h3>
                 <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">{{ listing.description }}</div>
-                <div class="z-10 mt-2 text-xl font-bold text-white">${{ listing.price.bid }}</div>
-                <div class="z-10 mt-2">
-                    <a href="{% url 'listing' listing.id %}" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full inline-block">
-                        View Details
-                    </a>
-                </div>
+                <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">Price: <strong>${{ listing.price.bid }}</strong></div>
+                <a href="{% url 'listing' listing.id %}" class="z-10 mt-2 text-sm font-semibold text-blue-500 hover:text-blue-700">Details</a>
             </article>
         {% endfor %}
     </div>
