@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio</title>
+</head>
+<body>
+    <h1>Your Stock Portfolio</h1>
+
+    <ul>
+        {% for stock in stocks %}
+            <li>{{ stock["symbol"] }} - {{ stock["total_shares"] }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Cash: ${{ cash }}</p>
+    <p>Total Portfolio Value: ${{ total_value }}</p>
+    <p>Grand Total: ${{ grand_total }}</p>
+</body>
+</html>
+
