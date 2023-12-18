@@ -61,7 +61,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock T"""
+    """Buy shares of stock THIRD"""
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
