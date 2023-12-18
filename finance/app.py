@@ -40,7 +40,8 @@ from helpers import lookup
 def index():
     """Show portfolio of stocks"""
     # Fetch stocks for the user
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"]).fetchall()
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
+
 
     # Fetch user's cash
     user_cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]).fetchone()
