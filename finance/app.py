@@ -63,7 +63,8 @@ def index():
         total_value += stock["value"]
         grand_total += stock["value"]
 
-    return render_template("index.html", stocks=stocks_data, cash=cash, total_value=total_value, grand_total=grand_total)
+    return render_template("index.html", portfolio=your_portfolio_data, cash_left=your_cash_left, total_amount=your_total_amount)
+
 
 
 
