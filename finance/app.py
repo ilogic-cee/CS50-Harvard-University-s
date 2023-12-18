@@ -70,9 +70,10 @@ def buy():
 
        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}")
        return redirect("/")
-
        else:
-          return 
+          return render_template("buy.html")
+
+          
 
         transaction_value = shares * stock["price"]
 
