@@ -1,9 +1,11 @@
 ## Project Description
-
+## Commerce 
 This project is an e-commerce website developed using Django, a Python web framework. The purpose of the website is to allow users to browse, search, and purchase various products online. Key features include user authentication, product listings with details, a shopping cart system, and a checkout process.
 
-### Key Features:
 
+#### Video Demo:  https://youtu.be/fLcWGtrRgAM
+
+### Key Features:
 - **User Authentication:** Users can sign up, log in, and log out. Authenticated users have access to additional features like creating listings, bidding on items, and managing their watchlist.
 
 - **Product Listings:** The website displays a list of active listings, including product details such as title, description, image, and current bid price.
