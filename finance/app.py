@@ -51,14 +51,23 @@ def buy():
         elif not shares or not shares.isdigit() or int(shares) <=0:
             return apology("Must provide a positive integer number of shares")
 
-            
-        stock = lookup(symbol.upper())
 
-        if stock == None:
+        quote = lookup(symbol)
+        if quote is None:
             return apology("Symbol Does Not Exist")
 
-        if shares < 0:
-            return apology("Share Not Allowed")
+       price = quote["price"]
+       total_cost = int(shares)*price
+       cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+
+        if cash < total_cost:
+            return apology("not enough cash")
+
+        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
+                   total_cost=total_cost, user_id=session["user_id"])
+
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol,) cash = cash - :total_cost WHERE id = :user_id",
+                   total_cost=total_cost, user_id=session["user_id"])
 
         transaction_value = shares * stock["price"]
 
