@@ -29,9 +29,10 @@ def index():
         month = request.form.get("month")
         day = request.form.get("day")
         # TODO: Add the user's entry into the database
-        db.excute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day)"),
+        db.excute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day)",
         name = name, month=month, day=day)
         return redirect("/")
+    
 
     else:
 
