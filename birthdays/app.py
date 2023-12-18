@@ -32,12 +32,14 @@ def index():
         db.excute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day)",
         name = name, month=month, day=day)
         return redirect("/")
-    
+
 
     else:
+        rows = db.execute("SELECT * FROM birthdays")
+
 
         # TODO: Display the entries in the database on index.html
 
-        return render_template("index.html")
+        return render_template("index.html", rows=rows)
 
 
