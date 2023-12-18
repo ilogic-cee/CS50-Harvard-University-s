@@ -36,19 +36,20 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    # Assuming db.execute returns a list of rows
     stocks_data = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
 
-    if stocks_data:
-        stocks = stocks_data[0]["cash"]
-    else:
-        stocks = []  # or any other default value
+    # Check if stocks_data is not empty before accessing the first element
+    if not stocks_data:
+        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
 
     cash_data = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
 
-    if cash_data:
-        cash = cash_data[0]["cash"]
-    else:
-        cash = 0  # or any other default value
+    # Check if cash_data is not empty before accessing the first element
+    if not cash_data:
+        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
+
+    cash = cash_data[0]["cash"]
 
     total_value = cash
     grand_total = cash
@@ -62,6 +63,7 @@ def index():
         grand_total += stock["value"]
 
     return render_template("index.html", stocks=stocks_data, cash=cash, total_value=total_value, grand_total=grand_total)
+
 
 
 
