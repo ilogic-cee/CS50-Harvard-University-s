@@ -61,7 +61,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
+    """Buy shares of stock T"""
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
@@ -88,7 +88,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}")
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
     else:
         return render_template("buy.html")
