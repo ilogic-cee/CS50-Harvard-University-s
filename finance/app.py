@@ -68,7 +68,7 @@ def buy():
 
         if not symbol:
             return apology("Must Give Symbol")
-        elif not shares or int(shares) <= 0:
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("Must provide a positive integer number of shares")
 
         quote = lookup(symbol)
