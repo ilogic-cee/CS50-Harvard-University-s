@@ -135,8 +135,12 @@ def register():
 
      rows = db.execute("SELECT * FROM users WHERE username =?", request.form.get("username"))
 
-   session["user_id"] = rows[0]["id"]
-   return redirect("/")
+        session["user_id"] = rows[0]["id"]
+
+         return redirect("/")
+    else:
+        return render_template("register.html")
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
