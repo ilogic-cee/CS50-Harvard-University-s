@@ -124,8 +124,18 @@ def register():
 
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("password do not match", 400)
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
+        if len(rows) != 0:
+            return apology("username already exists", 400)
 
+       db.execute("INSERT INTO user (username, hash) VALUES(?, ?)",
+                  request.form.get("username"), generate_password_hash(request.form.get("password"))
+
+     rows = db.execute("SELECT * FROM users WHERE username =?", request.form.get("username"))
+
+   session["user_id"] = rows[0]["id"]
+   return redirect("/")
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
