@@ -68,35 +68,10 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}")
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
     else:
         return render_template("buy.html")
-
-
-
-        transaction_value = shares * stock["price"]
-
-        user_id = session["user_id"]
-        user_cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-        user_cash = user_cash_db[0]["cash"]
-
-        if user_cash < transaction_value:
-            return apology("Not Enough Money")
-        uptd_cash = user_cash - transaction_value
-
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", uptd_cash, user_id)
-
-        date = datetime.datetime.now()
-
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
-
-        flash("Boudht!")
-
-        return redirect("/")
-
-    """Buy shares of stock"""
-    return apology("TODO")
 
 
 @app.route("/history")
