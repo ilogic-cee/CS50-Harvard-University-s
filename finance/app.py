@@ -123,23 +123,24 @@ def register():
             return apology("must confirm password", 400)
 
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("password do not match", 400)
+            return apology("passwords do not match", 400)
 
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         if len(rows) != 0:
             return apology("username already exists", 400)
 
-       db.execute("INSERT INTO user (username, hash) VALUES(?, ?)"
-                  request.form.get("username"), generate_password_hash(request.form.get("password")))
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
 
-     rows = db.execute("SELECT * FROM users WHERE username =?", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         session["user_id"] = rows[0]["id"]
 
-         return redirect("/")
+        return redirect("/")
     else:
         return render_template("register.html")
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
