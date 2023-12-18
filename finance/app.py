@@ -45,7 +45,8 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
+
         if not symbol:
             return apology("Must Give Symbol")
         elif not shares or not shares.isdigit() or int(shares) <= 0:
@@ -68,10 +69,11 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}")
         return redirect("/")
     else:
         return render_template("buy.html")
+
 
 
 @app.route("/history")
