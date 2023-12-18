@@ -34,20 +34,14 @@ def after_request(response):
 
 @app.route("/")
 @login_required
-from flask import render_template, session
-from helpers import lookup
-
 def index():
     """Show portfolio of stocks"""
-    # Fetch stocks for the user
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])[0]["cash"]
 
 
-    # Fetch user's cash
-    user_cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]).fetchone()
 
-    # Check if the result is not empty before accessing its elements
-    cash = user_cash["cash"] if user_cash else 0
+
+    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
     total_value = cash
     grand_total = cash
@@ -60,8 +54,8 @@ def index():
         total_value += stock["value"]
         grand_total += stock["value"]
 
-    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
 
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
