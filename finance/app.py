@@ -229,9 +229,15 @@ def sell():
                 if stock["total_shares"] < shares:
                     return apology("not enough shares")
                 else:
-                    quote = lookup(symbol):
+                    quote = lookup(symbol)
                     if quote is None:
                         return apology("symbol not found")
                     price = quote["price"]
                     total_sale = shares * price
+
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                               user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
+
+                    
+
     return apology("TODO")
