@@ -34,7 +34,9 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use POSTGRES database
-db = SQL(os.getenv("DATABASE_UR"))
+# Configure CS50 Library to use POSTGRES database
+db = SQL(os.getenv("DATABASE_URL"))
+
 
 # Make sure API key is set
 # if not os.environ.get("API_KEY"):
@@ -42,7 +44,7 @@ db = SQL(os.getenv("DATABASE_UR"))
 
 @app.route("/")
 @login_required
-def index(): 
+def index():
     """Show portfolio of stocks"""
     current_price={}
     response={}
