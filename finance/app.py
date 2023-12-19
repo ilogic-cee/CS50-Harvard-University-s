@@ -143,8 +143,9 @@ def logout():
     return redirect("/")
 
 
-@app.route("/quote", methods=["GET", "POST"])
+
 @login_required
+@app.route("/quote", methods=["GET", "POST"])
 def quote():
     """Get stock quote."""
     if request.method == "GET":
