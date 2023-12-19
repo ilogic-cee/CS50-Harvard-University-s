@@ -42,7 +42,7 @@ db = SQL(os.getenv("DATABASE_UR"))
 
 @app.route("/")
 @login_required
-def index():
+def index(): 
     """Show portfolio of stocks"""
     current_price={}
     response={}
