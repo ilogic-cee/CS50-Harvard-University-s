@@ -39,7 +39,18 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    current_price={}
+    response={}
+    total={}
+    query= db.execute("SELECT userid,symbol,name,quantity FROM holdings WHERE userid=:userid ",userid=session["user_id"])
+    cashq= db.execute("SELECT cash FROM users WHERE id=:userid",userid=session["user_id"])
+    gtotal=cashq[0]["cash"]
+    for j in query:
+        total[j["symbol"]] = lookup(j["symbol"])["price"] * int(j["quantity"])
+        current_price[j["symbol"]]=lookup(j["symbol"])["price"]
+        gtotal=gtotal+total[j["symbol"]]
+
+    return render_template("index.html",gtotal=gtotal,query=query,cash=cashq[0]["cash"],total=total,current_price=current_price)
 
 
 @app.route("/buy", methods=["GET", "POST"])
