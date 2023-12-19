@@ -240,8 +240,8 @@ def sell():
                                user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
                     flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
-
                     return redirect("/")
+                
             return apology("symbol not found")
 
 
