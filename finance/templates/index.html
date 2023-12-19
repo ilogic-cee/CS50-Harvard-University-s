@@ -5,29 +5,30 @@
 {% endblock %}
 
 {% block main %}
-<h4>Account Summary</h4>
-<h6>You have ${{ grand_total }} available.</h6>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Account Type</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Investments</td>
-      <td></td>
-      <td></td>
-      <td>${{ investment_total }}</td>
-    </tr>
-     <tr>
-      <td>Cash</td>
-      <td></td>
-      <td></td>
-      <td>${{ cash }}</td>
-    </tr>
-  </tbody>
-</table>
+    <h4>Account Summary</h4>
+    <h6>You have ${{ grand_total }} available.</h6>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Account Type</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Investments</td>
+          <td></td>
+          <td></td>
+          <td>${{ investment_total }}</td>
+        </tr>
+        <tr>
+          <td>Cash</td>
+          <td></td>
+          <td></td>
+          <td>${{ cash }}</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}
