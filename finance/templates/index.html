@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Portfolio</title>
-</head>
-<body>
-    <h1>Your Stock Portfolio</h1>
+{% extends "layout.html" %}
 
-    <ul>
-        {% for stock in stocks %}
-            <li>{{ stock["symbol"] }} - {{ stock["total_shares"] }}</li>
-        {% endfor %}
-    </ul>
+{% block title %}
+    Your Account
+{% endblock %}
 
-    <p>Cash: ${{ cash }}</p>
-    <p>Total Portfolio Value: ${{ total_value }}</p>
-    <p>Grand Total: ${{ grand_total }}</p>
-</body>
-</html>
+{% block main %}
+<h4>Account Summary</h4>
+<h6>You have ${{ grand_total }} available.</h6>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Account Type</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Investments</td>
+      <td></td>
+      <td></td>
+      <td>${{ investment_total }}</td>
+    </tr>
+     <tr>
+      <td>Cash</td>
+      <td></td>
+      <td></td>
+      <td>${{ cash }}</td>
+    </tr>
+  </tbody>
+</table>
