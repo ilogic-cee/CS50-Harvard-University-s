@@ -198,7 +198,7 @@ def register():
             check2=db.execute("SELECT * FROM users WHERE username=:username",username=username)
             session["user_id"] = check2[0]["id"]
             flash('Registered!')
-            return redirect("/")
+            return render_template("register.html", form=form)
 
 
 @app.route("/sell", methods=["GET", "POST"])
