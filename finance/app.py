@@ -234,6 +234,7 @@ def sell():
                         return apology("symbol not found")
                     price = quote["price"]
                     total_sale = shares * price
+                    db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id", total_sale=total_sale, user_id=session["user_id"])
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                                user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
