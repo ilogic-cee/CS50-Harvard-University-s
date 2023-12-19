@@ -170,4 +170,50 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    if request.method == "GET":
+        query = db.execute("SELECT symbol, quantity FROM holdings WHERE userid=:userid", userid=session["user_id"])
+        return render_template("sell.html", query=query)
+    else:
+        capital = db.execute("SELECT cash FROM users WHERE id=:userid", userid=session["user_id"])
+        quantity = db.execute("SELECT quantity FROM holdings WHERE userid=:userid AND symbol=:symbol",
+                              userid=session["user_id"], symbol=request.form.get("symbol"))
+
+        if request.form.get("symbol") is None:
+            return apology("Symbol required")
+        elif lookup(request.form.get("symbol")) is None:
+            return apology("Invalid symbol")
+        elif request.form.get("shares") is None:
+            return apology("Incomplete input")
+        elif int(request.form.get("shares")) > quantity[0]["quantity"]:
+            return apology("Not enough shares")
+        else:
+            today = date.today()
+            d = today.strftime("%d/%m/%Y")
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            name = lookup(request.form.get("symbol"))
+            response = lookup(request.form.get("symbol"))
+            amount = response["price"] * int(request.form.get("shares"))
+            trade = db.execute(
+                "INSERT INTO transactions (userid, date, time, symbol, name, price, quantity, total) VALUES (:userid, :date, :time, :symbol, :name, :price, :quantity, :total)",
+                userid=session["user_id"], date=d, time=current_time, symbol=(request.form.get("symbol")),
+                name=name["name"], price=response["price"], quantity=-(int(request.form.get("shares"))), total=amount)
+            update = db.execute("UPDATE users SET cash=:cash WHERE id=:userid ",
+                               cash=capital[0]["cash"] + amount, userid=session["user_id"])
+            update2 = db.execute(
+                "UPDATE holdings SET quantity=:q WHERE userid=:userid AND symbol=:symbol",
+                q=int(quantity[0]["quantity"]) - int(request.form.get("shares")), userid=session["user_id"],
+                symbol=request.form.get("symbol"))
+            flash('Sold!')
+            return redirect("/")
+
+def errorhandler(e):
+    """Handle error"""
+    if not isinstance(e, HTTPException):
+        e = InternalServerError()
+    return apology(e.name, e.code)
+
+
+# Listen for errors
+for code in default_exceptions:
+    app.errorhandler(code)(errorhandler)
