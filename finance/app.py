@@ -232,5 +232,6 @@ def sell():
                     quote = lookup(symbol):
                     if quote is None:
                         return apology("symbol not found")
-                    price = quote["shares "]
+                    price = quote["price"]
+                    total_sale = shares * price
     return apology("TODO")
