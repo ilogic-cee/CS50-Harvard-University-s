@@ -5,21 +5,11 @@
 {% endblock %}
 
 {% block main %}
-<div class="container mt-5">
-    <h2 class="mb-4">Get a Stock Quote</h2>
-    <form action="{{ url_for('quote') }}" method="post">
-        <div class="form-group">
-            <label for="symbol">Symbol</label>
-            <input type="text" class="form-control" name="symbol" id="symbol" placeholder="Enter stock symbol" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Get Quote</button>
-    </form>
 
-    {% if quote %}
-        <div class="mt-4">
-            <h3>{{ quote['name'] }} ({{ quote['symbol'] }})</h3>
-            <p>Price: {{ quote['price']|usd }}</p>
-        </div>
-    {% endif %}
-</div>
+       <form action="/quote" method="post">
+           <div class="form-group">
+                <input autocomplete="off" autofocus="" class="form-control" name="symbol" placeholder="Symbol" type="text">
+           </div>
+           <button class="btn btn-primary" type="submit">Quote</button>
+       </form>
 {% endblock %}
