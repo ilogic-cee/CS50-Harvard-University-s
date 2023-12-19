@@ -107,6 +107,11 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
+    transactions = db.execute(
+        "SELECT * FROM transactions WHERE user_id = :user_id ORDER BY timestamp DESC", user_id=session["user_id"])
+
+    return render_template("history.html", transactions=transactions)
+
     return apology("TODO")
 
 
