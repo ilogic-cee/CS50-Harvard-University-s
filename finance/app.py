@@ -243,9 +243,10 @@ def sell():
                     flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
                     return redirect("/")
 
-            return apology("symbol not found")
-        else:
-            return render_template("sell.html", stocks=stocks)
+        return apology("symbol not found")
+
+    return render_template("sell.html", stocks=stocks)
+
 
 
 
