@@ -172,6 +172,11 @@ def quote():
             message = "A share of " + response["name"] + " (" + response["symbol"] + ") " + "costs $" + str(response["price"]) + "."
             return render_template("quote.html", message=message)
 
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    password = PasswordField('Password', validators=[DataRequired()])
+    cpassword = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Sign Up')
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -199,6 +204,8 @@ def register():
             session["user_id"] = check2[0]["id"]
             flash('Registered!')
             return render_template("register.html", form=form)
+
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
