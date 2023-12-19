@@ -6,6 +6,7 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime,date
+from your_module import RegistrationForm
 
 from helpers import apology, login_required, lookup, usd
 
@@ -174,6 +175,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    form = RegistrationForm() 
     if request.method == "GET":
         return render_template("register.html")
     else:
