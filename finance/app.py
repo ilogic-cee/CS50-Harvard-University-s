@@ -169,7 +169,7 @@ def quote():
         else:
             response = lookup(symbol)
             message = "A share of " + response["name"] + " (" + response["symbol"] + ") " + "costs $" + str(response["price"]) + "."
-            return render_template("quoted.html", message=message)
+            return render_template("quote.html", message=message)
 
 
 @app.route("/register", methods=["GET", "POST"])
