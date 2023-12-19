@@ -107,6 +107,7 @@ def buy():
 
 
 
+
 @app.route("/history")
 @login_required
 def history():
