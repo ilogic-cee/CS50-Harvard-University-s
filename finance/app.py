@@ -40,22 +40,14 @@ def index():
     # Assuming db.execute returns a list of rows
     stocks_data = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0", user_id=session["user_id"])
 
-    # Check if stocks_data is not empty before accessing the first element
-    if not stocks_data:
-        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
 
-    cash_data = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
+    cash_data = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
-    # Check if cash_data is not empty before accessing the first element
-    if not cash_data:
-        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
-
-    cash = cash_data[0]["cash"]
 
     total_value = cash
     grand_total = cash
 
-    for stock in stocks_data:
+    for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = quote["price"]
