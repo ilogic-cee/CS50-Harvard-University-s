@@ -35,6 +35,18 @@ def after_request(response):
     return response
 
 
+app.jinja_env.filters["usd"] = usd
+
+
+app.config["SESSION_FILE_DIR"] = mkdtemp()
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+# Configure CS50 Library to use POSTGRES database
+db = SQL(os.getenv("DATABASE_UR"))
+
+
 @app.route("/")
 @login_required
 def index():
