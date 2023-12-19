@@ -1,40 +1,48 @@
 {% extends "layout.html" %}
 
 {% block title %}
-   Portfolio
+    Portfolio
 {% endblock %}
 
 {% block main %}
-        <h2>Portfolio</h2>
 
-        <table class="table table-bordered table-striped">
-            <thead class="thead-light">
-                <tr>
-                    <th>Symbol</th>
-                    <th>Name</th>
-                    <th>Shares</th>
-                    <th>Price</th>
-                    <th>Total Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for stock in stocks %}
-                <tr>
-                    <td>{{ stock.symbol }}</td>
-                    <td>{{ stock.name}}</td>
-                    <td>{{ stock.total_shares }}</td>
-                    <td>${{ stock.price }}</td>
-                    <td>${{ stock.price * stock.total_shares }}</td>
-                </tr>
-            {% endfor %}
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td colspan="4" align="right">Cash</td>
-                <td>{{ cash }}</td>
-           </tr>
-           <tr>
-               <td colspan="4" align="right">Total Value</td>
-               <td>{{ total_value }}</td>
-           </tr>
-         </tbody>
-     </table>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{"$"'%0.2f'| format(gtotal)}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+
+                {% for i in query %}
+                {% if i["quantity"] > 0 %}
+                <tr>
+                    <td>{{ i["symbol"].upper() }}</td>
+                    <td>{{ i["name"] }}</td>
+                    <td>{{ i["quantity"] }}</td>
+                    <td>{{"$" '%0.2f'| format(current_price[i["symbol"]]) }}</td>
+                    <td>{{"$" '%0.2f'| format(total[i["symbol"]]) }}</td>
+                </tr>
+                {% endif %}
+                {%endfor%}
+
+                <tr>
+                    <td>CASH</td>
+                    <td colspan="3"></td>
+                    <td>{{"$"'%0.2f'| format(cash) }}</td>
+                </tr>
+
+        </tbody>
+    </table>
+
 {% endblock %}
