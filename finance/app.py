@@ -175,9 +175,9 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    form = RegistrationForm() 
+    form = RegistrationForm()
     if request.method == "GET":
-        return render_template("register.html")
+        return render_template("register.html", form=form)
     else:
         username= request.form.get("username")
         check=db.execute("SELECT * FROM users WHERE username=:username",username=username)
