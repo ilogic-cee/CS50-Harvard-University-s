@@ -244,8 +244,10 @@ def sell():
                     return redirect("/")
 
         return apology("symbol not found")
+    else:
+        return render_template("sell.html", stocks=stocks)
 
-    return render_template("sell.html", stocks=stocks)
+
 
 
 
