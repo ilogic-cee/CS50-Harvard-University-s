@@ -1,33 +1,39 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Your Account
+   portfolio
 {% endblock %}
 
 {% block main %}
-    <h4>Account Summary</h4>
+    <h2>Portfolio</h2>
     <h6>You have ${{ grand_total }} available.</h6>
-    <table class="table table-striped">
-      <thead>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
         <tr>
-          <th scope="col">Account Type</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col">Total</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Name</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total Value</th>
         </tr>
       </thead>
       <tbody>
+        {% for stock in stocks %}
         <tr>
-          <td>Investments</td>
-          <td></td>
-          <td></td>
-          <td>${{ investment_total }}</td>
+          <td>{{ stock.symbol }}</td>
+          <td>{{ stock.name}}</td>
+          <td>{{ stock.total_shares }}</td>
+          <td>${{ stock.price }}</td>
+          <td>${{ stock.price * stock.total_shares }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td colspan="4" align="right">Cash</td>
+          <td>{{ cash }}</td>
         </tr>
         <tr>
-          <td>Cash</td>
-          <td></td>
-          <td></td>
-          <td>${{ cash }}</td>
+          <td colspan="4" align="right">Total Value</td>
+          <td>{{ total_value }}</td>
         </tr>
       </tbody>
     </table>
