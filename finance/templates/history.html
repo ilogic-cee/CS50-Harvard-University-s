@@ -1,33 +1,30 @@
 {% extends "layout.html" %}
 
 {% block title %}
-   History
+    History
 {% endblock %}
 
 {% block main %}
-        <table class="table table-striped">
-            <thead class="thead-light">
-                <tr>
-                    <th>Type</th>
-                    <th>Symbol</th>
-                    <th>Shares</th>
-                    <th>Price</th>
-                    <th>Total </th>
-                    <th>Timestamp</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for transaction in transactions %}
-    <tr>
-        <td>{{ transaction.type }}</td>
-        <td>{{ transaction.symbol}}</td>
-        <td>{{ transaction.shares }}</td>
-        <td>{{ transaction.price }}</td>
-        <td>{{ transaction.shares * transaction.price }}</td>
-        <td>{{ transaction.timestamp }}</td>
-    </tr>
-{% endfor %}
 
-         </tbody>
-     </table>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for i in query %}
+                <tr>
+                    <td>{{ i["symbol"].upper() }}</td>
+                    <td>{{ i["quantity"] }}</td>
+                    <td>{{"$" '%0.2f'| format(i["price"]) }}</td>
+                    <td>{{i["date"]}} {{i["time"]}}</td>
+                </tr>
+                {%endfor%}
+
+        </tbody>
+    </table>
 {% endblock %}

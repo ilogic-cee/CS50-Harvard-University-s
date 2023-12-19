@@ -5,22 +5,13 @@
 {% endblock %}
 
 {% block main %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="text-center mb-4">Buy Stocks</h1>
-            <form action="{{ url_for('buy') }}" method="post">
-                <div class="form-group">
-                    <label for="shares">Shares:</label>
-                    <input type="text" class="form-control" name="shares" id="shares" placeholder="Enter the number of shares" required>
-                </div>
-                <div class="form-group">
-                    <label for="symbol">Symbol:</label>
-                    <input type="text" class="form-control" name="symbol" id="symbol" placeholder="Enter stock symbol" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Buy Stocks</button>
-            </form>
+          <form action="/buy" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus="" class="form-control" name="symbol" placeholder="Symbol" type="text">
         </div>
-    </div>
-</div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" min="1" name="shares" placeholder="Shares" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
 {% endblock %}
