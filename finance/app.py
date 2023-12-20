@@ -159,17 +159,24 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    if request.method == "GET":
-        return render_template("quote.html")
-    else:
-        symbol=request.form.get("symbol")
-        if lookup(symbol) == None:
-            return apology("Invalid symbol!")
-        else:
-            response = lookup(symbol)
-            message="A share of " + response["name"] +" ("+ response["symbol"] +") "+ "costs $" +str(response["price"])+"."
-            return render_template("quoted.html",message=message)
+    """Get stock quote."""
 
+    # User has reached route via POST
+    if request.method == "POST":
+        symbolFromUser = request.form.get("symbol")
+        lookedUp = lookup(symbolFromUser)
+
+        # Check if stock exist
+        if lookedUp == None:
+            return apology("stock symbol does not exist")
+        else:
+            stock = lookedUp["name"]
+            price = usd(lookedUp["price"])
+            symbol = lookedUp["symbol"]
+            return render_template("quoted.html", name=stock, price=price, symbol=symbol)
+    else:
+        return render_template("quote.html")
+    
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -204,7 +211,7 @@ def register():
     else:
         return render_template("register.html")
 
-        
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
