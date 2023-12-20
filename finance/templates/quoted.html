@@ -5,10 +5,7 @@
 {% endblock %}
 
 {% block main %}
-       <main class="container p-5">
-            <p>
-                {{ message }}
-            </p>
-
-        </main>
+    <div class="container">
+        <h1>A share of {{ stockSpec['name'] }} costs {{ stockSpec['price'] }}.</h1>
+    </div>
 {% endblock %}

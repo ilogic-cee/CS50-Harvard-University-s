@@ -1,36 +1,46 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Portfolio
+    Home
 {% endblock %}
 
 {% block main %}
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
-                <th scope="col">Symbols</th>
-                <th scope="col">Shares</th>
-                <th scope="col">Price</th>
-                <th scope="col">TOTAL</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Name</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">TOTAL</th>
             </tr>
         </thead>
         <tbody>
-            {% for row in database %}
-                <tr>
-                    <td>{{ row["symbol"] }}</td>
-                    <td>{{ row["shares"] }}</td>
-                    <td>{{ row["price"] }}</td>
-                </tr>
+            {% for holding in holdings %}
+            <tr>
+              <th scope="row">{{ holding["symbol"] }}</th>
+              <td>{{ holding["name"] }}</td>
+              <td>{{ holding["shares"] }}</td>
+              <td>{{ holding["price"] }}</td>
+              <td>{{ holding["total"] }}</td>
+            </tr>
             {% endfor %}
+            <tr>
+                <th scope="row">CASH</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td >{{ cash }}</td>
+            </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td></td>
                 <td></td>
-                <th scope="1">Total Amount</th>
-                <th scope="1">{{ cash }}</th>
+                <td></td>
+                <td></td>
+                <td>{{ all_total }}</td>
             </tr>
         </tfoot>
     </table>
-
 {% endblock %}
