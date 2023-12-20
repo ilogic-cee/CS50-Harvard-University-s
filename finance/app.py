@@ -216,10 +216,12 @@ def register():
 
         # Check for user error
         if not username or not password or not confirmation:
+            print("400 MISSING FIELDS")
             return apology("missing fields")
 
         # Check if passwords match
         if password != confirmation:
+            print("400 PASSWORDS DON'T MATCH")
             return apology("passwords don't match")
 
         # Check if the username already exists
@@ -227,9 +229,10 @@ def register():
         print("checkUsername:", checkUsername)  # Debugging print statement
 
         if checkUsername[0]["COUNT(*)"] == 1:
+            print("400 USERNAME ALREADY EXISTS")
             return apology("username already exists")
 
-        # Put new user inside the database
+        # Put the new user inside the database
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
 
         # Log the user in after registering
@@ -239,6 +242,7 @@ def register():
         return redirect("/")
     else:
         return render_template("register.html")
+
 
 
 
