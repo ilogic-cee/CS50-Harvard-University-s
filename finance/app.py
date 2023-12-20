@@ -9,6 +9,7 @@ from datetime import datetime,date
 from flask import render_template
 from helpers import usd
 from flask_login import login_required, current_user,LoginManager
+import secrets
 
 
 from helpers import apology, login_required, lookup, usd
@@ -16,6 +17,7 @@ from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
