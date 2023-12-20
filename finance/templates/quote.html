@@ -5,10 +5,21 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/quote" method="post">
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Get a Stock Quote</h2>
+                        <form action="/quote" method="post">
+                            <div class="form-group">
+                                <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Enter Stock Symbol" type="text">
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit">Get Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-primary" type="submit">Quote</button>
-    </form>
+    </div>
 {% endblock %}
