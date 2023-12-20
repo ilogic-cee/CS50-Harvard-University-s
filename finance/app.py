@@ -215,18 +215,19 @@ def register():
         confirmation = request.form.get("confirmation")
 
         # Check for user error
+        if not username or not password or not confirmation:
+            return apology("missing fields")
+
+        # Check if passwords match
+        if password != confirmation:
+            return apology("passwords don't match")
+
+        # Check if the username already exists
         checkUsername = db.execute("SELECT COUNT(*) FROM users WHERE username = ?", username)
         print("checkUsername:", checkUsername)  # Debugging print statement
-        if not username:
-            return apology("missing username")
-        elif not password:
-            return apology("missing password")
-        elif not confirmation:
-            return apology("missing confirmation")
-        elif checkUsername[0]["COUNT(*)"] == 1:
+
+        if checkUsername[0]["COUNT(*)"] == 1:
             return apology("username already exists")
-        elif password != confirmation:
-            return apology("passwords don't match")
 
         # Put new user inside the database
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
@@ -238,6 +239,7 @@ def register():
         return redirect("/")
     else:
         return render_template("register.html")
+
 
 
 
