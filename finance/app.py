@@ -217,17 +217,17 @@ def register():
         # Check for user error
         checkUsername = db.execute("SELECT COUNT(*) FROM users WHERE username = ?", username)
         if not username:
-            return apology("missing username")
+            return "Missing username"
         elif not password:
-            return apology("missing password")
+            return "Missing password"
         elif not confirmation:
-            return apology("missing confirmation")
+            return "Missing confirmation"
         elif checkUsername[0]["COUNT(*)"] == 1:
-            return apology("username already exist")
+            return "Username already exists"
         elif password != confirmation:
-            return apology("passwords doesn't match")
+            return "Passwords don't match"
 
-        # Put new user inside the database
+        # Put a new user inside the database
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
 
         # Log the user in after registering
