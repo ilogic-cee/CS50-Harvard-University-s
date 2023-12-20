@@ -8,7 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime,date
 from flask import render_template
 from helpers import usd
-from flask_login import login_required, current_user,LoginManager
+from flask_login import login_required, current_user, LoginManager
 import secrets
 
 
@@ -182,7 +182,7 @@ def login():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
+
 @app.route("/logout")
 def logout():
     """Log user out"""
