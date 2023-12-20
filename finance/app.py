@@ -52,7 +52,7 @@ def index():
         "SELECT symbol, stock, SUM(shares) AS SHARES, price, SUM(total) AS TOTAL FROM stocks WHERE id = ? GROUP BY symbol",
         session["user_id"])
 
-    # Get the cash of user
+    # Get the cash of the user
     leftCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
     # Get the total amount the user has spent
@@ -60,11 +60,14 @@ def index():
 
     # Sets the money and renders the html
     try:
-        allMoney = float(leftCash[0]["cash"]) + float(totalBought[0]["SUM(total)"])
-        return render_template("index.html", stocks=stockInfo, cash=usd(leftCash[0]["cash"]), totalMoney=usd(allMoney))
-    except TypeError:
-        allMoney = 10000.00
-        return render_template("index.html", stocks=stockInfo, cash=usd(leftCash[0]["cash"]), totalMoney=usd(allMoney))
+        total_spent = totalBought[0]["SUM(total)"]
+    except (TypeError, KeyError):
+        total_spent = 0.0
+
+    allMoney = float(leftCash[0]["cash"]) + float(total_spent)
+
+    return render_template("index.html", stocks=stockInfo, cash=usd(leftCash[0]["cash"]), totalMoney=usd(allMoney))
+
 
 
 @app.route("/buy", methods=["GET", "POST"])
