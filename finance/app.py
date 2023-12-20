@@ -18,6 +18,7 @@ from helpers import apology, login_required, lookup, usd
 # Configure application
 app = Flask(__name__)
 login_manager = LoginManager(app)
+login_manager.login_view = 'login'
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
