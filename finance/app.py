@@ -172,30 +172,39 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "GET":
-        return render_template("register.html")
-    else:
-        username= request.form.get("username")
-        check=db.execute("SELECT * FROM users WHERE username=:username",username=username)
-        password1=request.form.get("password")
-        password2=request.form.get("cpassword")
+    """Register user"""
 
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+
+        # Check for user error
+        checkUsername = db.execute("SELECT COUNT(*) FROM users WHERE username = ?", username)
         if not username:
-            return apology("You must enter a username")
+            return apology("missing username")
+        elif not password:
+            return apology("missing password")
+        elif not confirmation:
+            return apology("missing confirmation")
+        elif checkUsername[0]["COUNT(*)"] == 1:
+            return apology("username already exist")
+        elif password != confirmation:
+            return apology("passwords doesn't match")
 
-        elif len(check) > 0:
-            return apology("Username not available")
+        # Put new user inside the database
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
 
-        elif password1 != password2:
-            return apology("Passwords do not match")
+        # Log the user in after registering
+        login = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        session["user_id"] = login[0]["id"]
 
-        else:
-            rows=db.execute("INSERT INTO users (username,hash) VALUES (:username,:password)",username=username,password=generate_password_hash(password2, method='pbkdf2:sha256', salt_length=8))
-            check2=db.execute("SELECT * FROM users WHERE username=:username",username=username)
-            session["user_id"] = check2[0]["id"]
-            flash('Registered!')
-            return redirect("/")
+        return redirect("/")
+    else:
+        return render_template("register.html")
 
+        
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
