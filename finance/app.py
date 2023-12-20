@@ -216,18 +216,19 @@ def register():
 
         # Check for user error
         checkUsername = db.execute("SELECT COUNT(*) FROM users WHERE username = ?", username)
+        print("checkUsername:", checkUsername)  # Debugging print statement
         if not username:
-            return "Missing username"
+            return apology("missing username")
         elif not password:
-            return "Missing password"
+            return apology("missing password")
         elif not confirmation:
-            return "Missing confirmation"
+            return apology("missing confirmation")
         elif checkUsername[0]["COUNT(*)"] == 1:
-            return "Username already exists"
+            return apology("username already exists")
         elif password != confirmation:
-            return "Passwords don't match"
+            return apology("passwords don't match")
 
-        # Put a new user inside the database
+        # Put new user inside the database
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
 
         # Log the user in after registering
@@ -237,6 +238,7 @@ def register():
         return redirect("/")
     else:
         return render_template("register.html")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
