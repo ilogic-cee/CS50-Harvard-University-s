@@ -201,11 +201,11 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "GET":
-        query= db.execute("SELECT symbol,quantity FROM holdings WHERE userid=:userid",userid=session["user_id"])
+        query= db.execute("SELECT symbol,quntity FROM holdings WHERE userid=:userid",userid=session["user_id"])
         return render_template("sell.html",query=query)
     else:
         capital= db.execute("SELECT cash FROM users WHERE id=:userid",userid=session["user_id"])
-        quantity=db.execute("SELECT quantity FROM holdings WHERE userid=:userid AND symbol=:symbol",userid=session["user_id"],symbol=request.form.get("symbol"))
+        quantity=db.execute("SELECT quntity FROM holdings WHERE userid=:userid AND symbol=:symbol",userid=session["user_id"],symbol=request.form.get("symbol"))
 
         if request.form.get("symbol") == None:
             return apology("Symbol required")
