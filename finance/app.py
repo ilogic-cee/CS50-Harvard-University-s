@@ -330,7 +330,8 @@ def addcash():
             return redirect("/")
 
 
-
+@app.route("/errorhandler", methods=["GET", "POST"])
+@login_required
 def errorhandler(e):
     """Handle error"""
     if not isinstance(e, HTTPException):
