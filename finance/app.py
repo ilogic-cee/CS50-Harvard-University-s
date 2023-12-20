@@ -8,6 +8,7 @@ from functools import wraps
 
 
 app = Flask(__name__)
+
 def apology(message, code=400):
     """Render message as an apology to user."""
     def escape(s):
