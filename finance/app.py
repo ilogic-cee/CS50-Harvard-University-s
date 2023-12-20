@@ -87,7 +87,7 @@ def buy():
             response=lookup(request.form.get("symbol"))
             amount= response["price"] * int(request.form.get("shares"))
             response=lookup(request.form.get("symbol"))
-            trade= db.execute("INSERT INTO transactions (user_id,date,timestamp,symbol,name,price,quantity,total) VALUES (:userid,:date,:time,:symbol,:name,:price,:quantity,:total)",userid=session["user_id"],date=d,time=current_time,symbol=request.form.get("symbol"), name=response["name"], price=response["price"],quantity=request.form.get("shares"),total=amount )
+            trade= db.execute("INSERT INTO transactions (user_id,timestamp,symbol,name,price,quantity,total) VALUES (:userid,:date,:time,:symbol,:name,:price,:quantity,:total)",userid=session["user_id"],date=d,time=current_time,symbol=request.form.get("symbol"), name=response["name"], price=response["price"],quantity=request.form.get("shares"),total=amount )
             update= db.execute("UPDATE users SET cash=:amt WHERE id=:userid ", amt=capital[0]["cash"]-amount,userid=session["user_id"])
             check=db.execute("SELECT symbol FROM holdings WHERE symbol=:symbol AND userid=:userid",symbol=request.form.get("symbol"),userid=session["user_id"])
             if len(check) < 1:
