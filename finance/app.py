@@ -46,58 +46,83 @@ db = SQL("sqlite:///finance.db")
 @login_required
 def index():
     """Show portfolio of stocks"""
-    current_price={}
-    response={}
-    total={}
-    query= db.execute("SELECT userid,symbol,name,quntity FROM holdings WHERE userid=:userid ",userid=session["user_id"])
-    cashq= db.execute("SELECT cash FROM users WHERE id=:userid",userid=session["user_id"])
-    gtotal=cashq[0]["cash"]
-    for j in query:
-        total[j["symbol"]] = lookup(j["symbol"])["price"] * int(j["quantity"])
-        current_price[j["symbol"]]=lookup(j["symbol"])["price"]
-        gtotal=gtotal+total[j["symbol"]]
 
-    return render_template("index.html",gtotal=gtotal,query=query,cash=cashq[0]["cash"],total=total,current_price=current_price)
+    # Get data manipulated by the user through buying and selling
+    stockInfo = db.execute(
+        "SELECT symbol, stock, SUM(shares) AS SHARES, price, SUM(total) AS TOTAL FROM stocks WHERE id = ? GROUP BY symbol",
+        session["user_id"])
+
+    # Get the cash of user
+    leftCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+    # Get the total amount the user has spent
+    totalBought = db.execute("SELECT SUM(total) FROM stocks WHERE id = ?", session["user_id"])
+
+    # Sets the money and renders the html
+    try:
+        allMoney = float(leftCash[0]["cash"]) + float(totalBought[0]["SUM(total)"])
+        return render_template("index.html", stocks=stockInfo, cash=usd(leftCash[0]["cash"]), totalMoney=usd(allMoney))
+    except TypeError:
+        allMoney = 10000.00
+        return render_template("index.html", stocks=stockInfo, cash=usd(leftCash[0]["cash"]), totalMoney=usd(allMoney))
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    if request.method == "GET":
-        return render_template("buy.html")
-    else:
-        capital= db.execute("SELECT cash FROM users WHERE id=:userid",userid=session["user_id"])
-        if request.form.get("symbol") == None:
-            return apology("Symbol required")
+    """Buy shares of stock"""
 
-        elif request.form.get("shares") == None:
-            return apology("Invalid quantity")
+    # User reached route via POST
+    if request.method == "POST":
 
-        elif lookup(request.form.get("symbol")) == None:
-            return apology("Invalid symbol")
+        # Put input of user in variables
+        buySymbol = request.form.get("symbol")
+        buyShares = request.form.get("shares")
 
-        elif capital[0]["cash"] < lookup(request.form.get("symbol"))["price"] * int(request.form.get("shares")):
-            return apology("Insufficient funds")
+        # Use the lookup() function
+        buyLookedUp = lookup(buySymbol)
 
+        # Check for user error
+        if not buySymbol:
+            return apology("missing symbol")
+        elif buyLookedUp == None:
+            return apology("invalid symbol")
+        elif not buyShares:
+            return apology("missing shares")
+        elif not buyShares.isdigit():
+            return apology("invalid shares")
+
+        buyShares = int(buyShares)
+        if buyShares <= 0:
+            return apology("invalid shares")
+
+        # Set important data to variables
+        buyerId = db.execute("SELECT id FROM users WHERE id = ?", session["user_id"])
+        buyStock = buyLookedUp["name"]
+        buyPrice = buyLookedUp["price"]
+        buyTime = datetime.now()
+
+        # Calculate total money spent and set cash of user in a variable
+        totalBuyPrice = buyShares * buyPrice
+        cashOfBuyer = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        # Check if user can afford the stock
+        if cashOfBuyer[0]["cash"] < totalBuyPrice:
+            return apology("can't afford")
         else:
-            today = date.today()
-            d = today.strftime("%d/%m/%Y")
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            response=lookup(request.form.get("symbol"))
-            amount= response["price"] * int(request.form.get("shares"))
-            response=lookup(request.form.get("symbol"))
-            trade= db.execute("INSERT INTO transactions (user_id,timestamp,symbol,price, shares, total) VALUES (:userid,:time,:symbol,:price,:quantity,:total)",userid=session["user_id"],time=current_time,symbol=request.form.get("symbol"), price=response["price"],quantity=request.form.get("shares"),total=amount )
-            update= db.execute("UPDATE users SET cash=:amt WHERE id=:userid ", amt=capital[0]["cash"]-amount,userid=session["user_id"])
-            check=db.execute("SELECT symbol FROM holdings WHERE symbol=:symbol AND userid=:userid",symbol=request.form.get("symbol"),userid=session["user_id"])
-            if len(check) < 1:
-                update_holdings=db.execute("INSERT INTO holdings (userid,symbol,name,quantity) VALUES (:userid,:symbol,:name,:quantity)", userid=session["user_id"], symbol=request.form.get("symbol"),name=lookup(request.form.get("symbol"))["name"],quantity=request.form.get("shares"))
-            else:
-                quant=db.execute("SELECT quantity FROM holdings WHERE userid=:userid AND symbol=:symbol ",userid=session["user_id"], symbol=request.form.get("symbol"))
-                update_holdings=db.execute("UPDATE holdings SET quantity=:q WHERE symbol=:symbol AND userid=:userid",q=int(quant[0]["quantity"])+int(request.form.get("shares")), symbol=request.form.get("symbol"),userid=session["user_id"])
-            flash('Bought!')
-            return redirect("/")
+            remainingCash = int(cashOfBuyer[0]["cash"]) - totalBuyPrice
 
+            # Update database
+            db.execute("INSERT INTO stocks (id, stock, symbol, shares, price, total, time) VALUES(?, ?, ?, ?, ?, ?, ?)",
+                       buyerId[0]["id"], buyStock, buySymbol, buyShares, buyPrice, totalBuyPrice, buyTime)
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, buyerId[0]["id"])
+            db.execute("UPDATE stocks SET symbol = UPPER(symbol)")
+
+            flash("Bought!")
+
+            return redirect("/")
+    else:
+        return render_template("buy.html")
 
 @app.route("/history")
 @login_required
@@ -176,7 +201,7 @@ def quote():
             return render_template("quoted.html", name=stock, price=price, symbol=symbol)
     else:
         return render_template("quote.html")
-    
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -216,38 +241,56 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    if request.method == "GET":
-        query= db.execute("SELECT symbol,quntity FROM holdings WHERE userid=:userid",userid=session["user_id"])
-        return render_template("sell.html",query=query)
+
+    # User has reached route via POST
+    if request.method == "POST":
+        sellSymbol = request.form.get("symbol")
+        sellShares = request.form.get("shares")
+
+        sellLookedUp = lookup(sellSymbol)
+
+        # Get number of shares user has
+        shareAmount = db.execute("SELECT SUM(shares) FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], sellSymbol)
+
+        # Check for user error
+        if not sellSymbol:
+            return apology("missing symbol")
+        elif sellLookedUp == None:
+            return apology("invalid symbol")
+        elif not sellShares:
+            return apology("missing shares")
+        elif not sellShares.isdigit():
+            return apology("invalid shares")
+
+        sellShares = int(sellShares)
+        if sellShares <= 0 or sellShares > shareAmount[0]["SUM(shares)"]:
+            return apology("invalid shares")
+
+        # Set important data to variables
+        sellerId = db.execute("SELECT id FROM users WHERE id = ?", session["user_id"])
+        sellStock = sellLookedUp["name"]
+        sellPrice = sellLookedUp["price"]
+        totalSellPrice = sellShares * sellPrice
+        sellShares = -abs(sellShares)
+        sellTime = datetime.now()
+
+        # Calculate the amount of money returned to user
+        cashOfSeller = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        remainingCash = int(cashOfSeller[0]["cash"]) + totalSellPrice
+        totalSellPrice = -abs(totalSellPrice)
+
+        # Update database
+        db.execute("INSERT INTO stocks (id, stock, symbol, shares, price, total, time) VALUES(?, ?, ?, ?, ?, ?, ?)",
+                   sellerId[0]["id"], sellStock, sellSymbol, sellShares, sellPrice, totalSellPrice, sellTime)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, sellerId[0]["id"])
+        db.execute("UPDATE stocks SET symbol = UPPER(symbol)")
+
+        flash("Sold!")
+
+        return redirect("/")
     else:
-        capital= db.execute("SELECT cash FROM users WHERE id=:userid",userid=session["user_id"])
-        quantity=db.execute("SELECT quntity FROM holdings WHERE userid=:userid AND symbol=:symbol",userid=session["user_id"],symbol=request.form.get("symbol"))
-
-        if request.form.get("symbol") == None:
-            return apology("Symbol required")
-
-        elif lookup(request.form.get("symbol")) == None:
-            return apology("Invalid symbol")
-
-        elif request.form.get("shares") == None:
-            return apology("Incomplete input")
-
-        elif int(request.form.get("shares")) > quantity[0]["quantity"]:
-            return apology("Not enough shares")
-
-        else:
-            today = date.today()
-            d = today.strftime("%d/%m/%Y")
-            now = datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            name=lookup(request.form.get("symbol"))
-            response=lookup(request.form.get("symbol"))
-            amount= response["price"] * int(request.form.get("shares"))
-            trade= db.execute("INSERT INTO transactions (userid,date,time,symbol,name,price,quantity,total) VALUES (:userid,:date,:time,:symbol,:name,:price,:quantity,:total)",userid=session["user_id"],date=d,time=current_time, symbol=(request.form.get("symbol")), name=name["name"], price=response["price"],quantity=-(int(request.form.get("shares"))),total=amount )
-            update= db.execute("UPDATE users SET cash=:cash WHERE id=:userid ", cash=capital[0]["cash"]+amount,userid=session["user_id"])
-            update2= db.execute("UPDATE holdings SET quantity=:q WHERE userid=:userid AND symbol=:symbol",q=int(quantity[0]["quantity"])-int(request.form.get("shares")),userid=session["user_id"],symbol=request.form.get("symbol"))
-            flash('Sold!')
-            return redirect("/")
+        symbols = db.execute("SELECT SUM(shares) AS SHARES, symbol FROM stocks WHERE id = ? GROUP BY symbol", session["user_id"])
+        return render_template("sell.html", symbols=symbols)
 
 @app.route("/addcash", methods=["GET", "POST"])
 @login_required
