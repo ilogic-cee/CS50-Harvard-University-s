@@ -1,31 +1,36 @@
-sort1 uses: TODO
-
-How do you know?: TODO
-
-When you give sort1 a list that's already sorted, it doesn't take too long to figure out that it's already sorted and doesn't need to do much work. This is like when you have your books arranged alphabetically on your shelf, it's easy to find the book you want without having to rearrange everything.
-
-When you give sort1 a list that's mixed up, it takes a bit more time to figure out the right order, but it still gets the job done. This is like when you have a pile of toys on the floor, and you need to put them away in their respective boxes. It might take some time to sort through them all, but you'll eventually find the right spot for each toy.
-
-When you give sort1 a list that's completely backwards, it takes even longer to sort it out. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. It's going to take some extra time to fix everything and put it in the right order.pporting the hypothesis that sort1 is selection sor
-
-sort2 uses: TODO
-
-How do you know?: TODO
-
-
-When you give sort2 a list that's already sorted, it takes a long time to figure out that it's already sorted. This is like when you have your books arranged alphabetically on your shelf, but you ask your friend to double-check the order. Even though the books are already sorted, your friend might still go through each book one by one, just in case.
-
-When you give sort2 a list that's mixed up, it takes a long time to sort it out. This is like when you have a pile of toys on the floor, and you want to put them away in their respective boxes. But instead of sorting them one by one, you keep picking up random toys and throwing them into the boxes, hoping they'll end up in the right spot. It might take a while, and there might be some mistakes along the way, but eventually you'll get most of the toys in the right places.
-
-When you give sort2 a list that's completely backwards, it takes even longer to sort it out. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. And instead of fixing them one by one, you decide to take them all off the hangers, throw them into a pile on the floor, and then start hanging them up again, hoping you'll get them all right this time. It's going to take a long time, and there might be a lot of confusion along the way, but eventually you'll get most of the clothes back in the right order.
-
-
-sort3 uses: TODO
-
-How do you know?: TODO
-
-When you give sort3 a list that's already sorted, it doesn't take much time to figure out that it's already sorted. This is like when you have your books arranged alphabetically on your shelf, and you want to find a specific book. You can quickly scan the titles and find the one you're looking for without having to check each book individually.
-
-When you give sort3 a list that's mixed up, it takes a reasonable amount of time to sort it out. This is like when you have a pile of toys on the floor, and you want to put them away in their respective boxes. You can divide the toys into smaller groups, sort each group individually, and then combine the sorted groups to create one big sorted pile. It's still going to take some effort, but it's a more efficient way of sorting than just picking up random toys and throwing them into boxes.
-
-When you give sort3 a list that's completely backwards, it takes a bit more time to sort it out, but it's still much faster than sort1 or sort2. This is like when you have your clothes hanging in your closet, but someone has turned them all inside out. You can divide the clothes into smaller groups, flip each group of clothes the right way around, and then put them back on the hangers. It's still going to take some effort, but it's a more organized and efficient way of fixing the problem than trying to fix each piece of clothing individually.
+sort1 uses: Bubble Sort
+How do you know?:
+1. Bubble sort's best case is omega of n and worst case is n^2. In a random sort, bubble sort can be the slowest because it has to go through all of the elements twice (n^2 times).
+2. In a reverse sort, bubble sort has the worst time since it has to move each element on the very left all the way to the right, making a lot of excess swaps.
+3. This has the fastest time when running against already sorted data. It only has to look at each element once, making it better than selection sort since in the best case scenario, bubble sort is omega of n.
+sort2 uses: Merge Sort
+How do you know?:
+1. Merge sort's best case is omega (n log n) and worst case is O (n log n), which is faster than n^2 (selection sort). In a random sort, this is the fastest to complete by a landslide since it's utilizing recursion to break down a larger data set into smaller, manageable sortable sets.
+2. In a reverse sort, merge sort has the best time by a long shot. Utilizing recursion allows for the reversed data to be quickly reversed again into the sorted order.
+3. In a sorted run, merge sort still has to look at the elements n log n times, meaning it's not as fast as bubble sort (omega of n) but faster than selection sort (n^2).
+sort3 uses: Selection Sort
+How do you know?:
+1. Selection Sort's best case is Big Omega of n^2 and worst case is Big O of n^2. In a random sort, selection is the second fastest to complete (after merge sort).
+2. In a reverse sort, selection sort's time is between merge sort and bubble sort. It still has to iterate through each n element, but it doesn't actively swap its adjacent element, making it quicker than bubble sort.
+3. In a sorted run, selection sort still has to go through each element n^2 times and make comparisons, making it slower than bubble sort and merge sort
+## TEST NOTES: ##
+1. sorted small
+sort1: time ./sort1 sorted5000.txt, real    0m0.011s
+sort2: time ./sort2 sorted5000.txt, real    0m0.013s
+sort3: time ./sort3 sorted5000.txt, real    0m0.034s
+2. sorted large
+sort1: time ./sort1 sorted50000.txt, real    0m2.341s - 0m3.722s
+sort2: time ./sort2 sorted50000.txt, real    0m1.668s -  0m3.397s
+sort3: time ./sort3 sorted50000.txt, real    0m7.533s
+3. reversed small
+sort1: time ./sort1 reversed5000.txt, real    0m0.087s
+sort2: time ./sort2 reversed5000.txt, real    0m0.016s
+sort3: time ./sort3 reversed5000.txt, real    0m0.034s
+4. random small (multiple tests for each sort)
+sort1: time ./sort1 random5000.txt, real    0m0.057s - 0m0.127s
+sort2: time ./sort2 random5000.txt, real    0m0.010s - 0m0.017s
+sort3: time ./sort3 random5000.txt, real    0m0.032s - 0m0.036s
+5. random large (multiple tests for each sort)
+sort1: time ./sort1 random50000.txt, real    0m14.649s - 0m15.234s
+sort2: time ./sort2 random50000.txt, real    0m2.358s - 0m3.580s
+sort3: time ./sort3 random50000.txt, real    0m7.083s - 0m7.908
