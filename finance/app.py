@@ -35,7 +35,7 @@ Session(app)
 
 # Configure CS50 Library to use POSTGRES database
 # Configure CS50 Library to use POSTGRES database
-db = SQL(os.getenv("DATABASE_URL"))
+db = SQL("sqlite:///finance.db")
 
 
 # Make sure API key is set
