@@ -376,3 +376,7 @@ def user():
     else:
         userName = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
         return render_template("user.html", userName=userName[0]["username"])
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
