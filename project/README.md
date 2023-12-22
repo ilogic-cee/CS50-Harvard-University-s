@@ -41,6 +41,3 @@ To get started with SneakerALot, simply visit our website at [www.sneakeralot.co
 
 For any inquiries or assistance, contact our customer support team at [support@sneakeralot.com](mailto:support@sneakeralot.com).
 
-[Insert additional sections or information as needed.]
-
-[Note: Replace "[Insert URL Here]" and "[www.sneakeralot.com](#)" with the actual URL of your video demo and your website, respectively.]
