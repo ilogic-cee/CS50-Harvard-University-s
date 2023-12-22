@@ -9,7 +9,7 @@ SneakerALot is a premier online sneaker store that caters to sneaker enthusiasts
 ## Features:
 
 1. **Extensive Sneaker Catalog:**
-   - Browse through a diverse and up-to-date catalog featuring sneakers from top brands like Nike, Adidas, Jordan, and more. Stay on top of the latest releases and discover exclusive collaborations.
+   - Browse through a diverse and up-to-date catalog featuring sneakers from top brands like Nike, Jordan, New balance, Jordan 1, Jordan 4, Nike Dunks and more. Stay on top of the latest releases and discover exclusive collaborations.
 
 2. **User-Friendly Interface:**
    - Our website is designed with the user in mind, ensuring a smooth and intuitive shopping experience. Easily navigate through categories, filter options, and product details to find the perfect pair.
