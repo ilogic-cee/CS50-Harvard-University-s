@@ -1,31 +1,34 @@
+from PIL import Image, ImageOps
+import sys
+import os
+
+
 def main():
-    plate = input("Plate: ")
-    if is_valid(plate):
-        print("Valid")
+    if len(sys.argv) < 3:
+        sys.exit("Too few command-line arguments")
+    elif len(sys.argv) > 3:
+        sys.exit("Too many command-line arguments")
     else:
-        print("Invalid")
-
-
-def is_valid(s):
-    if 2 <= len(s) <= 6 and s.isalnum():
-        # Return true if characters are all letters
-        if s.isalpha():
-            return True
+        format = [".jpg", ".jpeg", ".png"]
+        inp = os.path.splitext(sys.argv[1])
+        outp = os.path.splitext(sys.argv[2])
+        if outp[1].lower() not in format:
+            sys.exit("Invalid output")
+        elif inp[1].lower() != outp[1].lower():
+            sys.exit("Input and output have different extensions")
         else:
-            # Check for number in the middle
-            # (only if the first two characters are letters and the last character is number)
-            if s[:2].isalpha() and s[-2:].isdigit():
-                for i in range(len(s)):
-                    if s[i].isdigit():
-                        # Return false if number starts with 0 or the following character is letter
-                        if s[i].startswith("0") or s[i:].isalpha():
-                            return False
-                        else:
-                            return True
-            else:
-                return False
-    else:
-        return False
+            edit_photo(sys.argv[1], sys.argv[2])
+
+
+def edit_photo(input, output):
+    try:
+        shirt = Image.open("shirt.png")
+        with Image.open(input) as input:
+            input_cropped = ImageOps.fit(input, shirt.size)
+            input_cropped.paste(shirt, mask = shirt)
+            input_cropped.save(output)
+    except FileNotFoundError:
+        sys.exit(f"Input does not exist")
 
 
 if __name__ == "__main__":
