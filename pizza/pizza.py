@@ -4,8 +4,8 @@ from tabulate import tabulate
 
 
 def main():
-    if len(sys.argv) < 2:
-        sys.exit("Too few command-line arguments")
+    if len(sys.argv) != 2 or not sys.argv[1].endswith(".csv"):
+        sys.exit("Usage: python pizza.py <filename.csv>")
     elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
     else:
