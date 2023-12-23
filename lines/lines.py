@@ -7,7 +7,8 @@ def main():
     elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
     else:
-        if sys.argv[1][-3:] != ".py":
+        if not sys.argv[1].endswith(".py"):
+
             sys.exit("Not a python file")
         else:
             print(count_lines(sys.argv[1]))
