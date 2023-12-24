@@ -1,14 +1,13 @@
+import re
+
+
 def main():
     print(parse(input("HTML: ")))
 
 
 def parse(s):
-    # Use regex to find the YouTube URL in the src attribute
-    match = re.search(r'<iframe[^>]*src="(?:https?://)?(?:www\.)?youtube\.com/embed/([^"]+)"', s)
-
-    if match:
-        video_id = match.group(1)
-        return f"https://youtu.be/{video_id}"
+    if link := re.search(r"<iframe src=\"https?://(www\.)?youtube\.com/embed/([a-zA-Z0-9]+)\"></iframe>", s):
+        return f"https://youtu.be/{link.group(2)}"
     else:
         return None
 
