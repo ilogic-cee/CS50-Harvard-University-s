@@ -2,7 +2,11 @@ import re
 
 
 def main():
-    print(count(input("Text: ")))
+    result = count(input("Text: "))
+    if result is not None:
+        print(result)
+    else:
+        print("No occurrences of 'um' found.")
 
 
 def count(s):
@@ -11,7 +15,9 @@ def count(s):
     regex = "(^|\W)um($|\W)"
     match = re.findall(regex, s, re.IGNORECASE)
     if match:
-        return(len(match))
+        return len(match)
+    else:
+        return None
 
 
 if __name__ == "__main__":
