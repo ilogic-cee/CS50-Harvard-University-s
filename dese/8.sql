@@ -1,1 +1,2 @@
-SELECT name, number_of_pupils FROM districts;
+SELECT "name", "pupils" FROM "districts"
+JOIN "expenditures" ON "expenditures"."district_id" = "districts"."id";
