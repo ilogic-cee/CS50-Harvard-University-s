@@ -1,1 +1,1 @@
-SELECT name, city FROM schools WHERE type = 'Public';
+SELECT "name", "city" FROM "schools" WHERE "type" = 'Public School';

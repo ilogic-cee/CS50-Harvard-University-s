@@ -1,2 +1,6 @@
-SELECT city, COUNT(*) FROM schools WHERE type = 'Public' GROUP BY city ORDER BY COUNT(*) DESC, city LIMIT 10;
-SELECT city, COUNT(*) FROM schools WHERE type = 'Public' GROUP BY city HAVING COUNT(*) <= 3 ORDER BY COUNT(*) DESC, city;
+SELECT "city", COUNT("type") AS "Number of Public Schools"
+FROM "schools"
+WHERE "type" = 'Public School'
+GROUP BY "city"
+HAVING "Number of Public Schools" <= 3
+ORDER BY "Number of Public Schools" DESC, "city";
