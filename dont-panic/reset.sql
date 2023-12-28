@@ -1,3 +1,6 @@
+-- Start transaction
+BEGIN TRANSACTION;
+
 -- Drop tables
 DROP TABLE IF EXISTS "user_logs";
 DROP TABLE IF EXISTS "orders";
