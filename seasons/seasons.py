@@ -1,26 +1,25 @@
 from datetime import date
 import inflect
 import sys
+import operator
+
+p = inflect.engine()
+
 
 def main():
     try:
-        dob_input = input("Enter your birthdate (YYYY-MM-DD): ")
-        dob = date.fromisoformat(dob_input)
-
-        # Ensure the birthdate is not in the future
-        if dob > date.today():
-            sys.exit("Birthdate cannot be in the future. Please enter a valid date.")
-
-        age_in_days = (date.today() - dob).days
-        print(f"You are {convert_days_to_minutes(age_in_days)} minutes old.")
-
+        dob = input("Date of Birth: ")
+        # date.fromisoformat(dob) will check whether dob is a valid date or not
+        difference = operator.sub(date.today(), date.fromisoformat(dob))
+        print(convert(difference.days))
     except ValueError:
-        sys.exit("Invalid date format. Please enter the date in YYYY-MM-DD format.")
+        sys.exit("Invalid date")
 
-def convert_days_to_minutes(days):
-    p = inflect.engine()
-    minutes = days * 24 * 60
-    return p.number_to_words(minutes, andword='').capitalize() + " minutes"
+
+def convert(time):
+    minutes = time * 24 * 60
+    return f"{(p.number_to_words(minutes, andword='')).capitalize()} minutes"
+
 
 if __name__ == "__main__":
     main()
