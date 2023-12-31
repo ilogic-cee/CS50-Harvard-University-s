@@ -1,6 +1,6 @@
 Tic-Tac-Toe AI
-Video Demo: [URL of your video]
-Description:
+Video Demo:
+Description:https://youtu.be/GxvLY7-p0Ak
 This project is an implementation of a Tic-Tac-Toe game in Python, featuring an AI opponent that uses the minimax algorithm to calculate its moves. The goal was to create a simple yet challenging game that can be played in a console environment.
 
 Files in the Project:
