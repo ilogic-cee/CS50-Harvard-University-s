@@ -57,10 +57,10 @@ def wins(state, player):
     print("Win state list:", win_state)
 
     if [player, player, player] in win_state:
-        print("Win detected!")
+)
         return True
     else:
-        print("No win detected.")
+
         return False
 
 
