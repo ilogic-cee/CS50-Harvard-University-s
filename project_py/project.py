@@ -51,6 +51,9 @@ def wins(state, player):
         [state[0][0], state[1][1], state[2][2]],
         [state[2][0], state[1][1], state[0][2]],
     ]
+        print("Checking win state for player", player)
+    print("Win state list:", win_state)
+    
     if [player, player, player] in win_state:
         return True
     else:
