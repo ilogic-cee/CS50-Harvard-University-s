@@ -56,7 +56,7 @@ All columns in the `instructors` table are required and hence should have the `N
 
 #### Problems
 
-The `problems` table includes:
+The `problems` table includes:S
 
 * `id`, which specifies the unique ID for the instructor as an `INTEGER`. This column thus has the `PRIMARY KEY` constraint applied.
 * `problem_set`, which is an `INTEGER` specifying the number of the problem set of which the problem is a part. Problem sets are *not* represented separately, given that each is only identified by a number.
