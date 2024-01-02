@@ -1,7 +1,7 @@
 # Design Document
 
 
-Video overview: (Normally there would be a URL here, but not for this sample assignment!)
+Video overview: https://youtu.be/AFXa55Fus5s
 
 ## Scope
 
