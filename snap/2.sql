@@ -1,3 +1,3 @@
-SELECT expires_at
+SELECT expiry_time
 FROM messages
 WHERE id = 151;
