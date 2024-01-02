@@ -1,126 +1,58 @@
--- Drop existing tables if they exist
-DROP TABLE Artist CASCADE CONSTRAINTS;
-DROP TABLE Artist_Concert CASCADE CONSTRAINTS;
-DROP TABLE Song CASCADE CONSTRAINTS;
-DROP TABLE Song_Genre CASCADE CONSTRAINTS;
-DROP TABLE Music_Video CASCADE CONSTRAINTS;
-DROP TABLE Album CASCADE CONSTRAINTS;
-DROP TABLE Album_Genre CASCADE CONSTRAINTS;
-DROP TABLE Playlist CASCADE CONSTRAINTS;
-DROP TABLE Song_on_Playlist CASCADE CONSTRAINTS;
-DROP TABLE Artist_on_Playlist CASCADE CONSTRAINTS;
-DROP TABLE SUser CASCADE CONSTRAINTS;
+-- Inserting sample data into tables
 
--- Create Artist table
-CREATE TABLE Artist (
-    Artist_ID VARCHAR2(20),
-    Stage_Name VARCHAR2(20),
-    First_Name VARCHAR2(20),
-    Last_Name VARCHAR2(250),
-    Artist_Info VARCHAR2(20),
-    Shares NUMBER(20),
-    CONSTRAINT artist_pk PRIMARY KEY (Artist_ID)
-);
+-- Insert data into Artist table
+INSERT INTO Artist VALUES ('A1', 'Artist One', 'First1', 'Last1', 'Info about Artist One', 1000);
+INSERT INTO Artist VALUES ('A2', 'Artist Two', 'First2', 'Last2', 'Info about Artist Two', 1500);
+-- ... (add more artists as needed)
 
--- Create Artist_Concert table
-CREATE TABLE Artist_Concert (
-    Artist VARCHAR2(20),
-    Venue VARCHAR2(20),
-    Date_Con DATE,
-    Time VARCHAR2(20),
-    CONSTRAINT artist_concert_pk PRIMARY KEY (Artist)
-);
+-- Insert data into Album table
+INSERT INTO Album VALUES ('AL1', 'A1', 'Album One', TO_DATE('2021-01-01', 'YYYY-MM-DD'), 10);
+INSERT INTO Album VALUES ('AL2', 'A2', 'Album Two', TO_DATE('2021-02-01', 'YYYY-MM-DD'), 8);
+-- ... (add more albums as needed)
 
--- Create Song table
-CREATE TABLE Song (
-    Song_ID VARCHAR2(30),
-    Artist VARCHAR2(20),
-    Album VARCHAR2(30),
-    Title VARCHAR2(30),
-    Duration VARCHAR2(20),
-    Number_of_Plays VARCHAR2(20),
-    Release_Date DATE,
-    CONSTRAINT song_pk PRIMARY KEY (Song_ID)
-);
+-- Insert data into Song table
+INSERT INTO Song VALUES ('S1', 'A1', 'AL1', 'Song One', '3:30', 500, TO_DATE('2021-01-01', 'YYYY-MM-DD'));
+INSERT INTO Song VALUES ('S2', 'A1', 'AL1', 'Song Two', '4:00', 300, TO_DATE('2021-01-15', 'YYYY-MM-DD'));
+-- ... (add more songs as needed)
 
--- Create Song_Genre table
-CREATE TABLE Song_Genre (
-    Song VARCHAR2(30),
-    Song_Genre VARCHAR2(30),
-    CONSTRAINT song_genre_pk PRIMARY KEY (Song, Song_Genre)
-);
+-- ... (similarly insert data into other tables like Music_Video, Playlist, etc.)
 
--- Create Music_Video table
-CREATE TABLE Music_Video (
-    Video_ID VARCHAR2(20),
-    Song VARCHAR2(20),
-    Title VARCHAR2(20),
-    Duration VARCHAR2(20),
-    Release_Date DATE,
-    CONSTRAINT music_video_pk PRIMARY KEY (Video_ID)
-);
+-- Retrieving data from tables
 
--- Create Album table
-CREATE TABLE Album (
-    Album_ID VARCHAR2(30),
-    Artist VARCHAR2(20),
-    Title VARCHAR2(30),
-    Release_Date DATE,
-    Number_of_Songs VARCHAR2(20),
-    CONSTRAINT album_pk PRIMARY KEY (Album_ID)
-);
+-- Get all songs by a specific artist
+SELECT * FROM Song WHERE Artist = 'A1';
 
--- Create Album_Genre table
-CREATE TABLE Album_Genre (
-    Album VARCHAR2(20),
-    Album_Genre VARCHAR2(20),
-    CONSTRAINT album_genre_pk PRIMARY KEY (Album, Album_Genre)
-);
+-- Get all albums by a specific artist
+SELECT * FROM Album WHERE Artist = 'A1';
 
--- Create Playlist table
-CREATE TABLE Playlist (
-    Playlist_ID VARCHAR2(20),
-    Number_of_Songs VARCHAR2(20),
-    Title VARCHAR2(20),
-    Created_By VARCHAR2(20),
-    CONSTRAINT playlist_pk PRIMARY KEY (Playlist_ID)
-);
+-- Get the total number of songs in each album
+SELECT Album, COUNT(*) AS Total_Songs FROM Song GROUP BY Album;
 
--- Create Song_on_Playlist table
-CREATE TABLE Song_on_Playlist (
-    Song VARCHAR2(20),
-    Playlist VARCHAR2(20),
-    Date_Added VARCHAR2(20),
-    CONSTRAINT song_on_playlist_pk PRIMARY KEY (Song)
-);
+-- Updating data in tables
 
--- Create Artist_on_Playlist table
-CREATE TABLE Artist_on_Playlist (
-    Artist VARCHAR2(20),
-    Playlist VARCHAR2(20),
-    Date_Added VARCHAR2(20),
-    CONSTRAINT artist_on_playlist_pk PRIMARY KEY (Artist)
-);
+-- Increase the number of shares for an artist
+UPDATE Artist SET Shares = Shares + 500 WHERE Artist_ID = 'A1';
 
--- Create SUser table
-CREATE TABLE SUser (
-    Username VARCHAR2(20),
-    Age VARCHAR2(20),
-    Country VARCHAR2(20),
-    Email VARCHAR2(20),
-    CONSTRAINT suser_pk PRIMARY KEY (Username)
-);
+-- Update the duration of a specific song
+UPDATE Song SET Duration = '4:30' WHERE Song_ID = 'S1';
 
--- Add foreign key constraints
-ALTER TABLE Artist_Concert ADD CONSTRAINT artist_concert_fk FOREIGN KEY (Artist) REFERENCES Artist (Artist_ID);
-ALTER TABLE Song ADD CONSTRAINT song_fk FOREIGN KEY (Artist) REFERENCES Artist (Artist_ID);
-ALTER TABLE Song ADD CONSTRAINT song_fk2 FOREIGN KEY (Album) REFERENCES Album (Album_ID);
-ALTER TABLE Song_Genre ADD CONSTRAINT song_genre_fk FOREIGN KEY (Song) REFERENCES Song (Song_ID);
-ALTER TABLE Music_Video ADD CONSTRAINT music_video_fk FOREIGN KEY (Song) REFERENCES Song (Song_ID);
-ALTER TABLE Album ADD CONSTRAINT album_fk FOREIGN KEY (Artist) REFERENCES Artist (Artist_ID);
-ALTER TABLE Album_Genre ADD CONSTRAINT album_genre_fk FOREIGN KEY (Album) REFERENCES Album (Album_ID);
-ALTER TABLE Song_on_Playlist ADD CONSTRAINT song_on_playlist_fk FOREIGN KEY (Song) REFERENCES Song (Song_ID);
-ALTER TABLE Song_on_Playlist ADD CONSTRAINT song_on_playlist_fk2 FOREIGN KEY (Playlist) REFERENCES Playlist (Playlist_ID);
-ALTER TABLE Artist_on_Playlist ADD CONSTRAINT artist_on_playlist_fk FOREIGN KEY (Artist) REFERENCES Artist (Artist_ID);
-ALTER TABLE Artist_on_Playlist ADD CONSTRAINT artist_on_playlist_fk2 FOREIGN KEY (Playlist) REFERENCES Playlist (Playlist_ID);
-ALTER TABLE Playlist ADD CONSTRAINT playlist_fk FOREIGN KEY (Created_By) REFERENCES
+-- Deleting data from tables
+
+-- Delete a specific song
+DELETE FROM Song WHERE Song_ID = 'S2';
+
+-- Delete a specific album and its songs
+DELETE FROM Song WHERE Album = 'AL2';
+DELETE FROM Album WHERE Album_ID = 'AL2';
+
+-- Complex Queries
+
+-- Find artists with more than one album
+SELECT Artist_ID, Stage_Name FROM Artist
+WHERE Artist_ID IN (SELECT Artist FROM Album GROUP BY Artist HAVING COUNT(*) > 1);
+
+-- List songs along with their artist names
+SELECT Song.Title, Artist.Stage_Name FROM Song
+JOIN Artist ON Song.Artist = Artist.Artist_ID;
+
+-- Ensure to adapt and test these queries according to your database setup
