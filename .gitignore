@@ -29,3 +29,4 @@ vendor/
 !Makefile
 
 # Ignore files larger than 100M
+/.git/objects/pack/pack-0020c4b0972272262faee939c81520e5ca66c22c.pack
