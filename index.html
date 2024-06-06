@@ -1,0 +1,3010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anon - eCommerce Website</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/SneakerAlotLogo.svg" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+
+  <!--
+    - MODAL
+  -->
+
+  <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+
+    <div class="modal-content">
+
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="newsletter-img">
+        <img src="./project/assets/images/newsletter.jpg" alt="subscribe newsletter" width="400" height="400">
+      </div>
+
+      <div class="newsletter">
+
+        <form action="#">
+
+          <div class="newsletter-header">
+
+            <h3 class="newsletter-title">Stay fresh – subscribe now!</h3>
+
+            <p class="newsletter-desc">
+              Step up your sneaker game! Subscribe to <b>SneakerAlot</b>  for the latest kicks and exclusive discounts. 👟🔥
+            </p>
+
+          </div>
+
+          <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+
+          <button type="submit" class="btn-newsletter">Get Em'</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--
+    - NOTIFICATION TOAST
+  -->
+
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+      <img src="./assets/images/products/air-jordan-1.jpeg" alt="Rose Gold Earrings" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+
+      <p class="toast-message">
+        Someone in new just bought
+      </p>
+
+      <p class="toast-title">
+        Air Jordan 1 Mid “University Blue”
+      </p>
+
+      <p class="toast-meta">
+        <time datetime="PT2M">2 Hours</time> ago
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--
+    - HEADER
+  -->
+
+  <header>
+
+    <div class="header-top">
+
+      <div class="container">
+
+        <ul class="header-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="header-alert-news">
+          <p>
+            <b>Free Shipping</b>
+            This Week Order Over - 1899,99 rands
+          </p>
+        </div>
+
+        <div class="header-top-actions">
+
+          <select name="currency">
+
+            <option value="zar">ZAR &#82;</option>
+            <option value="usd">USD &#36;</option>
+
+
+          </select>
+
+          <select name="language">
+
+            <option value="en-US">English</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="header-main">
+
+      <div class="container">
+
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/SneakerAlotLogo.svg" alt="ilogic's logo" width="200" height="200">
+        </a>
+
+        <div class="header-search-container">
+
+          <input type="search" name="search" class="search-field" placeholder="input the pair's name.">
+
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Home</a>
+          </li>
+             <!-- Sneaker Categories Menu -->
+          <li class="menu-category">
+            <a href="#" class="menu-title">Sneaker Categories</a>
+
+            <div class="dropdown-panel">
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Men's Sneakers</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Running</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Casual</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">High-Tops</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Basketball</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Limited Edition</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">
+                            <img src="./assets/images/nikedunkbanner.webp" alt="men's sneakers collection" width="250" height="119">
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Women's Sneakers</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Running</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Casual</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Athletic</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Fashion</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Limited Edition</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">
+                            <img src="./assets/images/download.jpg" alt="women's sneakers collection" width="250" height="119">
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="dropdown-panel-list">
+
+                    <li class="menu-title">
+                        <a href="#">Kids' Sneakers</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Running</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Casual</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">School Shoes</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">Character-themed</a>
+                    </li>
+
+                    <li class="panel-list-item">
+                        <a href="#">
+                            <img src="./assets/images/download (1).jpg" alt="kids' sneakers collection" width="250" height="119">
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </li>
+
+
+    </nav>
+
+    <div class="mobile-bottom-navigation">
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="home-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="grid-outline"></ion-icon>
+      </button>
+
+    </div>
+
+    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="mobile-menu-category-list">
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Home</a>
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Men's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Running Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Shorts & Jeans</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">High-Tops</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Basketball Sneakers</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Women's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Running Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Slip-On Sneakers</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Platform Sneakers</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">High Heel Sneakers</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Kids</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Running Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Cartoon Character Sneakers</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Velcro Closure Sneakers</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Slip-On Sneakers</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">New Arrivals</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Latest Releases</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Seasonal Styles</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Trending Now</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Air Freshener</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Sneakeralot News</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Hot Offers</a>
+        </li>
+
+      </ul>
+
+      <div class="menu-bottom">
+
+        <ul class="menu-category-list">
+
+          <li class="menu-category">
+
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Rands &nbsp; &#8381;</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="menu-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+  </header>
+
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+    <div class="banner">
+
+      <div class="container">
+
+        <div class="slider-container has-scrollbar">
+
+          <div class="slider-item">
+
+            <img src="./assets/images/maxresdefault.jpg" alt="women's latest fashion sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending item</p>
+
+              <h2 class="banner-title" style="color: #ffffff;"> Sneakers </h2>
+
+              <p class="banner-text">
+                 <b>R</b> 1100.90
+            </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="./assets/images/Nike-Dunk-Launch-Landing-Page.webp" alt="modern sunglasses" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-text">
+                 <b>R</b> 1100.90
+            </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="./assets/images/nike-sb-to-retro-both-nike-dunk-de-la-soul-01.webp" alt="new fashion summer sale" class="banner-img">
+
+            <div class="banner-content">
+
+
+
+
+              <p class="banner-text">
+                <b>R</b> 900.99
+           </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - CATEGORY
+    -->
+
+    <div class="category">
+
+      <div class="container">
+
+        <div class="category-item-container has-scrollbar">
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="dress & frock" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Sneakers Available</h3>
+
+                <p class="category-item-amount">(53)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="winter wear" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">In Stock</h3>
+
+                <p class="category-item-amount">(58)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="glasses & lens" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Styles</h3>
+
+                <p class="category-item-amount">(68)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="shorts & jeans" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Options</h3>
+
+                <p class="category-item-amount">(84)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="t-shirts" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Designs</h3>
+
+                <p class="category-item-amount">(35)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="jacket" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Models</h3>
+
+                <p class="category-item-amount">(16)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="watch" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Pairs</h3>
+
+                <p class="category-item-amount">(27)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="./assets/images/icons/icons8-nike-500.svg" alt="hat & caps" width="60">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Varieties</h3>
+
+                <p class="category-item-amount">(39)</p>
+              </div>
+
+              <a href="#" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Category</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="sidebar-menu-category-list">
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/IceNike.png" alt="clothes" width="50" height="50"
+                    height="50" class="menu-title-img">
+
+                    <p class="menu-title">Sneakers</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Shirt</p>
+                      <data value="300" class="stock" title="Available Stock">300</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">shorts & jeans</p>
+                      <data value="60" class="stock" title="Available Stock">60</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/IceNike.png" alt="clothes" width="50" height="50"
+                    height="50" class="menu-title-img">
+                    <p class="menu-title">Footwear</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Sports</p>
+                      <data value="45" class="stock" title="Available Stock">45</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Formal</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Casual</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Safety Shoes</p>
+                      <data value="26" class="stock" title="Available Stock">26</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="./assets/images/IceNike.png" alt="clothes" width="50" height="50"
+                    height="50" class="menu-title-img">
+                    <p class="menu-title">Men Shoes</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Sports Shoes</p>
+                      <data value="45" class="stock" title="Available Stock">45</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Formal Shoes</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Casual Shoes</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Boots</p>
+                      <data value="26" class="stock" title="Available Stock">26</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+
+          </div>
+
+          <div class="product-showcase">
+
+            <h3 class="showcase-heading">best sellers</h3>
+
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/icons/air-jordan-1-mid-university-blue-grey-wethenew-1_2.svg" alt="baby fabric shoes" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Air Jordan 1 Retro High OG</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>R2099.99</del>
+                      <p class="price">R1799.90</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/dunk1.svg" alt="men's hoodies t-shirt" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Nike Dunk x Grateful Dead</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>1700.90</del>
+                      <p class="price">R1399.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+          <!--
+            - PRODUCT MINIMAL
+          -->
+
+          <div class="product-minimal">
+
+            <div class="product-showcase">
+
+              <h2 class="title">New Arrivals</h2>
+
+              <div class="showcase-wrapper has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Air Jordan 1 Retro High OG "Chicago Reimagined"</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R3 000</p>
+                        <del> R4 000</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="girls pink embro design top" class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Dunk Low </h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R1 800</p>
+                        <del>R2000</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="black floral wrap midi skirt" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price"> R1 600</p>
+                        <del>R2 500</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="pure garment dyed cotton shirt" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Blazer Mid '77 Vintage White:</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R1 600</p>
+                        <del>R2000.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="men yarn fleece full-zip jacket" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Zoom Freak 4:</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">sneaker</a>
+
+                      <div class="price-box">
+                        <p class="price">R2 300</p>
+                        <del>R2 800</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="mens winter leathers jackets" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Air Max 90 Futura</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneaker</a>
+
+                      <div class="price-box">
+                        <p class="price">R1 900</p>
+                        <del>R2 200</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="mens winter leathers jackets" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Air Pegasus</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneaker</a>
+
+                      <div class="price-box">
+                        <p class="price"> R1 600</p>
+                        <del>R1 900</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="better basics french terry sweatshorts" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Waffle One</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R1 400</p>
+                        <del>R1 800</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="product-showcase">
+
+              <h2 class="title">Trending</h2>
+
+              <div class="showcase-wrapper  has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="running & trekking shoes - white" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title"> Air Jordan 1 High OG "Chicago Reimagined</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price"> R5 100</p>
+                        <del>R6 000</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="trekking & running shoes - black" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Dunk Low "Siempre Familia"</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers </a>
+
+                      <div class="price-box">
+                        <p class="price">R2 400 </p>
+                        <del>R3 000</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="womens party wear shoes" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Blazer Mid '77 Vintage White:</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R2 200</p>
+                        <del> R2 800 </del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="sports claw women's shoes" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Air Max 90 Futura:</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">5 400</p>
+                        <del>R6 500</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="air tekking shoes - white" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Nike Waffle One</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R2 000</p>
+                        <del>R1 800</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+
+                  <div class="showcase">
+
+
+
+
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="casual men's brown shoes" class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Casual Men's Brown shoes</h4>
+                      </a>
+
+
+
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="product-showcase">
+
+              <h2 class="title">Top Rated</h2>
+
+              <div class="showcase-wrapper  has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="pocket watch leather pouch" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Pocket Watch Leather Pouch</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Watches</a>
+
+                      <div class="price-box">
+                        <p class="price">$50.00</p>
+                        <del>$34.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box">
+                      <img src="./assets/images/products/Nike-Dripping-Render-removebg-preview.png" alt="silver deer heart necklace" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Air Jordan 1 Retro High OG
+                        </h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sneakers</a>
+
+                      <div class="price-box">
+                        <p class="price">R1799.90</p>
+                        <del>R2000.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - PRODUCT FEATURED
+          -->
+
+          <div class="product-featured">
+
+            <h2 class="title">Deal of the day</h2>
+
+            <div class="showcase-wrapper has-scrollbar">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                  <div class="showcase-banner">
+                    <img src="./assets/images/products/Jordan1Red.png" alt="Jordan1Red" class="showcase-img">
+                  </div>
+
+                  <div class="showcase-content">
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <a href="#">
+                      <h3 class="showcase-title">Chicago' Air Jordan 1</h3>
+                    </a>
+
+                    <p class="showcase-desc">
+                      Air Jordan 1 Retro High OG "Chicago Lost And Found" sneakers
+                    </p>
+
+                    <div class="price-box">
+                      <p class="price">R1 800</p>
+
+                      <del>R2 000</del>
+                    </div>
+
+                    <button class="add-cart-btn">add to cart</button>
+
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p>
+                          already sold: <b>20 000</b>
+                        </p>
+
+                        <p>
+                          available: <b>120 200</b>
+                        </p>
+                      </div>
+
+                      <div class="showcase-status-bar"></div>
+                    </div>
+
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">
+                        Hurry Up! Offer ends in:
+                      </p>
+
+                      <div class="countdown">
+
+                        <div class="countdown-content">
+
+                          <p class="display-number">360</p>
+
+                          <p class="display-text">Days</p>
+
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">24</p>
+                          <p class="display-text">Hours</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">59</p>
+                          <p class="display-text">Min</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">00</p>
+                          <p class="display-text">Sec</p>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                  <div class="showcase-banner">
+                    <img src="./assets/images/products/DunkPink.png" alt="Rose Gold diamonds Earring" class="showcase-img">
+                  </div>
+
+                  <div class="showcase-content">
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <h3 class="showcase-title">
+                      <a href="#" class="showcase-title">Triple Pink low dunks womens </a>
+                    </h3>
+
+                    <p class="showcase-desc">
+                      Step into style with Nike Triple Pink Dunks – comfort meets bold design!
+                    </p>
+
+                    <div class="price-box">
+                      <p class="price">R1 990</p>
+                      <del>R2 300</del>
+                    </div>
+
+                    <button class="add-cart-btn">add to cart</button>
+
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p> already sold: <b>15000</b> </p>
+
+                        <p> available: <b>40000</b> </p>
+                      </div>
+
+                      <div class="showcase-status-bar"></div>
+                    </div>
+
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">Hurry Up! Offer ends in:</p>
+
+                      <div class="countdown">
+                        <div class="countdown-content">
+                          <p class="display-number">60</p>
+                          <p class="display-text">Days</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">24</p>
+                          <p class="display-text">Hours</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">59</p>
+                          <p class="display-text">Min</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">00</p>
+                          <p class="display-text">Sec</p>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - PRODUCT GRID
+          -->
+
+          <div class="product-main">
+
+            <h2 class="title">New Products</h2>
+
+            <div class="product-grid">
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/nike-dunk-low1.png" alt="nike dunk" width="300" class="product-img default">
+                  <img src="./assets/images/products/nike-dunk-low2.png" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+
+                  <p class="showcase-badge">15%</p>
+
+                  <div class="showcase-actions">
+
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-content">
+
+                  <a href="#" class="showcase-category">Nike Dunk Low</a>
+
+                  <a href="#">
+                    <h3 class="showcase-title">nspired by the iconic "Chicago" colorway, this sneaker features updated materials and a slightly altered design.</h3>
+                  </a>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 800</p>
+                    <del>R 1 750</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/Nike-Air-Force-1-Pixel.png" alt="Pure Garment Dyed Cotton Shirt" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/Nike-Air-force1-2.png" alt="Pure Garment Dyed Cotton Shirt" class="product-img hover"
+                    width="300">
+
+                  <p class="showcase-badge angle black">sale</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nike Air Force 1 Low "Pixel"</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">This playful sneaker features a pixelated Swoosh logo and a unique textured upper.</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 450</p>
+                    <del>R1 560</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+
+                  <img src="./assets/images/products/Nike Blazer Mid '77.png" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/Nike Blazer Mid '77;2.png" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img hover"
+                    width="300">
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nike Blazer Mid '77 Vintage White</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title"> " Blazer Mid '77 Vintage White: Classic. Clean. Timeless.  "</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 800</p>
+                    <del>R1 600</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+
+                <div class="showcase-banner">
+
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/lead-off-white-x-air-jordan-4 (2).png" alt="Black Floral Wrap Midi Skirt" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/The-Off-White-Air-Jordan-4-.png" alt="Black Floral Wrap Midi Skirt" class="product-img hover"
+                    width="300">
+
+
+                  <p class="showcase-badge angle pink">new</p>
+
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Off-White x Air Jordan 4 "Sail"</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title"> "Step into Virgil's magic: AJ4 with translucent flair, bold branding, and head-turning style." </a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R2 500</p>
+                    <del>R3 500</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+                  <img src="./assets/images/products/AirforcewithLaces1.png" alt="Casual Men's Brown shoes" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/washedblackThiccLacesgt.png" alt="Casual Men's Brown shoes" class="product-img hover"
+                    width="300">
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Airforce big laces</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">
+                      Nike air force : Basketball heritage, durable style, and a touch of flash for timeless radiance.</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1299.00</p>
+                    <del>R1600.00</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/Nike-SB-Dunk-Low-Paris-Sneaker.png" alt="Pocket Watch Leather Pouch" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/dunks3.1.png" alt="Pocket Watch Leather Pouch" class="product-img hover"
+                    width="300">
+
+                  <p class="showcase-badge angle black">Limited</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nike SB Dunk Low Paris</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">was one of the extremely limited Dunk colorways designed for 2003’s White Dunk Exhibition in Paris.</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R7 500</p>
+                    <del>R1 700</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/0b6-DUNK-LOW-REMASTERED-MEDIUM-OLIVE-NEUTRAL-OLIVE-EARTH (2).png" alt="Smart watche Vital Plus" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/195-DV0821-001-Nike-Air-Dunk-Jumbo-angled-u3I (2).png" alt="Smart watche Vital Plus" class="product-img hover" width="300">
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nike Dunk Low Remastered 'Medium Olive'"</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">Shelflife Online Store presents the Nike Dunk Low Remastered 'Light Olive' - Medium Olive/Neutral-Olive Earth - DV0821-200.</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R3400</p>
+                    <del>R4000.00</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                </br>
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/Air-Jordan-1-High-University-Blue.png" alt="Womens Party Wear Shoes" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/Air-Jordan-1-High-University-Blue2.png.png" alt="Womens Party Wear Shoes" class="product-img hover"
+                    width="300">
+
+                  <p class="showcase-badge angle black">sale</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Air Jordan 1 Mid </a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">Colour Shown: University Blue/White/Black</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 800</p>
+                    <del>R2 300</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+            <img src="./assets/images/products/nike-dunk-low-reverse-panda-.png" alt="Mens Winter Leathers Jackets" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/nike-dunk-low-reverse-panda-1.png" alt="Mens Winter Leathers Jackets" class="product-img hover"
+                    width="300">
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">nike-dunk-low-reverse-panda</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">Dunk Low Retro sneakers from Nike featuring white/black, leather, signature Swoosh logo detail</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R2 100</p>
+                    <del>R1 900</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/Nike Air Force 1 '072.png" alt="Trekking & Running Shoes - black" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/Nike Air Force 1 '07.png" alt="Trekking & Running Shoes - black" class="product-img hover"
+                    width="300">
+
+                  <p class="showcase-badge angle black">sale</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Nike Air Force 1 '07</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">Colour Shown: White/Picante Red/White</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 599</p>
+                    <del>R1 800</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+              </br>
+            </br>
+          </br>
+                  <img src="./assets/images/products/NewBalance2002RProtectionPackPink-2_1 (1).png" alt="Men's Leather Formal Wear shoes" class="product-img default"
+                    width="300">
+                  <img src="./assets/images/products/NewBalance2002RProtectionPackPink-2_1 (2).png" alt="Men's Leather Formal Wear shoes" class="product-img hover"
+                    width="300">
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">New Balance 2002R Protection Pack Rain</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">cream white
+                      leather/calf suede
+                      logo patch to the side
+                      round toe</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R1 500.00</p>
+                    <del>R1 650.00</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/BodegaxNewBalance990v3OliveLeaf2 (2).png" alt="Better Basics French Terry Sweatshorts"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/BodegaxNewBalance990v3OliveLeaf.png" alt="Better Basics French Terry Sweatshorts"
+                    class="product-img hover" width="300">
+
+                  <p class="showcase-badge angle black">limited</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Bodega x New Balance 990v3 Olive Leaf</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">
+                      Bodega x New Balance 990 v3 "Anniversary": A collab marking 15 years, blending New England style with a special colorway. </a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">R7 008.00</p>
+                    <del>R8 500.</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title"></h2>
+
+            <div class="testimonial-card">
+
+              <img src="./assets/images/products/ilogicJr..jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">IlogicJR</p>
+
+              <p class="testimonial-title">CEO & Founder Invision</p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            <img src="./assets/images/Nike-TS-GPS-BrownAd-BlogBanner.png" alt="summer collection" class="cta-banner">
+
+
+          </div>
+
+
+
+          <!--
+            - SERVICE
+          -->
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over R900</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">SA Orders Only</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over R1200</p>
+
+                </div>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - BLOG
+    -->
+
+    <div class="blog">
+
+      <div class="container">
+
+        <div class="blog-container has-scrollbar">
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/nikedunkad1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">Fashion</a>
+
+              <a href="#">
+                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+              </a>
+
+              <p class="blog-meta">
+                By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/nike-hijab-ad.webp" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">Sneakers</a>
+
+              <h3>
+                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+
+              <p class="blog-meta">
+               <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2023</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/maxresdefault2.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
+                class="blog-banner" width="300">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">Shoes</a>
+
+              <h3>
+                <a href="#" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+              </h3>
+
+              <p class="blog-meta">
+                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2023</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/justdo.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">sneakers</a>
+
+              <h3>
+                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+
+              <p class="blog-meta">
+                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  <!--
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Sneakers:</h3>
+
+          <a href="#" class="footer-category-link">Running Shoes</a>
+          <a href="#" class="footer-category-link">Basketball Shoes</a>
+          <a href="#" class="footer-category-link">Casual Sneakers</a>
+          <a href="#" class="footer-category-link">Athletic Shoes</a>
+          <a href="#" class="footer-category-link">High-Tops</a>
+          <a href="#" class="footer-category-link">Low-Tops</a>
+          <a href="#" class="footer-category-link">Slip-Ons</a>
+          <a href="#" class="footer-category-link">Training Shoes</a>
+          <a href="#" class="footer-category-link">Fashion Sneakers</a>
+          <a href="#" class="footer-category-link">Skate Shoes</a>
+        </div>
+
+        <div class="footer-category-box">
+
+          <h3 class="category-box-title">Fashion :</h3>
+
+          <a href="#" class="footer-category-link">T-shirt</a>
+          <a href="#" class="footer-category-link">Shirts</a>
+          <a href="#" class="footer-category-link">shorts & jeans</a>
+          <a href="#" class="footer-category-link">jacket</a>
+          <a href="#" class="footer-category-link">dress & frock</a>
+          <a href="#" class="footer-category-link">innerwear</a>
+          <a href="#" class="footer-category-link">hosiery</a>
+
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">footwear :</h3>
+
+          <a href="#" class="footer-category-link">sport</a>
+          <a href="#" class="footer-category-link">formal</a>
+          <a href="#" class="footer-category-link">Boots</a>
+          <a href="#" class="footer-category-link">casual</a>
+          <a href="#" class="footer-category-link">cowboy shoes</a>
+          <a href="#" class="footer-category-link">safety shoes</a>
+          <a href="#" class="footer-category-link">Party wear shoes</a>
+          <a href="#" class="footer-category-link">Branded</a>
+          <a href="#" class="footer-category-link">Firstcopy</a>
+          <a href="#" class="footer-category-link">Long shoes</a>
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Running Shoes</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Casual Sneakers</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Athletic Shoes</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">High-Tops</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Low-Tops</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Products</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Our Company</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Delivery</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">About us</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Services</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+               Oxford Street,
+              Rosebank, Johannesburg
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">+2772 591 7265</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">IlogicalJR@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">iLogicJr</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
